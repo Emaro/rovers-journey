@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=4 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="PackedScene" uid="uid://11p5xm2bbg3q" path="res://scenes/rover.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://bgnxgqf6eg6w4" path="res://scenes/resource.tscn" id="2_0wfyh"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sgp6g"]
 
@@ -19,3 +20,12 @@ current = true
 
 [node name="Rover" parent="." instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="Resource" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.158, 0.5, -3.334)
+
+[node name="Resource2" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
+
+[node name="Resource3" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.564, 0.5, 1.338)
