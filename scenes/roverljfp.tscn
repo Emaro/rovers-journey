@@ -19,80 +19,80 @@ albedo_color = Color(0.11372549, 0.14901961, 0.2627451, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_44p52"]
 
 [node name="VehicleBody3D" type="VehicleBody3D"]
-mass = 200.0
-engine_force = 601.68
-brake = 6.51
-steering = 0.1420698
+mass = 240.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0, 0.4)
 script = ExtResource("1_il8ej")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2316868, 0)
 shape = SubResource("BoxShape3D_il8ej")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.6, 0, 0, 0, 0.5, 0, 0, 0, 4, 0, -1, 0)
+transform = Transform3D(2.6, 0, 0, 0, 0.5, 0, 0, 0, 4, 0, -1.2316868, 0)
 mesh = SubResource("BoxMesh_8cnl3")
 
-[node name="VehicleWheel3D" type="VehicleWheel3D" parent="."]
+[node name="wheelFR" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4901371, -1.257155, 2.0055156)
-brake = 6.51
-steering = 0.1420698
 use_as_steering = true
-wheel_roll_influence = 0.5
-wheel_friction_slip = 0.8
-suspension_stiffness = 20.0
+wheel_roll_influence = 0.0
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wheelFR"]
 transform = Transform3D(-4.371139e-08, 0.19999999, 0, -1, -8.742277e-09, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_d4gi6")
 surface_material_override/0 = SubResource("StandardMaterial3D_7ff10")
 
-[node name="VehicleWheel3D2" type="VehicleWheel3D" parent="."]
+[node name="wheelBR" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4901371, -1.257155, -2.2568946)
-engine_force = 601.68
-brake = 6.51
 use_as_traction = true
-wheel_roll_influence = 0.5
-wheel_friction_slip = 0.8
-suspension_stiffness = 20.0
+wheel_roll_influence = 0.0
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wheelBR"]
 transform = Transform3D(-4.371139e-08, 0.19999999, 0, -1, -8.742277e-09, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_d4gi6")
 surface_material_override/0 = SubResource("StandardMaterial3D_7ff10")
 
-[node name="VehicleWheel3D3" type="VehicleWheel3D" parent="."]
+[node name="wheelBL" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5395627, -1.2571547, -2.2568946)
-engine_force = 601.68
-brake = 6.51
 use_as_traction = true
-wheel_roll_influence = 0.5
-wheel_friction_slip = 0.8
-suspension_stiffness = 20.0
+wheel_roll_influence = 0.0
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wheelBL"]
 transform = Transform3D(-4.371139e-08, 0.19999999, 0, -1, -8.742277e-09, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_d4gi6")
 surface_material_override/0 = SubResource("StandardMaterial3D_7ff10")
 
-[node name="VehicleWheel3D4" type="VehicleWheel3D" parent="."]
+[node name="wheelFL" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5395627, -1.257155, 2.0055156)
-brake = 6.51
-steering = 0.1420698
+use_as_traction = true
 use_as_steering = true
-wheel_roll_influence = 0.5
-wheel_friction_slip = 0.8
-suspension_stiffness = 20.0
+wheel_roll_influence = 0.0
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleWheel3D4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wheelFL"]
 transform = Transform3D(-4.371139e-08, 0.19999999, 0, -1, -8.742277e-09, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_d4gi6")
 surface_material_override/0 = SubResource("StandardMaterial3D_7ff10")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.7, 0, 0, 0, -3.059797e-08, -0.5, 0, 0.7, -2.1855694e-08, 0, -0.57155263, -0.5938267)
+transform = Transform3D(0.7, 0, 0, 0, -3.059797e-08, -0.5, 0, 0.7, -2.1855694e-08, 0, -0.8032395, -0.5938267)
 mesh = SubResource("CapsuleMesh_44p52")
