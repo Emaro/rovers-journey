@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var move_speed := 5.0
 
 func _physics_process(delta: float) -> void:
+	
 	var input_dir = Vector3.ZERO
 
 	if Input.is_action_pressed("move_forward"):

@@ -1,11 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=7 format=3 uid="uid://b8h0h8nkkq1yv"]
 
-[ext_resource type="PackedScene" uid="uid://11p5xm2bbg3q" path="res://scenes/rover.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://bgnxgqf6eg6w4" path="res://scenes/resource.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dv36k1xeid7yn" path="res://scenes/roverljfp.tscn" id="5_tbgi4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sgp6g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tbgi4"]
+size = Vector3(20, 2, 20)
 
 [node name="Main" type="Node3D"]
 
@@ -15,13 +18,6 @@ mesh = SubResource("PlaneMesh_sgp6g")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 6, 10)
-current = true
-
-[node name="Rover" parent="." instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="Resource" parent="." instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.158, 0.5, -3.334)
@@ -36,3 +32,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.564, 0.5, 1.338)
 
 [node name="Alien" parent="." instance=ExtResource("4_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 6)
+
+[node name="Rover" parent="." instance=ExtResource("5_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2450998, 0)
+metadata/_edit_lock_ = true
+
+[node name="Camera3D" type="Camera3D" parent="Rover"]
+transform = Transform3D(-1, 2.9900352e-08, -8.215054e-08, 0, 0.9396927, 0.34202015, 8.742278e-08, 0.34202015, -0.9396927, 0, 3, -5)
+current = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_tbgi4")
