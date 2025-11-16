@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmtd4eqggidvo"]
+
+[ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="1_g7g4h"]
+[ext_resource type="PackedScene" uid="uid://c1yrv7iljhb0h" path="res://scenes/new_rover.tscn" id="2_j8ivh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
+albedo_texture = ExtResource("1_g7g4h")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j8ivh"]
+material = SubResource("StandardMaterial3D_tefeu")
+size = Vector2(50, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nd71p"]
+size = Vector3(500, 1, 500)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nd71p"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ddre"]
+size = Vector3(5, 1, 5)
+
+[node name="TestScene" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_j8ivh")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23632813, -0.5, 0)
+shape = SubResource("BoxShape3D_nd71p")
+
+[node name="Ramp" type="StaticBody3D" parent="."]
+transform = Transform3D(1.0000001, 1.490116e-08, 7.45058e-09, 1.3275614e-08, 0.8909115, 0.45417714, -6.767767e-09, -0.45417714, 0.8909115, -5.722046e-06, 0.5521498, 48.658493)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ramp"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+mesh = SubResource("BoxMesh_nd71p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp"]
+shape = SubResource("BoxShape3D_7ddre")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.9659258, -0.07314912, -0.24826701, 0.25881907, 0.27299604, 0.92654526, 0, -0.9592302, 0.28262627, 25.096813, 38.420956, 46.82599)
+shadow_enabled = true
+
+[node name="Rover" parent="." instance=ExtResource("2_j8ivh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4779654, 0)
