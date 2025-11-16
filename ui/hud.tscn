@@ -21,7 +21,7 @@ text = "Mineral: 0"
 
 [node name="AlienDialog" type="PanelContainer" parent="."]
 visible = false
-custom_minimum_size = Vector2(420, 160)
+custom_minimum_size = Vector2(500, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -37,12 +37,20 @@ grow_vertical = 2
 
 [node name="VBox" type="VBoxContainer" parent="AlienDialog"]
 layout_mode = 2
+alignment = 1
 
 [node name="Msg" type="Label" parent="AlienDialog/VBox"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Buttons" type="HBoxContainer" parent="AlienDialog/VBox"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
 
 [node name="UpgradeBtn" type="Button" parent="AlienDialog/VBox/Buttons"]
 layout_mode = 2
@@ -55,15 +63,15 @@ text = "Cancel"
 [node name="InteractLabel" type="Label" parent="."]
 visible = false
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -28.0
-offset_top = -148.0
+offset_top = -11.5
 offset_right = 28.0
-offset_bottom = -125.0
+offset_bottom = 11.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 text = "[E] Talk"

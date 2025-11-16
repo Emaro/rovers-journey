@@ -27,13 +27,13 @@ mesh = SubResource("PlaneMesh_sgp6g")
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
 
 [node name="Resource" parent="." instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.158, 0.5, -3.334)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.336, 0.5, 10.539)
 
 [node name="Resource2" parent="." instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.828, 0.5, 7.576)
 
 [node name="Resource3" parent="." instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.564, 0.5, 1.338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.379, 0.5, 13.909)
 
 [node name="HUD" parent="." instance=ExtResource("3_sugp2")]
 
