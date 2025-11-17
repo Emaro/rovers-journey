@@ -74,20 +74,23 @@ layout_mode = 0
 offset_left = 2.0
 offset_right = 65.0
 offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
 text = "Rocks: 0"
 
 [node name="SandstoneLabel" type="Label" parent="."]
 layout_mode = 1
 offset_left = 2.0
-offset_top = 20.0
-offset_right = 109.0
-offset_bottom = 43.0
+offset_top = 40.0
+offset_right = 203.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 30
 text = "Sandstones: 0"
 
 [node name="MetalscrapLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 40.0
-offset_right = 114.0
-offset_bottom = 63.0
+offset_top = 80.0
+offset_right = 211.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 30
 text = "Metalscraps: 0"
