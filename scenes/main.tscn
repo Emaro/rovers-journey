@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=17 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bgnxgqf6eg6w4" path="res://scenes/resource.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c1yrv7iljhb0h" path="res://scenes/new_rover.tscn" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://bso0ngaucisw3" path="res://scenes/camera_arm.gd" id="6_tefeu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
 albedo_texture = ExtResource("1_tbgi4")
@@ -113,8 +114,10 @@ acceleration = 400.0
 max_speed = 30.0
 
 [node name="Camera3D2" type="Camera3D" parent="Rover"]
-transform = Transform3D(-1, 2.9900352e-08, -8.215054e-08, 0, 0.9396927, 0.34202015, 8.742278e-08, 0.34202015, -0.9396927, 0, 6.2451, -5)
+transform = Transform3D(0.013962129, -0.34198684, 0.939601, 0, 0.9396927, 0.34202012, -0.99990255, -0.0047753295, 0.013120109, 39.99951, 7.6411, -29.93019)
+top_level = true
 current = true
+script = ExtResource("6_tefeu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
