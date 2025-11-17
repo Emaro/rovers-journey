@@ -88,7 +88,6 @@ mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_choun")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-visible = false
 mesh = SubResource("PlaneMesh_sgp6g")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -110,14 +109,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1.541, 30)
 
 [node name="Rover" parent="." instance=ExtResource("5_tbgi4")]
 transform = Transform3D(-0.013962217, 0, -0.99990255, 0, 1, 0, 0.99990255, 0, -0.013962217, 35, 1.396, -30)
-acceleration = 400.0
-max_speed = 30.0
+acceleration = 700.0
+lower_center_of_mass = 0.2
 
-[node name="Camera3D2" type="Camera3D" parent="Rover"]
-transform = Transform3D(0.013962129, -0.34198684, 0.939601, 0, 0.9396927, 0.34202012, -0.99990255, -0.0047753295, 0.013120109, 39.99951, 7.6411, -29.93019)
+[node name="CameraPivot" type="Node3D" parent="Rover"]
+
+[node name="Camera3D2" type="Camera3D" parent="Rover/CameraPivot" node_paths=PackedStringArray("hud")]
+transform = Transform3D(0.013962129, -0.34198684, 0.93960106, 0, 0.9396927, 0.34202015, -0.99990255, -0.0047753295, 0.01312011, 39.99951, 7.6411, -29.93019)
 top_level = true
 current = true
 script = ExtResource("6_tefeu")
+hud = NodePath("../../../HUD")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
