@@ -1,11 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=22 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="1_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://bgnxgqf6eg6w4" path="res://scenes/resource.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c1yrv7iljhb0h" path="res://scenes/new_rover.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://bso0ngaucisw3" path="res://scenes/camera_arm.gd" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bmhlq50ko23ih" path="res://resources/RockResource.tscn" id="6_tipki"]
+[ext_resource type="PackedScene" uid="uid://dxsgfnjoxo0bf" path="res://resources/SandstoneResource.tscn" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://cmmmoxstg8f1b" path="res://resources/MetalScrapResource.tscn" id="8_choun"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
 albedo_texture = ExtResource("1_tbgi4")
@@ -14,6 +16,45 @@ uv1_scale = Vector3(10, 10, 10)
 [sub_resource type="PlaneMesh" id="PlaneMesh_sgp6g"]
 material = SubResource("StandardMaterial3D_tefeu")
 size = Vector2(20, 20)
+
+[sub_resource type="Animation" id="Animation_o6xl0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alien:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Alien:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(30, 1.541, 30)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Alien:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 0.9999999, 0.9999999)]
+}
 
 [sub_resource type="Animation" id="Animation_tefeu"]
 resource_name = "alien_interaction"
@@ -64,45 +105,6 @@ tracks/3/keys = {
 "times": PackedFloat32Array(),
 "transitions": PackedFloat32Array(),
 "values": []
-}
-
-[sub_resource type="Animation" id="Animation_o6xl0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Alien:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Alien:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(30, 1.541, 30)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Alien:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 0.9999999, 0.9999999)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tipki"]
@@ -190,15 +192,6 @@ mesh = SubResource("PlaneMesh_sgp6g")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
 
-[node name="Resource" parent="." instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.336, 0.5, 10.539)
-
-[node name="Resource2" parent="." instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0.5, 30)
-
-[node name="Resource3" parent="." instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.379, 0.5, 13.909)
-
 [node name="HUD" parent="." instance=ExtResource("3_sugp2")]
 
 [node name="Alien" parent="." instance=ExtResource("4_jyhfs")]
@@ -238,5 +231,40 @@ assets = SubResource("Terrain3DAssets_ya4ey")
 show_checkered = true
 top_level = true
 metadata/_edit_lock_ = true
+
+[node name="Resources" type="Node3D" parent="."]
+
+[node name="Rocks" type="Node3D" parent="Resources"]
+
+[node name="RockResource" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.5, 27)
+
+[node name="RockResource2" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, -32.458)
+
+[node name="RockResource3" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.225, 0.5, -40.982)
+
+[node name="Sandstones" type="Node3D" parent="Resources"]
+
+[node name="SandstoneResource" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.5, 3)
+
+[node name="SandstoneResource2" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, 40)
+
+[node name="SandstoneResource3" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -8.749)
+
+[node name="Metalscraps" type="Node3D" parent="Resources"]
+
+[node name="MetalScrapResource" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
+
+[node name="MetalScrapResource2" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.5, -20)
+
+[node name="MetalScrapResource3" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.5, -50)
 
 [connection signal="animation_finished" from="Alien/AnimationPlayer" to="Alien" method="_on_animation_player_animation_finished"]

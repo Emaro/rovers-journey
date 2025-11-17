@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxsgfnjoxo0bf"]
+[gd_scene load_steps=5 format=3 uid="uid://dxsgfnjoxo0bf"]
+
+[ext_resource type="Script" uid="uid://cgaxwbmbbg7yo" path="res://scripts/sandstone_resource.gd" id="1_gj6t0"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_08epp"]
 
@@ -7,14 +9,13 @@ albedo_color = Color(0.49913138, 0.4238356, 0.26297566, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_08epp"]
 
-[node name="SandstoneResource" type="Node3D"]
+[node name="SandstoneResource" type="Area3D"]
+script = ExtResource("1_gj6t0")
 
 [node name="SandstoneMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7713452, 0, 0.68943995, 0, 0.7, 0, -0.91925335, 0, 0.57850885, 0, 0, 0)
 mesh = SubResource("SphereMesh_08epp")
 surface_material_override/0 = SubResource("StandardMaterial3D_gj6t0")
 
-[node name="PickupArea" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_08epp")

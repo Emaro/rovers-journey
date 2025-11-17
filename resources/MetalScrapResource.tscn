@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmmmoxstg8f1b"]
+[gd_scene load_steps=5 format=3 uid="uid://cmmmoxstg8f1b"]
+
+[ext_resource type="Script" uid="uid://don7wkqde28y3" path="res://scripts/metalscrap_resource.gd" id="1_i8q7m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_82i38"]
 
@@ -9,14 +11,13 @@ roughness = 0.4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i8q7m"]
 
-[node name="MetalScrapResource" type="Node3D"]
+[node name="MetalScrapResource" type="Area3D"]
+script = ExtResource("1_i8q7m")
 
 [node name="MetalScrapMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.2, 0, 0, 0, 0.1, 0, 0, 0, 0.9, 0, 0, 0)
 mesh = SubResource("BoxMesh_82i38")
 surface_material_override/0 = SubResource("StandardMaterial3D_82i38")
 
-[node name="PickupArea" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_i8q7m")
