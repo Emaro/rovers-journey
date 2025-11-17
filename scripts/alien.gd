@@ -1,6 +1,7 @@
 extends Area3D
 
 @export var cost_amount := 3
+@export var cost_item_id := "rock"   # which resource the alien wants
 
 var rover_near := false
 var rover_body: Node = null
@@ -48,25 +49,26 @@ func _talk() -> void:
 	if hud == null or not hud.has_method("show_alien_dialog"):
 		return
 
-	var minerals := Inventory.get_count("mineral")
-	var has_enough := minerals >= cost_amount
+	var available := Inventory.get_count(cost_item_id)
+	var has_enough := available >= cost_amount
 	hud.show_alien_dialog(self, cost_amount, has_enough)
 	$AnimationPlayer.play("alien_interaction")
 
 func perform_upgrade() -> void:
-
-	if Inventory.get_count("mineral") < cost_amount:
-		print("Alien: not enough minerals at upgrade time.")
+	if Inventory.get_count(cost_item_id) < cost_amount:
+		print("Alien: not enough %s at upgrade time." % cost_item_id)
 		return
 
-	Inventory.add_item("mineral", -cost_amount)
+	# pay the cost in the chosen resource (default: "rock")
+	Inventory.add_item(cost_item_id, -cost_amount)
 
 	if rover_body != null:
 		if rover_body is RaycastCar:
 			var car := rover_body as RaycastCar
 			car.max_speed *= 1.3
 			car.acceleration *= 1.3
-			print("Alien: upgraded rover. New max_speed =", car.max_speed, "new acceleration =", car.acceleration)
+			print("Alien: upgraded rover. New max_speed = %s new acceleration = %s"
+				% [car.max_speed, car.acceleration])
 		else:
 			if rover_body.has_variable("max_speed"):
 				rover_body.max_speed *= 1.3
@@ -80,4 +82,5 @@ func perform_upgrade() -> void:
 	$AnimationPlayer.play("alien_interaction")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if disappear: queue_free()
+	if disappear:
+		queue_free()

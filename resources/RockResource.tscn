@@ -8,7 +8,7 @@
 albedo_color = Color(0.39607844, 0.3254902, 0.3254902, 1)
 roughness = 0.85
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_jjs2q"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1feao"]
 
 [node name="RockResource" type="Area3D"]
 script = ExtResource("1_1feao")
@@ -19,4 +19,4 @@ mesh = SubResource("BoxMesh_jjs2q")
 surface_material_override/0 = SubResource("StandardMaterial3D_1feao")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_jjs2q")
+shape = SubResource("BoxShape3D_1feao")

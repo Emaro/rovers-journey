@@ -12,13 +12,6 @@ grow_vertical = 2
 scale = Vector2(1.0269814, 1.0329239)
 script = ExtResource("1_rbyyf")
 
-[node name="MineralLabel" type="Label" parent="."]
-layout_mode = 1
-offset_right = 77.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 40
-text = "Mineral: 0"
-
 [node name="AlienDialog" type="PanelContainer" parent="."]
 visible = false
 custom_minimum_size = Vector2(500, 200)
@@ -75,3 +68,26 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "[E] Talk"
+
+[node name="RocksLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 65.0
+offset_bottom = 23.0
+text = "Rocks: 0"
+
+[node name="SandstoneLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 2.0
+offset_top = 20.0
+offset_right = 109.0
+offset_bottom = 43.0
+text = "Sandstones: 0"
+
+[node name="MetalscrapLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 40.0
+offset_right = 114.0
+offset_bottom = 63.0
+text = "Metalscraps: 0"

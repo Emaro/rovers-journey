@@ -1,14 +1,17 @@
 extends Control
 
-@onready var mineral_label: Label = $MineralLabel
 @onready var interact_label: Label = $InteractLabel
+
+@onready var rocks_label: Label = $RocksLabel
+@onready var sandstone_label: Label = $SandstoneLabel
+@onready var metalscrap_label: Label = $MetalscrapLabel
 
 @onready var alien_dialog: PanelContainer = $AlienDialog
 @onready var msg_label: Label = $AlienDialog/VBox/Msg
 @onready var upgrade_btn: Button = $AlienDialog/VBox/Buttons/UpgradeBtn
 @onready var cancel_btn: Button = $AlienDialog/VBox/Buttons/CancelBtn
 
-var message_time_left: float = 0.0   # for short corner messages
+var message_time_left: float = 0.0   # for short temporary messages
 var current_alien: Node = null
 var current_cost: int = 0
 var current_has_enough: bool = false
@@ -25,11 +28,9 @@ func _ready() -> void:
 	Inventory.changed.connect(_refresh)
 
 func _process(delta: float) -> void:
-	# If the dialog is open, don't override anything
 	if alien_dialog.visible:
 		return
 
-	# Otherwise handle short messages + mineral counter
 	if message_time_left > 0.0:
 		message_time_left -= delta
 		if message_time_left <= 0.0:
@@ -38,15 +39,21 @@ func _process(delta: float) -> void:
 		_refresh()
 
 func _refresh() -> void:
-	mineral_label.text = "Minerals: %d" % Inventory.get_count("mineral")
+	var rocks := Inventory.get_count("rock")
+	var sandstone := Inventory.get_count("sandstone")
+	var metalscrap := Inventory.get_count("metalscrap")
 
-# --- Small temporary messages, if you need them somewhere else ---
+	rocks_label.text = "Rocks: %d" % rocks
+	sandstone_label.text = "Sandstones: %d" % sandstone
+	metalscrap_label.text = "Metalscraps: %d" % metalscrap
+
+# --- Small temporary messages ---
 func show_message(text: String, duration: float = 3.0) -> void:
 	message_time_left = duration
-	mineral_label.text = text
+	# Show messages in the rocks label for now
+	rocks_label.text = text
 
 # --- Alien interaction ---
-
 func show_interact_prompt() -> void:
 	interact_label.visible = true
 
@@ -57,9 +64,9 @@ func show_alien_dialog(alien: Node, cost: int, has_enough: bool) -> void:
 	current_alien = alien
 	current_cost = cost
 	current_has_enough = has_enough
-	message_time_left = 0.0  # stop any old message
+	message_time_left = 0.0
 
-	interact_label.visible = false        # hide [E] while dialog is open
+	interact_label.visible = false
 	alien_dialog.visible = true
 
 	if has_enough:
@@ -81,10 +88,10 @@ func _on_upgrade_pressed() -> void:
 		current_alien.perform_upgrade()
 
 	alien_dialog.visible = false
-	_refresh()               # update minerals in corner
-	interact_label.visible = true   # show [E] again if still near
+	_refresh()
+	interact_label.visible = true
 
 func _on_cancel_pressed() -> void:
 	alien_dialog.visible = false
 	_refresh()
-	interact_label.visible = true   # show [E] again if still near
+	interact_label.visible = true
