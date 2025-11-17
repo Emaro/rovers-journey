@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://lyvrj6sgrp8f" path="res://scripts/raycast_wheel.gd" id="3_20k7n"]
 
 [sub_resource type="Curve" id="Curve_nd71p"]
-_data = [Vector2(0.020504732, 0.3150205), 0.0, 0.0, 0, 0, Vector2(0.35410094, 0.89342856), 0.2182617, 0.2182617, 0, 0, Vector2(0.740458, 0.77438664), -0.851827, -0.851827, 0, 0, Vector2(1, 0.28426093), 0.0, 0.0, 0, 0]
-point_count = 4
+_data = [Vector2(0.020504732, 0.3150205), 0.0, 0.0, 0, 0, Vector2(0.31034482, 0.62178624), -0.8235736, -0.8235736, 0, 0, Vector2(0.4403183, 0.61885434), 0.0, 0.0, 0, 0, Vector2(0.51724136, 0.6335138), 0.0, 0.0, 0, 0, Vector2(0.6180371, 0.75078934), 0.0, 0.0, 0, 0, Vector2(0.74535805, 0.9091114), -0.851827, -0.851827, 0, 0, Vector2(1, 0.28426093), 0.0, 0.0, 0, 0]
+point_count = 7
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g7g4h"]
 albedo_color = Color(0, 1, 1, 1)
