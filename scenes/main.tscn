@@ -206,7 +206,8 @@ libraries = {
 [node name="Rover" parent="." instance=ExtResource("5_tbgi4")]
 transform = Transform3D(-0.013962217, 0, -0.99990255, 0, 1, 0, 0.99990255, 0, -0.013962217, 35, 1.396, -30)
 linear_damp_mode = 1
-acceleration = 700.0
+acceleration = 400.0
+max_speed = 30.0
 lower_center_of_mass = 0.2
 
 [node name="CameraPivot" type="Node3D" parent="Rover"]

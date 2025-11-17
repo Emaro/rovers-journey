@@ -65,8 +65,8 @@ func perform_upgrade() -> void:
 	if rover_body != null:
 		if rover_body is RaycastCar:
 			var car := rover_body as RaycastCar
-			car.max_speed *= 1.3
-			car.acceleration *= 1.3
+			car.max_speed *= 2
+			car.acceleration *= 2
 			print("Alien: upgraded rover. New max_speed = %s new acceleration = %s"
 				% [car.max_speed, car.acceleration])
 		else:
