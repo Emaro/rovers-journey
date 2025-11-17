@@ -8,6 +8,7 @@ class_name RaycastWheel
 @export var over_extend := 0.0
 @export var wheel_radius := 0.3
 @export var z_traction := 0.05
+@export var z_brake_traction := 0.25
 
 @export_group("Motor")
 @export var is_motor := false
@@ -21,18 +22,18 @@ class_name RaycastWheel
 
 var enigne_force := 0.0
 var grip_factor := 0.0
+var is_braking := false
 
 func _ready() -> void:
 	target_position.y = -(rest_dist + wheel_radius + over_extend)
 	
 func apply_wheel_physics(car: RaycastCar) -> void:
-	force_raycast_update()
 	target_position.y = -(rest_dist + wheel_radius + over_extend)
 	
 	# Rotates wheels visuals
 	var forward_dir := global_basis.z
 	var vel := forward_dir.dot(car.linear_velocity)
-	wheel.rotate_x(-vel * get_physics_process_delta_time() / wheel_radius)
+	wheel.rotate_x(vel * get_physics_process_delta_time() / wheel_radius)
 
 	if not is_colliding(): return
 	
@@ -49,7 +50,8 @@ func apply_wheel_physics(car: RaycastCar) -> void:
 	var tire_vel := car.get_point_velocity(contact)
 	var spring_damp_force := spring_damping * global_basis.y.dot(tire_vel)
 	
-	var y_force := (spring_force - spring_damp_force) * get_collision_normal()
+	var suspension_force := spring_force - spring_damp_force
+	var y_force := suspension_force * get_collision_normal()
 	
 	# Acceleration
 	if is_motor and car.motor_input:
@@ -78,7 +80,15 @@ func apply_wheel_physics(car: RaycastCar) -> void:
 	
 	var f_vel := forward_dir.dot(tire_vel)
 	var z_friction := z_traction
+	if absf(f_vel) < 0.1: z_friction = 2.0
+	if is_braking: z_friction = z_brake_traction
 	var z_force := -global_basis.z * f_vel * z_friction * (car.mass * gravity / 4.0)
+	
+	## counter sliding
+	if absf(f_vel) < 0.1:
+		var sus := global_basis.y * suspension_force
+		z_force.z -= sus.z * car.global_basis.y.dot(Vector3.UP)
+		x_force.x -= sus.x * car.global_basis.y.dot(Vector3.UP)
 	
 	car.apply_force(y_force, force_pos)
 	car.apply_force(x_force, force_pos)

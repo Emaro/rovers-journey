@@ -4,6 +4,7 @@ extends Area3D
 
 var rover_near := false
 var rover_body: Node = null
+var disappear := false
 
 func _ready() -> void:
 	monitoring = true
@@ -50,6 +51,7 @@ func _talk() -> void:
 	var minerals := Inventory.get_count("mineral")
 	var has_enough := minerals >= cost_amount
 	hud.show_alien_dialog(self, cost_amount, has_enough)
+	$AnimationPlayer.play("alien_interaction")
 
 func perform_upgrade() -> void:
 
@@ -73,5 +75,9 @@ func perform_upgrade() -> void:
 			print("Alien: upgraded generic rover body.")
 	else:
 		print("Alien: no rover_body set during upgrade.")
+	
+	disappear = true
+	$AnimationPlayer.play("alien_interaction")
 
-	queue_free()
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if disappear: queue_free()
