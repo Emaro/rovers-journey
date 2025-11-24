@@ -1,13 +1,19 @@
-[gd_scene load_steps=22 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=28 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien_1.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c1yrv7iljhb0h" path="res://scenes/new_rover.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://bso0ngaucisw3" path="res://scenes/camera_arm.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bmhlq50ko23ih" path="res://resources/RockResource.tscn" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://dxsgfnjoxo0bf" path="res://resources/SandstoneResource.tscn" id="7_85g3d"]
 [ext_resource type="PackedScene" uid="uid://cmmmoxstg8f1b" path="res://resources/MetalScrapResource.tscn" id="8_choun"]
+[ext_resource type="PackedScene" uid="uid://ixdaxlkbmvmq" path="res://scenes/alien_t1.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://dqddng704tpxf" path="res://scenes/tower_part_1.tscn" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://3vafua04vy5h" path="res://scenes/alien_t2.tscn" id="11_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://bdcwncw53o5eh" path="res://scenes/tower_part_2.tscn" id="12_trceg"]
+[ext_resource type="PackedScene" uid="uid://cpirfnsewblna" path="res://scenes/alien_t3.tscn" id="13_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://cqnhyt7o6klmf" path="res://scenes/tower_part_3.tscn" id="14_jkv2x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
 albedo_texture = ExtResource("1_tbgi4")
@@ -22,7 +28,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Alien:rotation")
+tracks/0/path = NodePath("Alien_1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -34,7 +40,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Alien:position")
+tracks/1/path = NodePath("Alien_1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -46,7 +52,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Alien:scale")
+tracks/2/path = NodePath("Alien_1:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -62,7 +68,7 @@ length = 0.75
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Alien:rotation")
+tracks/0/path = NodePath("Alien_1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -74,7 +80,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Alien:position")
+tracks/1/path = NodePath("Alien_1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -86,7 +92,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Alien:scale")
+tracks/2/path = NodePath("Alien_1:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -98,7 +104,7 @@ tracks/2/keys = {
 tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Alien")
+tracks/3/path = NodePath("Alien_1")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -194,10 +200,11 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70
 
 [node name="HUD" parent="." instance=ExtResource("3_sugp2")]
 
-[node name="Alien" parent="." instance=ExtResource("4_jyhfs")]
+[node name="Alien_1" parent="." node_paths=PackedStringArray("next_alien") instance=ExtResource("4_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 30, 1.541, 30)
+next_alien = NodePath("../Alien_T/Alien_T1")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Alien"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Alien_1"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_tipki")
@@ -238,6 +245,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, -32.458)
 [node name="RockResource3" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.225, 0.5, -40.982)
 
+[node name="RockResource4" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, 54)
+
+[node name="RockResource5" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.5, 27)
+
+[node name="RockResource6" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 27)
+
+[node name="RockResource7" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.5, 27)
+
+[node name="RockResource8" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.5, 27)
+
+[node name="RockResource9" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, 54)
+
+[node name="RockResource10" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.5, 27)
+
 [node name="Sandstones" type="Node3D" parent="Resources"]
 
 [node name="SandstoneResource" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
@@ -249,16 +277,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, 40)
 [node name="SandstoneResource3" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -8.749)
 
+[node name="SandstoneResource4" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.5, 3)
+
+[node name="SandstoneResource5" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.5, 3)
+
 [node name="Metalscraps" type="Node3D" parent="Resources"]
 
 [node name="MetalScrapResource" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
 
 [node name="MetalScrapResource2" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0.5, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, -20)
 
 [node name="MetalScrapResource3" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.5, -50)
+
+[node name="MetalScrapResource4" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
+
+[node name="MetalScrapResource5" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, -20)
+
+[node name="MetalScrapResource6" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
+
+[node name="MetalScrapResource7" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
+
+[node name="MetalScrapResource8" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://terrain_data"
@@ -268,4 +317,34 @@ show_checkered = true
 top_level = true
 metadata/_edit_lock_ = true
 
-[connection signal="animation_finished" from="Alien/AnimationPlayer" to="Alien" method="_on_animation_player_animation_finished"]
+[node name="Alien_T" type="Node3D" parent="."]
+
+[node name="Alien_T1" parent="Alien_T" node_paths=PackedStringArray("tower_part", "next_alien") instance=ExtResource("9_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1.5, 60)
+tower_part = NodePath("../../Tower_Parts/TowerPart_1")
+next_alien = NodePath("../Alien_T2")
+
+[node name="Alien_T2" parent="Alien_T" node_paths=PackedStringArray("tower_part", "next_alien") instance=ExtResource("11_eb6dy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.5, -50)
+tower_part = NodePath("../../Tower_Parts/TowerPart_2")
+next_alien = NodePath("../Alien_T3")
+
+[node name="Alien_T3" parent="Alien_T" node_paths=PackedStringArray("tower_part") instance=ExtResource("13_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1.5, 8)
+tower_part = NodePath("../../Tower_Parts/TowerPart_3")
+
+[node name="Tower_Parts" type="Node3D" parent="."]
+
+[node name="TowerPart_1" parent="Tower_Parts" instance=ExtResource("10_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.5, -20)
+visible = false
+
+[node name="TowerPart_2" parent="Tower_Parts" instance=ExtResource("12_trceg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4.5, -20)
+visible = false
+
+[node name="TowerPart_3" parent="Tower_Parts" instance=ExtResource("14_jkv2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 7.5, -20)
+visible = false
+
+[connection signal="animation_finished" from="Alien_1/AnimationPlayer" to="Alien_1" method="_on_animation_player_animation_finished"]

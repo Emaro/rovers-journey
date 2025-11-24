@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpirfnsewblna"]
+
+[ext_resource type="Script" uid="uid://dpnmjet8v74wc" path="res://scripts/alien_t3.gd" id="1_wllhr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_decaq"]
+radius = 2.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h100l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8rjw"]
+albedo_color = Color(0.86304724, 0.44660252, 0.4209031, 1)
+
+[node name="Alien_T3" type="Area3D"]
+visible = false
+monitoring = false
+script = ExtResource("1_wllhr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_decaq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_h100l")
+surface_material_override/0 = SubResource("StandardMaterial3D_u8rjw")

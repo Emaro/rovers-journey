@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b38w75aqlbwan"]
 
-[ext_resource type="Script" uid="uid://5uu28t1roxn3" path="res://scripts/alien.gd" id="1_h100l"]
+[ext_resource type="Script" uid="uid://5uu28t1roxn3" path="res://scripts/alien_1.gd" id="1_h100l"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_decaq"]
 radius = 2.0
@@ -10,7 +10,7 @@ radius = 2.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8rjw"]
 albedo_color = Color(0.86304724, 0.44660252, 0.4209031, 1)
 
-[node name="Alien" type="Area3D"]
+[node name="Alien_1" type="Area3D"]
 script = ExtResource("1_h100l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
