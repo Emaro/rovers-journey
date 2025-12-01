@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://xfkglq12mwuq"
+path="res://.godot/imported/Cliff_Prop_Bridge_Rope_Middle.obj-1a360a0323648fb5c1eb67d8ea2f6927.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cliff_Prop_Bridge_Rope_Middle.obj-1a360a0323648fb5c1eb67d8ea2f6927.mesh"]
+
+source_file="res://assets/Low poly rocks/modular_terrain_collection/Cliff_Prop_Bridge_Rope_Middle.obj"
+dest_files=["res://.godot/imported/Cliff_Prop_Bridge_Rope_Middle.obj-1a360a0323648fb5c1eb67d8ea2f6927.mesh", "res://.godot/imported/Cliff_Prop_Bridge_Rope_Middle.obj-1a360a0323648fb5c1eb67d8ea2f6927.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

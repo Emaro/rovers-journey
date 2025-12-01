@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dh4pkxa3sdlas"
+path="res://.godot/imported/Hilly_Terrain_Path_Corner_Outer_1x1.obj-73a7f7450fda470731ea913f4c19a350.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hilly_Terrain_Path_Corner_Outer_1x1.obj-73a7f7450fda470731ea913f4c19a350.mesh"]
+
+source_file="res://assets/Low poly rocks/modular_terrain_collection/Hilly_Terrain_Path_Corner_Outer_1x1.obj"
+dest_files=["res://.godot/imported/Hilly_Terrain_Path_Corner_Outer_1x1.obj-73a7f7450fda470731ea913f4c19a350.mesh", "res://.godot/imported/Hilly_Terrain_Path_Corner_Outer_1x1.obj-73a7f7450fda470731ea913f4c19a350.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

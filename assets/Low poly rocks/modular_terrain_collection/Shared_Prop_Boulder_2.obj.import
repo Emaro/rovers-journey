@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://crf5577h06cu3"
+path="res://.godot/imported/Shared_Prop_Boulder_2.obj-1d1683d775783183ff4cdf5bd72feede.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Shared_Prop_Boulder_2.obj-1d1683d775783183ff4cdf5bd72feede.mesh"]
+
+source_file="res://assets/Low poly rocks/modular_terrain_collection/Shared_Prop_Boulder_2.obj"
+dest_files=["res://.godot/imported/Shared_Prop_Boulder_2.obj-1d1683d775783183ff4cdf5bd72feede.mesh", "res://.godot/imported/Shared_Prop_Boulder_2.obj-1d1683d775783183ff4cdf5bd72feede.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

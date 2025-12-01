@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://tqqnoqgvdbw8"]
+
+[ext_resource type="PackedScene" uid="uid://cfewab0au5uto" path="res://assets/Monster Pack Animated by Quaternius/FBX/Slime.fbx" id="1_18l1o"]
+
+[node name="Slime" instance=ExtResource("1_18l1o")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/2/rotation = Quaternion(-0.06274438, 0.0021288367, -0.21324824, 0.9749789)
+bones/3/rotation = Quaternion(0.10083378, -0.6989557, 0.012501546, 0.7079104)
+bones/9/rotation = Quaternion(-0.26541483, -4.9179574e-11, -1.7864767e-10, 0.96413434)
+bones/10/rotation = Quaternion(0.1366986, 3.0548862e-11, 1.4572954e-10, 0.9906127)
+bones/13/rotation = Quaternion(0.26541477, -4.7192184e-08, -3.9965165e-08, 0.96413434)
+bones/14/rotation = Quaternion(-0.1366986, 7.157029e-08, 1.6552423e-08, 0.9906127)

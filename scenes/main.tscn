@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=28 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cqnhyt7o6klmf" path="res://scenes/tower_part_3.tscn" id="14_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://c00ehqfqittii" path="res://assets/sky_46_2k/sky_46_2k.png" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bhlus1o4fqfxd" path="res://scenes/terrain_desert.tscn" id="16_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://tqqnoqgvdbw8" path="res://assets/entities/slime.tscn" id="17_muem4"]
+[ext_resource type="Script" uid="uid://cujsmcgi6gpkv" path="res://assets/entities/slime.gd" id="18_dp3eg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
 albedo_texture = ExtResource("1_tbgi4")
@@ -174,6 +176,7 @@ lower_center_of_mass = 0.2
 transform = Transform3D(0.013962129, -0.34198684, 0.93960106, 0, 0.9396927, 0.34202015, -0.99990255, -0.0047753295, 0.01312011, 39.99951, 7.6411, -29.93019)
 top_level = true
 current = true
+near = 0.15
 script = ExtResource("6_tefeu")
 height = 2.5
 hud = NodePath("../../../HUD")
@@ -295,5 +298,9 @@ visible = false
 environment = SubResource("Environment_dp3eg")
 
 [node name="TerrainDesert" parent="." instance=ExtResource("16_jbj1t")]
+
+[node name="Slime" parent="." instance=ExtResource("17_muem4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19427681, 0)
+script = ExtResource("18_dp3eg")
 
 [connection signal="animation_finished" from="Alien_1/AnimationPlayer" to="Alien_1" method="_on_animation_player_animation_finished"]
