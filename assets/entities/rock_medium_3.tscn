@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://biigfatl23guf"]
+
+[ext_resource type="PackedScene" uid="uid://8g36xnn54e4v" path="res://assets/Stylized Nature MegaKit[Standard]/FBX/Rock_Medium_3.fbx" id="1_ovhoc"]
+[ext_resource type="Material" uid="uid://hlaecprfy5qe" path="res://assets/entities/weird_mat.tres" id="2_jp185"]
+[ext_resource type="Texture2D" uid="uid://cfvqor8l04dmi" path="res://assets/Mystical/1/1_diffuseOriginal.bmp" id="2_n8len"]
+[ext_resource type="Texture2D" uid="uid://clfr745he4ft0" path="res://assets/Mystical/1/1_ao.bmp" id="3_jp185"]
+[ext_resource type="Texture2D" uid="uid://ovoyk0wfsnef" path="res://assets/Mystical/1/1_metallic.bmp" id="4_i3xov"]
+[ext_resource type="Texture2D" uid="uid://c2vp8e782add8" path="res://assets/Mystical/1/1_normal.bmp" id="5_yvddb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_saypp"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+grow = true
+grow_amount = 0.01
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1m4x"]
+next_pass = SubResource("StandardMaterial3D_saypp")
+albedo_texture = ExtResource("2_n8len")
+metallic = 1.0
+metallic_texture = ExtResource("4_i3xov")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("5_yvddb")
+ao_enabled = true
+ao_texture = ExtResource("3_jp185")
+uv1_scale = Vector3(2, 2, 2)
+uv2_scale = Vector3(2, 2, 2)
+texture_filter = 0
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0, 1, 0, 1)
+
+[node name="Rock_Medium_3" instance=ExtResource("1_ovhoc")]
+
+[node name="Rock_Medium_3" parent="." index="0"]
+material_override = ExtResource("2_jp185")
+surface_material_override/0 = SubResource("StandardMaterial3D_y1m4x")
+metadata/_edit_lock_ = true

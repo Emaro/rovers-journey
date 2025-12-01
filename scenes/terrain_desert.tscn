@@ -1,4 +1,4 @@
-[gd_scene load_steps=154 format=4 uid="uid://bhlus1o4fqfxd"]
+[gd_scene load_steps=156 format=4 uid="uid://bhlus1o4fqfxd"]
 
 [ext_resource type="Terrain3DMaterial" uid="uid://jhie1oni47jk" path="res://data/data_desert/terrain_desert_material.res" id="1_cskbv"]
 [ext_resource type="Terrain3DAssets" uid="uid://07flg1gdbrp2" path="res://data/data_desert/terrain_desert.res" id="2_687ib"]
@@ -135,6 +135,8 @@
 [ext_resource type="PackedScene" uid="uid://cbxp21pibu0qb" path="res://assets/Stylized Nature MegaKit[Standard]/FBX/TwistedTree_5.fbx" id="133_han3a"]
 [ext_resource type="PackedScene" uid="uid://8g36xnn54e4v" path="res://assets/Stylized Nature MegaKit[Standard]/FBX/Rock_Medium_3.fbx" id="134_3gahb"]
 [ext_resource type="PackedScene" uid="uid://c1qb52ahaxl70" path="res://assets/Stylized Nature MegaKit[Standard]/FBX/Plant_7.fbx" id="135_mgoux"]
+[ext_resource type="PackedScene" uid="uid://biigfatl23guf" path="res://assets/entities/rock_medium_3.tscn" id="135_wvnc0"]
+[ext_resource type="PackedScene" uid="uid://bhl37mca84mtm" path="res://assets/entities/weird_ring.tscn" id="136_e1alf"]
 [ext_resource type="PackedScene" uid="uid://c52bi7l6tadfc" path="res://assets/Stylized Nature MegaKit[Standard]/FBX/Petal_4.fbx" id="136_xkv5a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0m2d"]
@@ -784,8 +786,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.760063, -2.6289005, -16.56
 [node name="TwistedTree_5" parent="WoodLog_Snow/StaticBody3D" instance=ExtResource("133_han3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.775482, -2.6289005, -33.046875)
 
+[node name="Rock_Medium_4" parent="WoodLog_Snow/StaticBody3D" instance=ExtResource("135_wvnc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.668106, -2.6289005, -64.70528)
+
+[node name="Rock Type3 01" parent="WoodLog_Snow/StaticBody3D" instance=ExtResource("136_e1alf")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 30.302498, 2.6650934, -70.29334)
+
 [node name="Rock_Medium_3" parent="WoodLog_Snow/StaticBody3D" instance=ExtResource("134_3gahb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.668106, -2.6289005, -52.293343)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.668106, -2.6289005, -70.29334)
 
 [node name="Plant_7" parent="WoodLog_Snow/StaticBody3D" instance=ExtResource("135_mgoux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.537369, -2.6289005, -52.737186)

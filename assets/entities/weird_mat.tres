@@ -1,0 +1,37 @@
+[gd_resource type="StandardMaterial3D" load_steps=8 format=3 uid="uid://hlaecprfy5qe"]
+
+[ext_resource type="Texture2D" uid="uid://cfvqor8l04dmi" path="res://assets/Mystical/1/1_diffuseOriginal.bmp" id="1_8ngth"]
+[ext_resource type="Texture2D" uid="uid://clfr745he4ft0" path="res://assets/Mystical/1/1_ao.bmp" id="2_mjayk"]
+[ext_resource type="Texture2D" uid="uid://brudh2hg5stus" path="res://assets/Mystical/1/1_height.bmp" id="3_qxnjh"]
+[ext_resource type="Texture2D" uid="uid://ovoyk0wfsnef" path="res://assets/Mystical/1/1_metallic.bmp" id="4_ir5c8"]
+[ext_resource type="Texture2D" uid="uid://c2vp8e782add8" path="res://assets/Mystical/1/1_normal.bmp" id="5_b7qq5"]
+[ext_resource type="Texture2D" uid="uid://qjguawen5ptp" path="res://assets/Mystical/1/1_smoothness.bmp" id="6_3d4i4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8j3s"]
+render_priority = 1
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0.45123965, 0.24566936, 0.14771965, 1)
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[resource]
+next_pass = SubResource("StandardMaterial3D_n8j3s")
+albedo_color = Color(0.9490196, 0.89411765, 1, 1)
+albedo_texture = ExtResource("1_8ngth")
+metallic = 1.0
+metallic_texture = ExtResource("4_ir5c8")
+roughness_texture = ExtResource("6_3d4i4")
+normal_enabled = true
+normal_texture = ExtResource("5_b7qq5")
+ao_enabled = true
+ao_texture = ExtResource("2_mjayk")
+heightmap_texture = ExtResource("3_qxnjh")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 5.2780304
+stencil_mode = 2
+stencil_flags = 2
+stencil_color = Color(0.45123965, 0.24566936, 0.14771965, 1)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhl37mca84mtm"]
+
+[ext_resource type="PackedScene" uid="uid://bhq4xj1ijlyyi" path="res://assets/Low poly rocks/Models/Rock Type3 01.dae" id="1_3wgvo"]
+[ext_resource type="Material" uid="uid://hlaecprfy5qe" path="res://assets/entities/weird_mat.tres" id="2_d26vi"]
+[ext_resource type="Texture2D" uid="uid://cfvqor8l04dmi" path="res://assets/Mystical/1/1_diffuseOriginal.bmp" id="3_guctu"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_2xhlg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02faj"]
+albedo_texture = ExtResource("3_guctu")
+
+[node name="Rock Type3 01" instance=ExtResource("1_3wgvo")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("TorusMesh_2xhlg")
+skeleton = NodePath("../Rock_Type3_01_mesh")
+surface_material_override/0 = ExtResource("2_d26vi")
+
+[node name="Rock_Type3_01_mesh" parent="." index="1"]
+visible = false
+material_override = SubResource("StandardMaterial3D_02faj")
