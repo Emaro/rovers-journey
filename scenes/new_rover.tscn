@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://c1yrv7iljhb0h"]
 
-[ext_resource type="Script" uid="uid://cc8fkkc60m7nf" path="res://raycast_car.gd" id="1_fubay"]
+[ext_resource type="Script" uid="uid://cc8fkkc60m7nf" path="res://scripts/raycast_car.gd" id="1_fubay"]
 [ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="2_k7dli"]
 [ext_resource type="Script" uid="uid://lyvrj6sgrp8f" path="res://scripts/raycast_wheel.gd" id="3_20k7n"]
 

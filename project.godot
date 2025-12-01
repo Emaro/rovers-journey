@@ -23,9 +23,9 @@ Inventory="*res://autoload/Inventory.gd"
 
 settings/addon_root_folder="res://addons/debug_draw_3d"
 
-[editor_plugins]
+[dotnet]
 
-enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
+project/assembly_name="RoversJourney"
 
 [input]
 
