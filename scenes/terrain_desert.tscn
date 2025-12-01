@@ -9,6 +9,5 @@
 data_directory = "res://data/data_desert"
 material = ExtResource("1_cskbv")
 assets = ExtResource("2_687ib")
-show_checkered = true
 top_level = true
 metadata/_edit_lock_ = true
