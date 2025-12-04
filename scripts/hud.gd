@@ -45,7 +45,7 @@ var story_lines_intro := [
 var story_lines_outro := [
 	"Mission Log 099: Final tower segment complete.",
 	"My connection back home is within reach.",
-	"Yet this planet no longer feels unknown. Its stones, its skies, its people...",
+	"Yet this planet no longer feels unknown...",
 	"This place could be my new home.",
 	"I must decide: Do I call home, or stay here?"
 ]
