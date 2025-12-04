@@ -148,4 +148,28 @@ text = "Rovers Journey"
 layout_mode = 2
 text = "Start Game"
 
+[node name="StoryPanel" type="PanelContainer" parent="."]
+visible = false
+z_index = 101
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StoryPanel"]
+layout_mode = 2
+alignment = 1
+
+[node name="StoryLabel" type="Label" parent="StoryPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="StoryNextButton" type="Button" parent="StoryPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Next"
+
 [connection signal="pressed" from="StartScreen/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

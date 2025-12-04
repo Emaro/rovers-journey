@@ -13,7 +13,10 @@ extends Control
 
 @onready var start_screen: Control = $StartScreen
 @onready var start_button: Button = $StartScreen/VBoxContainer/StartButton
-# ^ make sure this path matches your actual node tree in the scene
+
+@onready var story_panel: PanelContainer = $StoryPanel
+@onready var story_label: Label = $StoryPanel/VBoxContainer/StoryLabel
+@onready var story_next_button: Button = $StoryPanel/VBoxContainer/StoryNextButton
 
 var message_time_left: float = 0.0   # for short temporary messages
 var current_alien: Node = null
@@ -22,9 +25,27 @@ var current_has_enough: bool = false
 
 var current_mode: String = "upgrade"   # "upgrade" or "tower"
 
+# --- Intro story data ---
+var intro_lines := [
+	"Mission Log 042: Emergency landing complete.",
+	"I have crash-landed on an unknown planet.",
+	"Most of my systems are damaged. I must gather resources to begin repairs.",
+	"I should explore this place, maybe I can build a tower to call home..."
+]
+
+var intro_index: int = 0
+
+# --- Typewriter state ---
+var is_typing: bool = false
+var type_char_index: int = 0
+var type_char_delay: float = 0.03  # seconds between characters
+var type_accumulator: float = 0.0
+var current_intro_text: String = ""
+
+
 func _ready() -> void:
 	start_screen.visible = true
-	# get_tree().paused = true  # <- REMOVE / COMMENT OUT, we won't pause the tree
+	story_panel.visible = false
 
 	add_to_group("hud")
 	interact_label.visible = false
@@ -32,12 +53,16 @@ func _ready() -> void:
 
 	upgrade_btn.pressed.connect(_on_upgrade_pressed)
 	cancel_btn.pressed.connect(_on_cancel_pressed)
-	start_button.pressed.connect(_on_start_button_pressed)  # connect start button
+	start_button.pressed.connect(_on_start_button_pressed)
+	story_next_button.pressed.connect(_on_story_next_pressed)
 
 	_refresh()
 	Inventory.changed.connect(_refresh)
 
+
 func _process(delta: float) -> void:
+	_update_typewriter(delta)
+
 	if alien_dialog.visible:
 		return
 
@@ -48,6 +73,25 @@ func _process(delta: float) -> void:
 	else:
 		_refresh()
 
+
+func _update_typewriter(delta: float) -> void:
+	if not is_typing:
+		return
+
+	type_accumulator += delta
+
+	while is_typing and type_accumulator >= type_char_delay:
+		type_accumulator -= type_char_delay
+		type_char_index += 1
+
+		if type_char_index >= current_intro_text.length():
+			story_label.text = current_intro_text
+			is_typing = false
+			break
+		else:
+			story_label.text = current_intro_text.substr(0, type_char_index)
+
+
 func _refresh() -> void:
 	var rocks := Inventory.get_count("rock")
 	var sandstone := Inventory.get_count("sandstone")
@@ -57,18 +101,21 @@ func _refresh() -> void:
 	sandstone_label.text = "Sandstones: %d" % sandstone
 	metalscrap_label.text = "Metalscraps: %d" % metalscrap
 
+
 # --- Small temporary messages ---
 func show_message(text: String, duration: float = 3.0) -> void:
 	message_time_left = duration
-	# Show messages in the rocks label for now
 	rocks_label.text = text
+
 
 # --- Alien interaction ---
 func show_interact_prompt() -> void:
 	interact_label.visible = true
 
+
 func hide_interact_prompt() -> void:
 	interact_label.visible = false
+
 
 # ====== EXISTING DIALOG FOR ALIEN_1 (UPGRADE) ======
 func show_alien_dialog(alien: Node, cost: int, has_enough: bool) -> void:
@@ -91,6 +138,7 @@ func show_alien_dialog(alien: Node, cost: int, has_enough: bool) -> void:
 		upgrade_btn.disabled = true
 		upgrade_btn.text = "Upgrade"
 		cancel_btn.text = "Close"
+
 
 # ====== NEW DIALOG FOR ALIEN_T1 (TOWER BUILD) ======
 func show_alien_dialog_tower(
@@ -133,6 +181,7 @@ func show_alien_dialog_tower(
 		upgrade_btn.text = "Build"
 		cancel_btn.text = "Close"
 
+
 func _on_upgrade_pressed() -> void:
 	if not current_has_enough or current_alien == null:
 		return
@@ -148,11 +197,50 @@ func _on_upgrade_pressed() -> void:
 	_refresh()
 	interact_label.visible = true
 
+
 func _on_cancel_pressed() -> void:
 	alien_dialog.visible = false
 	_refresh()
 	interact_label.visible = true
 
+
+# --- Start screen + intro sequence ---
 func _on_start_button_pressed() -> void:
 	start_screen.visible = false
-	# if you later want to pause/unpause again, we'd handle it here
+	_start_intro_sequence()
+
+
+func _start_intro_sequence() -> void:
+	intro_index = 0
+	story_panel.visible = true
+	_show_current_intro_line()
+
+
+func _show_current_intro_line() -> void:
+	current_intro_text = intro_lines[intro_index]
+	story_label.text = ""                 # clear
+	type_char_index = 0
+	type_accumulator = 0.0
+	is_typing = true
+
+	if intro_index == intro_lines.size() - 1:
+		story_next_button.text = "Start mission"
+	else:
+		story_next_button.text = "Next"
+
+
+func _on_story_next_pressed() -> void:
+	# If text is still typing, first click finishes it instantly
+	if is_typing:
+		is_typing = false
+		story_label.text = current_intro_text
+		return
+
+	# Otherwise go to next line
+	intro_index += 1
+
+	if intro_index >= intro_lines.size():
+		# Intro finished – hide story panel, player can now play
+		story_panel.visible = false
+	else:
+		_show_current_intro_line()
