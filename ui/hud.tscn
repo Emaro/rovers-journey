@@ -2,17 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dbpiahylhqnt2" path="res://scripts/hud.gd" id="1_rbyyf"]
 
-[sub_resource type="FontFile" id="FontFile_rbyyf"]
-cache/0/48/0/ascent = 0.0
-cache/0/48/0/descent = 0.0
-cache/0/48/0/underline_position = 0.0
-cache/0/48/0/underline_thickness = 0.0
-cache/0/48/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+[sub_resource type="SystemFont" id="SystemFont_rbyyf"]
+font_names = PackedStringArray("Consolas")
 
 [node name="HUD" type="Control" groups=["hud"]]
 layout_mode = 3
@@ -140,12 +131,13 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="StartScreen/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_rbyyf")
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = SubResource("SystemFont_rbyyf")
+theme_override_font_sizes/font_size = 70
 text = "Rovers Journey"
 
 [node name="StartButton" type="Button" parent="StartScreen/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Start Game"
 
 [node name="StoryPanel" type="PanelContainer" parent="."]
