@@ -11,20 +11,28 @@ extends Control
 @onready var upgrade_btn: Button = $AlienDialog/VBox/Buttons/UpgradeBtn
 @onready var cancel_btn: Button = $AlienDialog/VBox/Buttons/CancelBtn
 
+@onready var start_screen: Control = $StartScreen
+@onready var start_button: Button = $StartScreen/VBoxContainer/StartButton
+# ^ make sure this path matches your actual node tree in the scene
+
 var message_time_left: float = 0.0   # for short temporary messages
 var current_alien: Node = null
 var current_cost: int = 0
 var current_has_enough: bool = false
 
-var current_mode: String = "upgrade"   # "upgrade" or "tower"   <<< NEW
+var current_mode: String = "upgrade"   # "upgrade" or "tower"
 
 func _ready() -> void:
+	start_screen.visible = true
+	# get_tree().paused = true  # <- REMOVE / COMMENT OUT, we won't pause the tree
+
 	add_to_group("hud")
 	interact_label.visible = false
 	alien_dialog.visible = false
 
 	upgrade_btn.pressed.connect(_on_upgrade_pressed)
 	cancel_btn.pressed.connect(_on_cancel_pressed)
+	start_button.pressed.connect(_on_start_button_pressed)  # connect start button
 
 	_refresh()
 	Inventory.changed.connect(_refresh)
@@ -64,7 +72,7 @@ func hide_interact_prompt() -> void:
 
 # ====== EXISTING DIALOG FOR ALIEN_1 (UPGRADE) ======
 func show_alien_dialog(alien: Node, cost: int, has_enough: bool) -> void:
-	current_mode = "upgrade"                   # <<< NEW
+	current_mode = "upgrade"
 	current_alien = alien
 	current_cost = cost
 	current_has_enough = has_enough
@@ -125,8 +133,6 @@ func show_alien_dialog_tower(
 		upgrade_btn.text = "Build"
 		cancel_btn.text = "Close"
 
-
-
 func _on_upgrade_pressed() -> void:
 	if not current_has_enough or current_alien == null:
 		return
@@ -146,3 +152,7 @@ func _on_cancel_pressed() -> void:
 	alien_dialog.visible = false
 	_refresh()
 	interact_label.visible = true
+
+func _on_start_button_pressed() -> void:
+	start_screen.visible = false
+	# if you later want to pause/unpause again, we'd handle it here
