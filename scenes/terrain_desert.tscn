@@ -1,4 +1,4 @@
-[gd_scene load_steps=158 format=4 uid="uid://bhlus1o4fqfxd"]
+[gd_scene load_steps=159 format=4 uid="uid://bhlus1o4fqfxd"]
 
 [ext_resource type="Terrain3DMaterial" uid="uid://jhie1oni47jk" path="res://terrain_data/terrain_desert/terrain_desert_material.res" id="2_e1alf"]
 [ext_resource type="Terrain3DAssets" uid="uid://07flg1gdbrp2" path="res://terrain_data/terrain_desert/terrain_desert.res" id="3_3lhbf"]
@@ -139,6 +139,7 @@
 [ext_resource type="PackedScene" uid="uid://bhl37mca84mtm" path="res://entities/weird_ring.tscn" id="136_e1alf"]
 [ext_resource type="PackedScene" uid="uid://c52bi7l6tadfc" path="res://assets/models/Stylized Nature MegaKit[Standard]/FBX/Petal_4.fbx" id="136_xkv5a"]
 [ext_resource type="Material" uid="uid://cokyqb2vf1641" path="res://assets/textures/Magical Forrest/1/magical_forrest_1.tres" id="139_e1alf"]
+[ext_resource type="PackedScene" uid="uid://c6eewk8djck30" path="res://scenes/starting_area.tscn" id="140_3lhbf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0m2d"]
 resource_name = "Starfish"
@@ -336,7 +337,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0358696, 0.012912273, 5.20
 data_directory = "res://terrain_data/terrain_desert"
 material = ExtResource("2_e1alf")
 assets = ExtResource("3_3lhbf")
+collision_mode = 0
 top_level = true
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Rock Type6 02" parent="." instance=ExtResource("25_nmrnd")]
@@ -820,3 +823,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.334175, -2.6289005, -36.96
 transform = Transform3D(36.225315, 0, 0, 0, 0.27865595, 0, 0, 0, 71.52584, 71.277054, -0.11572313, 15.7579155)
 mesh = SubResource("BoxMesh_3lhbf")
 surface_material_override/0 = ExtResource("139_e1alf")
+
+[node name="StartingArea" parent="." instance=ExtResource("140_3lhbf")]
