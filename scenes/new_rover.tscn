@@ -4,9 +4,9 @@
 [ext_resource type="Material" uid="uid://breym7k6v2vb4" path="res://assets/rover_material.tres" id="2_avdik"]
 [ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="2_k7dli"]
 [ext_resource type="Script" uid="uid://lyvrj6sgrp8f" path="res://scripts/raycast_wheel.gd" id="3_20k7n"]
-[ext_resource type="PackedScene" uid="uid://cgur1iu5kosfe" path="res://assets/entities/tire2.tscn" id="4_20k7n"]
-[ext_resource type="PackedScene" uid="uid://bt2jbawht547w" path="res://assets/entities/wheel.tscn" id="4_k7dli"]
-[ext_resource type="PackedScene" uid="uid://dgc1gegx2kr0m" path="res://assets/entities/scifi_wheel.tscn" id="7_2jort"]
+[ext_resource type="PackedScene" uid="uid://cgur1iu5kosfe" path="res://entities/tire2.tscn" id="4_20k7n"]
+[ext_resource type="PackedScene" uid="uid://bt2jbawht547w" path="res://entities/wheel.tscn" id="4_k7dli"]
+[ext_resource type="PackedScene" uid="uid://dgc1gegx2kr0m" path="res://entities/scifi_wheel.tscn" id="7_2jort"]
 
 [sub_resource type="Curve" id="Curve_nd71p"]
 _data = [Vector2(0.020504732, 0.3150205), 0.0, 0.0, 0, 0, Vector2(0.31034482, 0.62178624), -0.8235736, -0.8235736, 0, 0, Vector2(0.4403183, 0.61885434), 0.0, 0.0, 0, 0, Vector2(0.51724136, 0.6335138), 0.0, 0.0, 0, 0, Vector2(0.6180371, 0.75078934), 0.0, 0.0, 0, 0, Vector2(0.74535805, 0.9091114), -0.851827, -0.851827, 0, 0, Vector2(1, 0.28426093), 0.0, 0.0, 0, 0]

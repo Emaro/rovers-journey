@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=28 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
@@ -15,10 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cpirfnsewblna" path="res://scenes/alien_t3.tscn" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://cqnhyt7o6klmf" path="res://scenes/tower_part_3.tscn" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://bxtjow2u3t7p8" path="res://scripts/tower_end_trigger.gd" id="15_0ld40"]
-[ext_resource type="Texture2D" path="res://assets/sky_46_2k/sky_46_2k.png" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bhlus1o4fqfxd" path="res://scenes/terrain_desert.tscn" id="16_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://tqqnoqgvdbw8" path="res://assets/entities/slime.tscn" id="17_muem4"]
-[ext_resource type="Script" uid="uid://cujsmcgi6gpkv" path="res://assets/entities/slime.gd" id="18_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://c00ehqfqittii" path="res://assets/textures/sky_46_2k/sky_46_2k.png" id="16_muem4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
 albedo_texture = ExtResource("1_tbgi4")
@@ -130,7 +128,7 @@ size = Vector3(200, 2, 200)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ld40"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jbj1t"]
-panorama = ExtResource("15_jkv2x")
+panorama = ExtResource("16_muem4")
 
 [sub_resource type="Sky" id="Sky_muem4"]
 sky_material = SubResource("PanoramaSkyMaterial_jbj1t")
@@ -310,9 +308,5 @@ shape = SubResource("BoxShape3D_0ld40")
 environment = SubResource("Environment_dp3eg")
 
 [node name="TerrainDesert" parent="." instance=ExtResource("16_jbj1t")]
-
-[node name="Slime" parent="." instance=ExtResource("17_muem4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19427681, 0)
-script = ExtResource("18_dp3eg")
 
 [connection signal="animation_finished" from="Alien_1/AnimationPlayer" to="Alien_1" method="_on_animation_player_animation_finished"]

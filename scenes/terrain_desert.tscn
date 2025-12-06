@@ -1,13 +1,13 @@
 [gd_scene load_steps=158 format=4 uid="uid://bhlus1o4fqfxd"]
 
-[ext_resource type="Terrain3DMaterial" path="res://terrain_data/data_desert/terrain_desert_material.res" id="1_cskbv"]
-[ext_resource type="Terrain3DAssets" path="res://terrain_data/data_desert/terrain_desert.res" id="2_687ib"]
+[ext_resource type="Terrain3DMaterial" uid="uid://jhie1oni47jk" path="res://terrain_data/terrain_desert/terrain_desert_material.res" id="2_e1alf"]
+[ext_resource type="Terrain3DAssets" uid="uid://07flg1gdbrp2" path="res://terrain_data/terrain_desert/terrain_desert.res" id="3_3lhbf"]
 [ext_resource type="PackedScene" uid="uid://5cgxqj6x36sa" path="res://assets/models/Low poly rocks/Models/Rock Type1 01.dae" id="3_7yfra"]
 [ext_resource type="PackedScene" uid="uid://t67xrerhxbsy" path="res://assets/models/Low poly rocks/Models/Rock Type1 02.dae" id="4_a3jnr"]
 [ext_resource type="PackedScene" uid="uid://4ljvy7h7bh4" path="res://assets/models/Low poly rocks/Models/Rock Type1 03.dae" id="5_5orao"]
 [ext_resource type="PackedScene" uid="uid://c0fnc4jrlcni4" path="res://assets/models/Low poly rocks/Models/Rock Type1 04.dae" id="6_8vnbg"]
 [ext_resource type="PackedScene" uid="uid://ci20r3821kuad" path="res://assets/models/Low poly rocks/Models/Rock Type2 01.dae" id="7_wigko"]
-[ext_resource type="PackedScene" uid="uid://bu7iua6j64p0x" path="res://assets/entities/rock_type_1_01.tscn" id="8_up6qc"]
+[ext_resource type="PackedScene" uid="uid://bu7iua6j64p0x" path="res://entities/rock_type_1_01.tscn" id="8_up6qc"]
 [ext_resource type="PackedScene" uid="uid://dln0w1glqibls" path="res://assets/models/Low poly rocks/Models/Rock Type2 02.dae" id="9_2onxh"]
 [ext_resource type="PackedScene" uid="uid://dx8mm3r35n30o" path="res://assets/models/Low poly rocks/Models/Rock Type2 03.dae" id="10_sat4p"]
 [ext_resource type="PackedScene" uid="uid://cmxy0pitmc3xu" path="res://assets/models/Low poly rocks/Models/Rock Type2 04.dae" id="11_pejsk"]
@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bf2ngghd7ag60" path="res://assets/models/Low poly rocks/Models/Rock Type6 02.dae" id="25_nmrnd"]
 [ext_resource type="PackedScene" uid="uid://pqf4najlaayq" path="res://assets/models/Low poly rocks/Models/Rock Type6 03.dae" id="26_g7pn4"]
 [ext_resource type="PackedScene" uid="uid://dp7vnn2ax4txw" path="res://assets/models/Low poly rocks/Models/Rock Type6 04.dae" id="27_15pbc"]
-[ext_resource type="PackedScene" uid="uid://weoyf5gy6wfw" path="res://assets/entities/tree01.tscn" id="28_tkj4y"]
+[ext_resource type="PackedScene" uid="uid://weoyf5gy6wfw" path="res://entities/tree01.tscn" id="28_tkj4y"]
 [ext_resource type="PackedScene" uid="uid://brjv0xtdfw6bh" path="res://assets/models/Low poly trees/Models/Tree Type0 02.dae" id="29_452ka"]
 [ext_resource type="PackedScene" uid="uid://chkhv10td1ad" path="res://assets/models/Low poly trees/Models/Tree Type0 03.dae" id="30_xbkw0"]
 [ext_resource type="PackedScene" uid="uid://ct317b0vobwmq" path="res://assets/models/Low poly trees/Models/Tree Type0 01.dae" id="31_18yd3"]
@@ -62,7 +62,7 @@
 [ext_resource type="PackedScene" uid="uid://dbdl6yu7qkqgd" path="res://assets/models/Low poly trees/Models/Tree Type6 02.dae" id="60_erk3c"]
 [ext_resource type="PackedScene" uid="uid://pjhvc8buvb06" path="res://assets/models/Low poly trees/Models/Tree Type6 03.dae" id="61_lel5v"]
 [ext_resource type="PackedScene" uid="uid://dqtvgfw452vd3" path="res://assets/models/Low poly trees/Models/Tree Type6 04.dae" id="62_nrft2"]
-[ext_resource type="PackedScene" uid="uid://cim33c3t5qcns" path="res://assets/entities/tree_2.tscn" id="63_miux7"]
+[ext_resource type="PackedScene" uid="uid://cim33c3t5qcns" path="res://entities/tree_2.tscn" id="63_miux7"]
 [ext_resource type="PackedScene" uid="uid://dknm4mbuy82c7" path="res://assets/models/Low poly trees/Models/Tree Type7 01.dae" id="64_vnhan"]
 [ext_resource type="PackedScene" uid="uid://dlk3nh7jti547" path="res://assets/models/Low poly trees/Models/Tree Type7 02.dae" id="65_70g15"]
 [ext_resource type="PackedScene" uid="uid://dehijrpa3183w" path="res://assets/models/Low poly trees/Models/Tree Type7 03.dae" id="66_wlkpk"]
@@ -106,7 +106,7 @@
 [ext_resource type="PackedScene" uid="uid://b5rmhhrk4hup2" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/WoodLog.fbx" id="104_jdo05"]
 [ext_resource type="PackedScene" uid="uid://cnamw82ynggf4" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/WoodLog_Moss.fbx" id="105_tdym0"]
 [ext_resource type="PackedScene" uid="uid://drfhtp6ywk2js" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/WoodLog_Snow.fbx" id="106_d4jca"]
-[ext_resource type="PackedScene" uid="uid://oi7rlcn4ixlc" path="res://assets/entities/weird_log.tscn" id="107_14b70"]
+[ext_resource type="PackedScene" uid="uid://oi7rlcn4ixlc" path="res://entities/weird_log.tscn" id="107_14b70"]
 [ext_resource type="PackedScene" uid="uid://bj30o2oyyovq1" path="res://assets/models/Stylized Nature MegaKit[Standard]/FBX/Bush_Common_Flowers.fbx" id="108_ku80d"]
 [ext_resource type="PackedScene" uid="uid://c7cmqr2dcuk07" path="res://assets/models/Stylized Nature MegaKit[Standard]/FBX/Clover_1.fbx" id="109_ot1ei"]
 [ext_resource type="PackedScene" uid="uid://bt7wr8xlsklej" path="res://assets/models/Stylized Nature MegaKit[Standard]/FBX/Clover_2.fbx" id="110_wvnc0"]
@@ -135,8 +135,8 @@
 [ext_resource type="PackedScene" uid="uid://cbxp21pibu0qb" path="res://assets/models/Stylized Nature MegaKit[Standard]/FBX/TwistedTree_5.fbx" id="133_han3a"]
 [ext_resource type="PackedScene" uid="uid://8g36xnn54e4v" path="res://assets/models/Stylized Nature MegaKit[Standard]/FBX/Rock_Medium_3.fbx" id="134_3gahb"]
 [ext_resource type="PackedScene" uid="uid://c1qb52ahaxl70" path="res://assets/models/Stylized Nature MegaKit[Standard]/FBX/Plant_7.fbx" id="135_mgoux"]
-[ext_resource type="PackedScene" uid="uid://biigfatl23guf" path="res://assets/entities/rock_medium_3.tscn" id="135_wvnc0"]
-[ext_resource type="PackedScene" uid="uid://bhl37mca84mtm" path="res://assets/entities/weird_ring.tscn" id="136_e1alf"]
+[ext_resource type="PackedScene" uid="uid://biigfatl23guf" path="res://entities/rock_medium_3.tscn" id="135_wvnc0"]
+[ext_resource type="PackedScene" uid="uid://bhl37mca84mtm" path="res://entities/weird_ring.tscn" id="136_e1alf"]
 [ext_resource type="PackedScene" uid="uid://c52bi7l6tadfc" path="res://assets/models/Stylized Nature MegaKit[Standard]/FBX/Petal_4.fbx" id="136_xkv5a"]
 [ext_resource type="Material" uid="uid://cokyqb2vf1641" path="res://assets/textures/Magical Forrest/1/magical_forrest_1.tres" id="139_e1alf"]
 
@@ -333,9 +333,9 @@ size = Vector3(3.9838257, 0.076660156, 4.019043)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0358696, 0.012912273, 5.208581)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
-data_directory = "res://terrain_data/data_desert"
-material = ExtResource("1_cskbv")
-assets = ExtResource("2_687ib")
+data_directory = "res://terrain_data/terrain_desert"
+material = ExtResource("2_e1alf")
+assets = ExtResource("3_3lhbf")
 top_level = true
 metadata/_edit_lock_ = true
 
