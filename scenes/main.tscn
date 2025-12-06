@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=30 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://bxtjow2u3t7p8" path="res://scripts/tower_end_trigger.gd" id="15_0ld40"]
 [ext_resource type="PackedScene" uid="uid://bhlus1o4fqfxd" path="res://scenes/terrain_desert.tscn" id="16_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://c00ehqfqittii" path="res://assets/textures/sky_46_2k/sky_46_2k.png" id="16_muem4"]
+[ext_resource type="Script" uid="uid://brahuilm236c7" path="res://scripts/dark_area.gd" id="18_dp3eg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
 albedo_texture = ExtResource("1_tbgi4")
@@ -141,6 +142,13 @@ ssr_enabled = true
 ssao_enabled = true
 ssao_radius = 2.06
 ssao_intensity = 3.08
+glow_enabled = true
+fog_density = 0.0735
+volumetric_fog_enabled = true
+volumetric_fog_length = 10.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ld40"]
+radius = 37.55175
 
 [node name="Main" type="Node3D"]
 
@@ -151,9 +159,12 @@ mesh = SubResource("PlaneMesh_sgp6g")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+light_volumetric_fog_energy = 0.0
+light_specular = 2.0
 shadow_enabled = true
 
 [node name="HUD" parent="." instance=ExtResource("3_sugp2")]
+visible = false
 
 [node name="Alien_1" parent="." node_paths=PackedStringArray("next_alien") instance=ExtResource("4_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 30, 1.541, 30)
@@ -309,4 +320,37 @@ environment = SubResource("Environment_dp3eg")
 
 [node name="TerrainDesert" parent="." instance=ExtResource("16_jbj1t")]
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.950966, -114.50533, 29.449638)
+light_color = Color(1, 0.7294118, 0, 1)
+light_energy = 5.566
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 9.651
+omni_range = 34.695477
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3731937, -0.33578157, -10.082807)
+light_color = Color(1, 0.7294118, 0, 1)
+light_energy = 2.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 4.94
+omni_range = 8.404954
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.525171, -0.33578157, -18.737545)
+light_color = Color(1, 0.7294118, 0, 1)
+light_energy = 2.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 4.94
+omni_range = 8.404954
+
+[node name="DarkArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.802006)
+script = ExtResource("18_dp3eg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DarkArea"]
+shape = SubResource("SphereShape3D_0ld40")
+
 [connection signal="animation_finished" from="Alien_1/AnimationPlayer" to="Alien_1" method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="DarkArea" to="DarkArea" method="_on_body_entered"]
+[connection signal="body_exited" from="DarkArea" to="DarkArea" method="_on_body_exited"]

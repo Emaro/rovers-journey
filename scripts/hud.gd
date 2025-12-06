@@ -368,3 +368,7 @@ func _set_rover_input(enabled: bool) -> void:
 	var rover = get_tree().get_first_node_in_group("rover")
 	if rover and rover.has_method("set_input_enabled"):
 		rover.set_input_enabled(enabled)
+
+
+func _on_dark_area_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.

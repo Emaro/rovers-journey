@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cfc4up0xgcv5h"]
+
+[ext_resource type="Texture2D" uid="uid://b61rnjh6peauk" path="res://assets/textures/Lava/9/9_diffuseOriginal.bmp" id="1_13o7c"]
+[ext_resource type="Texture2D" uid="uid://dnxs2whnpblfi" path="res://assets/textures/Lava/9/9_ao.bmp" id="2_7tx83"]
+[ext_resource type="Texture2D" uid="uid://cvo13lkuhx41k" path="res://assets/textures/Lava/9/9_metallic.bmp" id="3_62umd"]
+[ext_resource type="Texture2D" uid="uid://b3ctl6gw72edw" path="res://assets/textures/Lava/9/9_normal.bmp" id="4_0pqfi"]
+
+[resource]
+albedo_texture = ExtResource("1_13o7c")
+metallic = 1.0
+metallic_texture = ExtResource("3_62umd")
+emission_enabled = true
+emission_texture = ExtResource("1_13o7c")
+normal_enabled = true
+normal_texture = ExtResource("4_0pqfi")
+ao_enabled = true
+ao_texture = ExtResource("2_7tx83")
+grow_amount = 0.199
