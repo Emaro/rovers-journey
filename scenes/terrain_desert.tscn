@@ -1,7 +1,7 @@
 [gd_scene load_steps=158 format=4 uid="uid://bhlus1o4fqfxd"]
 
-[ext_resource type="Terrain3DMaterial" uid="uid://jhie1oni47jk" path="res://data/data_desert/terrain_desert_material.res" id="1_cskbv"]
-[ext_resource type="Terrain3DAssets" uid="uid://07flg1gdbrp2" path="res://data/data_desert/terrain_desert.res" id="2_687ib"]
+[ext_resource type="Terrain3DMaterial" path="res://terrain_data/data_desert/terrain_desert_material.res" id="1_cskbv"]
+[ext_resource type="Terrain3DAssets" path="res://terrain_data/data_desert/terrain_desert.res" id="2_687ib"]
 [ext_resource type="PackedScene" uid="uid://5cgxqj6x36sa" path="res://assets/models/Low poly rocks/Models/Rock Type1 01.dae" id="3_7yfra"]
 [ext_resource type="PackedScene" uid="uid://t67xrerhxbsy" path="res://assets/models/Low poly rocks/Models/Rock Type1 02.dae" id="4_a3jnr"]
 [ext_resource type="PackedScene" uid="uid://4ljvy7h7bh4" path="res://assets/models/Low poly rocks/Models/Rock Type1 03.dae" id="5_5orao"]
@@ -333,7 +333,7 @@ size = Vector3(3.9838257, 0.076660156, 4.019043)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0358696, 0.012912273, 5.208581)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
-data_directory = "res://data/data_desert"
+data_directory = "res://terrain_data/data_desert"
 material = ExtResource("1_cskbv")
 assets = ExtResource("2_687ib")
 top_level = true
