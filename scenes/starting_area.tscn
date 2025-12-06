@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://c6eewk8djck30"]
+[gd_scene load_steps=3 format=3 uid="uid://c6eewk8djck30"]
+
+[ext_resource type="Terrain3DMaterial" uid="uid://d1msp1cmqgwgm" path="res://terrain_data/terrain_main/new_terrain_3d_material.res" id="1_ru252"]
+[ext_resource type="Terrain3DAssets" uid="uid://cprhb2r4jey5g" path="res://terrain_data/terrain_main/new_terrain_3d_assets.res" id="2_iru23"]
 
 [node name="StartingArea" type="Node3D"]
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://terrain_data/terrain_main"
+material = ExtResource("1_ru252")
+assets = ExtResource("2_iru23")
+top_level = true
+metadata/_edit_lock_ = true
