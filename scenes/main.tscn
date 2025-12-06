@@ -139,9 +139,10 @@ sky_material = SubResource("PanoramaSkyMaterial_jbj1t")
 background_mode = 2
 sky = SubResource("Sky_muem4")
 ambient_light_source = 3
+ssr_enabled = true
 ssao_enabled = true
 ssao_radius = 2.06
-ssao_intensity = 3.0
+ssao_intensity = 3.08
 
 [node name="Main" type="Node3D"]
 
@@ -172,6 +173,7 @@ linear_damp_mode = 1
 acceleration = 400.0
 max_speed = 30.0
 lower_center_of_mass = 0.2
+show_debug = false
 
 [node name="CameraPivot" type="Node3D" parent="Rover"]
 

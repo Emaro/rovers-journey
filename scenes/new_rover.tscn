@@ -1,20 +1,19 @@
-[gd_scene load_steps=17 format=3 uid="uid://c1yrv7iljhb0h"]
+[gd_scene load_steps=20 format=3 uid="uid://c1yrv7iljhb0h"]
 
 [ext_resource type="Script" uid="uid://cc8fkkc60m7nf" path="res://scripts/raycast_car.gd" id="1_fubay"]
+[ext_resource type="Material" uid="uid://breym7k6v2vb4" path="res://assets/rover_material.tres" id="2_avdik"]
 [ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="2_k7dli"]
 [ext_resource type="Script" uid="uid://lyvrj6sgrp8f" path="res://scripts/raycast_wheel.gd" id="3_20k7n"]
+[ext_resource type="PackedScene" uid="uid://cgur1iu5kosfe" path="res://assets/entities/tire2.tscn" id="4_20k7n"]
+[ext_resource type="PackedScene" uid="uid://bt2jbawht547w" path="res://assets/entities/wheel.tscn" id="4_k7dli"]
+[ext_resource type="PackedScene" uid="uid://dgc1gegx2kr0m" path="res://assets/scifi_wheel.tscn" id="7_2jort"]
 
 [sub_resource type="Curve" id="Curve_nd71p"]
 _data = [Vector2(0.020504732, 0.3150205), 0.0, 0.0, 0, 0, Vector2(0.31034482, 0.62178624), -0.8235736, -0.8235736, 0, 0, Vector2(0.4403183, 0.61885434), 0.0, 0.0, 0, 0, Vector2(0.51724136, 0.6335138), 0.0, 0.0, 0, 0, Vector2(0.6180371, 0.75078934), 0.0, 0.0, 0, 0, Vector2(0.74535805, 0.9091114), -0.851827, -0.851827, 0, 0, Vector2(1, 0.28426093), 0.0, 0.0, 0, 0]
 point_count = 7
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g7g4h"]
-albedo_color = Color(0, 1, 1, 1)
-albedo_texture = ExtResource("2_k7dli")
-uv1_scale = Vector3(2, 1, 2)
-
 [sub_resource type="BoxMesh" id="BoxMesh_j8ivh"]
-material = SubResource("StandardMaterial3D_g7g4h")
+material = ExtResource("2_avdik")
 size = Vector3(1.8, 0.5, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_g7g4h"]
@@ -71,6 +70,7 @@ mesh = SubResource("BoxMesh_j8ivh")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 0.52978694, 0, 0, 0, 1, 0, 0.18, -0.3)
+material_override = ExtResource("2_avdik")
 mesh = SubResource("BoxMesh_g7g4h")
 skeleton = NodePath("../..")
 
@@ -86,10 +86,21 @@ spring_damping = 200.0
 over_extend = 0.2
 is_steer = true
 grip_curve = SubResource("Curve_7ddre")
-show_debug = true
+
+[node name="wheel" parent="WheelFL" instance=ExtResource("7_2jort")]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, -0.62681943, 0.0036349297)
+
+[node name="Node3D" parent="WheelFL" instance=ExtResource("4_20k7n")]
+transform = Transform3D(-4.8082526e-08, 0, 1.4, 0, 1.1, 0, -1.1, 0, -6.119594e-08, 0.009042919, -0.50363076, -0.003934622)
+visible = false
+
+[node name="Cylinder_035" parent="WheelFL" instance=ExtResource("4_k7dli")]
+transform = Transform3D(-1.3113416e-06, 0, 15, 0, 30, 0, -30, 0, -6.556708e-07, 0.009042919, -0.50363076, -0.003934622)
+visible = false
 
 [node name="Wheel" type="MeshInstance3D" parent="WheelFL"]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
 mesh = SubResource("CylinderMesh_j8ivh")
 
 [node name="WheelFR" type="RayCast3D" parent="."]
@@ -101,10 +112,21 @@ spring_damping = 200.0
 over_extend = 0.2
 is_steer = true
 grip_curve = SubResource("Curve_7ddre")
-show_debug = true
+
+[node name="wheel" parent="WheelFR" instance=ExtResource("7_2jort")]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, -0.62681943, 0.0036349297)
+
+[node name="Node3D" parent="WheelFR" instance=ExtResource("4_20k7n")]
+transform = Transform3D(-4.8082526e-08, 0, -1.4, 0, 1.1, 0, 1.1, 0, -6.119594e-08, 0.009042919, -0.50363076, -0.003934622)
+visible = false
+
+[node name="Cylinder_035" parent="WheelFR" instance=ExtResource("4_k7dli")]
+transform = Transform3D(-1.3113416e-06, 0, -15, 0, 30, 0, 30, 0, -6.556708e-07, 0.009042919, -0.50363076, -0.003934622)
+visible = false
 
 [node name="Wheel" type="MeshInstance3D" parent="WheelFR"]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
 mesh = SubResource("CylinderMesh_j8ivh")
 
 [node name="WheelBR" type="RayCast3D" parent="."]
@@ -117,10 +139,21 @@ over_extend = 0.2
 wheel_radius = 0.45
 is_motor = true
 grip_curve = SubResource("Curve_7ddre")
-show_debug = true
+
+[node name="wheel" parent="WheelBR" instance=ExtResource("7_2jort")]
+transform = Transform3D(-2.1855692e-08, 0, -0.49999997, 0, 0.49999997, 0, 0.49999997, 0, -2.1855692e-08, 0, -0.62681943, 0.0036349297)
+
+[node name="Node3D" parent="WheelBR" instance=ExtResource("4_20k7n")]
+transform = Transform3D(-4.8082526e-08, 0, -1.4, 0, 1.1, 0, 1.1, 0, -6.119594e-08, 0.009042919, -0.50363076, -0.003934622)
+visible = false
+
+[node name="Cylinder_035" parent="WheelBR" instance=ExtResource("4_k7dli")]
+transform = Transform3D(-1.3113415e-06, 0, -14.999998, 0, 29.999996, 0, 29.999996, 0, -6.5567076e-07, 0.009042919, -0.50363076, -0.003934622)
+visible = false
 
 [node name="Wheel" type="MeshInstance3D" parent="WheelBR"]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
 mesh = SubResource("CylinderMesh_j8ivh")
 
 [node name="WheelBL" type="RayCast3D" parent="."]
@@ -133,10 +166,22 @@ over_extend = 0.2
 wheel_radius = 0.45
 is_motor = true
 grip_curve = SubResource("Curve_7ddre")
-show_debug = true
+
+[node name="wheel" parent="WheelBL" instance=ExtResource("7_2jort")]
+transform = Transform3D(-2.185569e-08, 0, -0.4999999, 0, 0.4999999, 0, 0.4999999, 0, -2.185569e-08, 0, -0.47791636, 0.0036349297)
+metadata/_edit_lock_ = true
+
+[node name="Node3D" parent="WheelBL" instance=ExtResource("4_20k7n")]
+transform = Transform3D(-4.8082526e-08, 0, 1.4, 0, 1.1, 0, -1.1, 0, -6.119594e-08, 0.009042919, -0.50363076, -0.003934622)
+visible = false
+
+[node name="Cylinder_035" parent="WheelBL" instance=ExtResource("4_k7dli")]
+transform = Transform3D(-1.3113415e-06, 0, 14.999998, 0, 29.999996, 0, -29.999996, 0, -6.5567076e-07, 0.009042919, -0.50363076, -0.003934622)
+visible = false
 
 [node name="Wheel" type="MeshInstance3D" parent="WheelBL"]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
 mesh = SubResource("CylinderMesh_j8ivh")
 
 [node name="Camera3D" type="Camera3D" parent="."]

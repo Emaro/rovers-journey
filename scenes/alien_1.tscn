@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b38w75aqlbwan"]
+[gd_scene load_steps=6 format=3 uid="uid://b38w75aqlbwan"]
 
 [ext_resource type="Script" uid="uid://5uu28t1roxn3" path="res://scripts/alien_1.gd" id="1_h100l"]
+[ext_resource type="Material" uid="uid://d34bvh21te5ou" path="res://assets/alienskin.tres" id="2_uyfb6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_decaq"]
 radius = 2.0
@@ -17,5 +18,6 @@ script = ExtResource("1_h100l")
 shape = SubResource("SphereShape3D_decaq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_uyfb6")
 mesh = SubResource("CapsuleMesh_h100l")
 surface_material_override/0 = SubResource("StandardMaterial3D_u8rjw")
