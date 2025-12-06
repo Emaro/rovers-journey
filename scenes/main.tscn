@@ -177,7 +177,7 @@ libraries = {
 }
 
 [node name="Rover" parent="." instance=ExtResource("5_tbgi4")]
-transform = Transform3D(-0.013962217, 0, -0.99990255, 0, 1, 0, 0.99990255, 0, -0.013962217, 35, 1.709422, -30)
+transform = Transform3D(-0.013962217, 0, -0.99990255, 0, 1, 0, 0.99990255, 0, -0.013962217, 86.832756, 1.709422, -58.557938)
 linear_damp_mode = 1
 acceleration = 400.0
 max_speed = 30.0
@@ -187,7 +187,7 @@ show_debug = false
 [node name="CameraPivot" type="Node3D" parent="Rover"]
 
 [node name="Camera3D2" type="Camera3D" parent="Rover/CameraPivot" node_paths=PackedStringArray("hud")]
-transform = Transform3D(0.013962129, -0.34198684, 0.93960106, 0, 0.9396927, 0.34202015, -0.99990255, -0.0047753295, 0.01312011, 39.99951, 7.6411, -29.93019)
+transform = Transform3D(-0.32168737, 0.32384035, -0.88974416, 4.9511728e-11, 0.9396927, 0.34202012, 0.94684595, 0.110023566, -0.30228725, 39.99951, 7.6411, -29.93019)
 top_level = true
 current = true
 near = 0.15
@@ -349,6 +349,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.802006)
 script = ExtResource("18_dp3eg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.373947, 0, -2.955511)
 shape = SubResource("SphereShape3D_0ld40")
 
 [connection signal="animation_finished" from="Alien_1/AnimationPlayer" to="Alien_1" method="_on_animation_player_animation_finished"]

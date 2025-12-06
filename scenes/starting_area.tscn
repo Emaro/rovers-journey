@@ -2,9 +2,8 @@
 
 [ext_resource type="Terrain3DMaterial" uid="uid://d1msp1cmqgwgm" path="res://terrain_data/terrain_main/new_terrain_3d_material.res" id="1_ru252"]
 [ext_resource type="Terrain3DAssets" uid="uid://cprhb2r4jey5g" path="res://terrain_data/terrain_main/new_terrain_3d_assets.res" id="2_iru23"]
-[ext_resource type="Material" uid="uid://cfc4up0xgcv5h" path="res://assets/textures/Lava/9/lava.tres" id="3_iru23"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_bert1"]
+[ext_resource type="PackedScene" uid="uid://c1yrv7iljhb0h" path="res://scenes/new_rover.tscn" id="3_iru23"]
+[ext_resource type="PackedScene" uid="uid://bu7iua6j64p0x" path="res://entities/rock_type_1_01.tscn" id="4_bert1"]
 
 [node name="StartingArea" type="Node3D"]
 
@@ -15,8 +14,12 @@ assets = ExtResource("2_iru23")
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(21.430786, 0, 0, 0, 1, 0, 0, 0, 20.58957, 0, 0.2505312, 0)
-material_override = ExtResource("3_iru23")
-gi_mode = 2
-mesh = SubResource("PlaneMesh_bert1")
+[node name="RigidBody3D" parent="." instance=ExtResource("3_iru23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1963086, 0)
+script = null
+
+[node name="Rock Type1 01" parent="." instance=ExtResource("4_bert1")]
+transform = Transform3D(0.97988987, -0.19953896, 0, 0.19953896, 0.97988987, 0, 0, 0, 1, 102.81381, 2.4369555, -66.40538)
+
+[node name="Rock Type1 02" parent="." instance=ExtResource("4_bert1")]
+transform = Transform3D(2.965711, -0.43704963, 0.11638794, 0.43463442, 2.9675581, 0.06847978, -0.12510571, -0.050835133, 2.996959, 92.78857, 2.7451797, -83.08985)
