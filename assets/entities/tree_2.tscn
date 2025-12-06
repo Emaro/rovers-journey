@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cim33c3t5qcns"]
 
-[ext_resource type="PackedScene" uid="uid://pjhvc8buvb06" path="res://assets/Low poly trees/Models/Tree Type6 03.dae" id="1_o4nvv"]
-[ext_resource type="Texture2D" uid="uid://bshrw6hu2xid8" path="res://assets/Low poly trees/Textures/Colorsheet Tree Normal.png" id="2_ex66d"]
+[ext_resource type="PackedScene" uid="uid://pjhvc8buvb06" path="res://assets/models/Low poly trees/Models/Tree Type6 03.dae" id="1_o4nvv"]
+[ext_resource type="Texture2D" uid="uid://bshrw6hu2xid8" path="res://assets/models/Low poly trees/Textures/Colorsheet Tree Normal.png" id="2_ex66d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3y8wc"]
 albedo_texture = ExtResource("2_ex66d")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhl37mca84mtm"]
 
-[ext_resource type="PackedScene" uid="uid://bhq4xj1ijlyyi" path="res://assets/Low poly rocks/Models/Rock Type3 01.dae" id="1_3wgvo"]
+[ext_resource type="PackedScene" uid="uid://bhq4xj1ijlyyi" path="res://assets/models/Low poly rocks/Models/Rock Type3 01.dae" id="1_3wgvo"]
 [ext_resource type="Material" uid="uid://hlaecprfy5qe" path="res://assets/entities/weird_mat.tres" id="2_d26vi"]
-[ext_resource type="Texture2D" uid="uid://cfvqor8l04dmi" path="res://assets/Mystical/1/1_diffuseOriginal.bmp" id="3_guctu"]
+[ext_resource type="Texture2D" uid="uid://cfvqor8l04dmi" path="res://assets/textures/Mystical/1/1_diffuseOriginal.bmp" id="3_guctu"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_2xhlg"]
 

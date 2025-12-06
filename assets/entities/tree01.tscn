@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://weoyf5gy6wfw"]
 
-[ext_resource type="PackedScene" uid="uid://chkhv10td1ad" path="res://assets/Low poly trees/Models/Tree Type0 03.dae" id="1_eek0x"]
-[ext_resource type="Texture2D" uid="uid://bshrw6hu2xid8" path="res://assets/Low poly trees/Textures/Colorsheet Tree Normal.png" id="2_nmn2t"]
+[ext_resource type="PackedScene" uid="uid://chkhv10td1ad" path="res://assets/models/Low poly trees/Models/Tree Type0 03.dae" id="1_eek0x"]
+[ext_resource type="Texture2D" uid="uid://bshrw6hu2xid8" path="res://assets/models/Low poly trees/Textures/Colorsheet Tree Normal.png" id="2_nmn2t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yk6tr"]
 albedo_color = Color(1, 0.5803922, 0.88235295, 1)

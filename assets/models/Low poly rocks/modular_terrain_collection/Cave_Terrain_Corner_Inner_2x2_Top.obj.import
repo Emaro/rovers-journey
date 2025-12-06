@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bx3r2arho7i54"
+path="res://.godot/imported/Cave_Terrain_Corner_Inner_2x2_Top.obj-96df7d77dfe2b8e3059a414836a9e676.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cave_Terrain_Corner_Inner_2x2_Top.obj-96df7d77dfe2b8e3059a414836a9e676.mesh"]
+
+source_file="res://assets/models/Low poly rocks/modular_terrain_collection/Cave_Terrain_Corner_Inner_2x2_Top.obj"
+dest_files=["res://.godot/imported/Cave_Terrain_Corner_Inner_2x2_Top.obj-96df7d77dfe2b8e3059a414836a9e676.mesh", "res://.godot/imported/Cave_Terrain_Corner_Inner_2x2_Top.obj-96df7d77dfe2b8e3059a414836a9e676.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

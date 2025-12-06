@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://d34bvh21te5ou"]
 
-[ext_resource type="Texture2D" uid="uid://cmmhs38fehogy" path="res://assets/Monster Skin/3/3_diffuseOriginal.bmp" id="1_pgna8"]
-[ext_resource type="Texture2D" uid="uid://do788fntoy5un" path="res://assets/Monster Skin/3/3_ao.bmp" id="2_gerig"]
-[ext_resource type="Texture2D" uid="uid://sod4vi3f16fj" path="res://assets/Monster Skin/3/3_normal.bmp" id="4_dnp32"]
-[ext_resource type="Texture2D" uid="uid://bhtfql2ycdv28" path="res://assets/Monster Skin/3/3_smoothness.bmp" id="4_pgna8"]
+[ext_resource type="Texture2D" uid="uid://cmmhs38fehogy" path="res://assets/textures/Monster Skin/3/3_diffuseOriginal.bmp" id="1_pgna8"]
+[ext_resource type="Texture2D" uid="uid://do788fntoy5un" path="res://assets/textures/Monster Skin/3/3_ao.bmp" id="2_gerig"]
+[ext_resource type="Texture2D" uid="uid://sod4vi3f16fj" path="res://assets/textures/Monster Skin/3/3_normal.bmp" id="4_dnp32"]
+[ext_resource type="Texture2D" uid="uid://bhtfql2ycdv28" path="res://assets/textures/Monster Skin/3/3_smoothness.bmp" id="4_pgna8"]
 
 [resource]
 albedo_texture = ExtResource("1_pgna8")

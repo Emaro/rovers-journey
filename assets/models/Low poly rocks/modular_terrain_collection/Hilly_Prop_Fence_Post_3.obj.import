@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ckamdnkwfau7d"
+path="res://.godot/imported/Hilly_Prop_Fence_Post_3.obj-3e78f0e9b3a600666fa77c51432d5f00.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hilly_Prop_Fence_Post_3.obj-3e78f0e9b3a600666fa77c51432d5f00.mesh"]
+
+source_file="res://assets/models/Low poly rocks/modular_terrain_collection/Hilly_Prop_Fence_Post_3.obj"
+dest_files=["res://.godot/imported/Hilly_Prop_Fence_Post_3.obj-3e78f0e9b3a600666fa77c51432d5f00.mesh", "res://.godot/imported/Hilly_Prop_Fence_Post_3.obj-3e78f0e9b3a600666fa77c51432d5f00.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

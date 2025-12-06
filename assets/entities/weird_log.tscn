@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://oi7rlcn4ixlc"]
 
-[ext_resource type="PackedScene" uid="uid://drfhtp6ywk2js" path="res://assets/Ultimate Nature Pack by Quaternius/FBX/WoodLog_Snow.fbx" id="1_k60vb"]
+[ext_resource type="PackedScene" uid="uid://drfhtp6ywk2js" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/WoodLog_Snow.fbx" id="1_k60vb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h313e"]
 albedo_color = Color(1, 0.27058825, 0.4392157, 1)

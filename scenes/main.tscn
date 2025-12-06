@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cpirfnsewblna" path="res://scenes/alien_t3.tscn" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://cqnhyt7o6klmf" path="res://scenes/tower_part_3.tscn" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://bxtjow2u3t7p8" path="res://scripts/tower_end_trigger.gd" id="15_0ld40"]
-[ext_resource type="Texture2D" uid="uid://c00ehqfqittii" path="res://assets/sky_46_2k/sky_46_2k.png" id="15_jkv2x"]
+[ext_resource type="Texture2D" path="res://assets/sky_46_2k/sky_46_2k.png" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bhlus1o4fqfxd" path="res://scenes/terrain_desert.tscn" id="16_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://tqqnoqgvdbw8" path="res://assets/entities/slime.tscn" id="17_muem4"]
 [ext_resource type="Script" uid="uid://cujsmcgi6gpkv" path="res://assets/entities/slime.gd" id="18_dp3eg"]

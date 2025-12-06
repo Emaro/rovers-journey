@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://7a6j2rhdchji"
+path="res://.godot/imported/Dragon.obj-423dac324f061a257730832c56b8cdb3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Dragon.obj-423dac324f061a257730832c56b8cdb3.mesh"]
+
+source_file="res://assets/models/Monster Pack Animated by Quaternius/OBJ/Dragon.obj"
+dest_files=["res://.godot/imported/Dragon.obj-423dac324f061a257730832c56b8cdb3.mesh", "res://.godot/imported/Dragon.obj-423dac324f061a257730832c56b8cdb3.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

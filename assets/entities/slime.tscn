@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://tqqnoqgvdbw8"]
 
-[ext_resource type="PackedScene" uid="uid://cfewab0au5uto" path="res://assets/Monster Pack Animated by Quaternius/FBX/Slime.fbx" id="1_18l1o"]
+[ext_resource type="PackedScene" uid="uid://cfewab0au5uto" path="res://assets/models/Monster Pack Animated by Quaternius/FBX/Slime.fbx" id="1_18l1o"]
 
 [node name="Slime" instance=ExtResource("1_18l1o")]
 

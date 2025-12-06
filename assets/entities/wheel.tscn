@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://bt2jbawht547w"]
 
-[ext_resource type="Texture2D" uid="uid://brle6d8jxxoy6" path="res://assets/car-wheels-pack/Tyres/AllTyres_0.png" id="1_w3jnd"]
+[ext_resource type="Texture2D" uid="uid://brle6d8jxxoy6" path="res://assets/models/car-wheels-pack/Tyres/AllTyres_0.png" id="1_w3jnd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dq1vb"]
 resource_name = "Rubber"

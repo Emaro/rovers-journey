@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rmb3onyp2x3a"
+path="res://.godot/imported/Cliff_Terrain_Waterfall_Base_Hill.obj-9e9a91e0b6bec6a8e602d1525d5dd969.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cliff_Terrain_Waterfall_Base_Hill.obj-9e9a91e0b6bec6a8e602d1525d5dd969.mesh"]
+
+source_file="res://assets/models/Low poly rocks/modular_terrain_collection/Cliff_Terrain_Waterfall_Base_Hill.obj"
+dest_files=["res://.godot/imported/Cliff_Terrain_Waterfall_Base_Hill.obj-9e9a91e0b6bec6a8e602d1525d5dd969.mesh", "res://.godot/imported/Cliff_Terrain_Waterfall_Base_Hill.obj-9e9a91e0b6bec6a8e602d1525d5dd969.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
