@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=30 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien_1.tscn" id="4_jyhfs"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://5w6jmb6s6jtk" path="res://assets/textures/sky_27_2k/sky_27_2k.png" id="15_muem4"]
 [ext_resource type="PackedScene" uid="uid://bhlus1o4fqfxd" path="res://scenes/terrain_desert.tscn" id="16_jbj1t"]
 [ext_resource type="Script" uid="uid://brahuilm236c7" path="res://scripts/dark_area.gd" id="18_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://c2suk4ky5e7mq" path="res://scenes/alien_info_lava.tscn" id="20_yc10j"]
+[ext_resource type="PackedScene" uid="uid://cv22yn5ht4yp4" path="res://scenes/alien_info_water.tscn" id="21_jscy8"]
 
 [sub_resource type="Animation" id="Animation_o6xl0"]
 length = 0.001
@@ -342,6 +344,14 @@ script = ExtResource("18_dp3eg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.373947, 0, -2.955511)
 shape = SubResource("SphereShape3D_0ld40")
+
+[node name="Info_Aliens" type="Node3D" parent="."]
+
+[node name="Alien_Info_Lava" parent="Info_Aliens" instance=ExtResource("20_yc10j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 1, 0)
+
+[node name="Alien_Info_Water" parent="Info_Aliens" instance=ExtResource("21_jscy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 1, 0)
 
 [connection signal="animation_finished" from="Alien_1/AnimationPlayer" to="Alien_1" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="DarkArea" to="DarkArea" method="_on_body_entered"]

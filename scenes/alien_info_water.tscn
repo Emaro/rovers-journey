@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv22yn5ht4yp4"]
+
+[ext_resource type="Script" uid="uid://byg4uwgamkoe0" path="res://scripts/alien_info_water.gd" id="1_8dsr1"]
+[ext_resource type="Material" uid="uid://d34bvh21te5ou" path="res://assets/alienskin.tres" id="2_ejii0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_decaq"]
+radius = 2.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h100l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8rjw"]
+albedo_color = Color(0.86304724, 0.44660252, 0.4209031, 1)
+
+[node name="Alien_Info_Water" type="Area3D"]
+script = ExtResource("1_8dsr1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_decaq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_ejii0")
+mesh = SubResource("CapsuleMesh_h100l")
+surface_material_override/0 = SubResource("StandardMaterial3D_u8rjw")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+pixel_size = 0.01
+text = "Watch out, Buddy. 
+The water here is deep. 
+Your wheels are not made for swimming."

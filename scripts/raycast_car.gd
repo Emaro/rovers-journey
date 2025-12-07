@@ -19,6 +19,11 @@ var motor_input := 0.0
 var handbrake := false # probably remove
 var is_slipping := false
 
+func _ready() -> void:
+	# Optional but useful later to find the rover:
+	add_to_group("rover")
+	# anything else you need here
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("handbrake"):
 		is_slipping = true
