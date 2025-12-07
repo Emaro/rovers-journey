@@ -1,0 +1,37 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://bgwyji6opcxam"]
+
+[ext_resource type="Texture2D" uid="uid://bfmt31c34254n" path="res://assets/models/sci-fi-wheel/source/wheel_0.png" id="1_u6g5n"]
+[ext_resource type="Texture2D" uid="uid://uijt045gh814" path="res://assets/models/sci-fi-wheel/source/wheel_1.png" id="2_5i6jl"]
+[ext_resource type="Texture2D" uid="uid://ofcckhf64q7k" path="res://assets/models/sci-fi-wheel/source/wheel_3.png" id="3_4o2by"]
+[ext_resource type="Texture2D" uid="uid://re87g3l14pqw" path="res://assets/models/sci-fi-wheel/source/wheel_2.png" id="4_u1l25"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6g5n"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.05
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[resource]
+resource_name = "DefaultMaterial"
+next_pass = SubResource("StandardMaterial3D_u6g5n")
+albedo_texture = ExtResource("1_u6g5n")
+metallic = 1.0
+metallic_texture = ExtResource("2_5i6jl")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_5i6jl")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("3_4o2by")
+normal_enabled = true
+normal_texture = ExtResource("4_u1l25")
+ao_enabled = true
+ao_texture = ExtResource("2_5i6jl")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.05

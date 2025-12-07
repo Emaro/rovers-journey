@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7dswoy2m81o7" path="res://assets/textures/snow_01_2k/snow_01_normal_gl_2k.png" id="2_8ppiq"]
 
 [resource]
+depth_draw_mode = 1
 albedo_color = Color(0.09019608, 0.6313726, 1, 1)
 albedo_texture = ExtResource("1_1eme1")
 albedo_texture_force_srgb = true
@@ -12,4 +13,11 @@ roughness = 0.0
 normal_enabled = true
 normal_scale = 4.18
 normal_texture = ExtResource("2_8ppiq")
-uv1_scale = Vector3(3, 3, 3)
+rim = 0.25
+rim_texture = ExtResource("1_1eme1")
+clearcoat = 0.76
+clearcoat_roughness = 1.0
+clearcoat_texture = ExtResource("1_1eme1")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true

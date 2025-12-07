@@ -169,7 +169,6 @@ grip_curve = SubResource("Curve_7ddre")
 
 [node name="wheel" parent="WheelBL" instance=ExtResource("7_2jort")]
 transform = Transform3D(-2.185569e-08, 0, -0.4999999, 0, 0.4999999, 0, 0.4999999, 0, -2.185569e-08, 0, -0.47791636, 0.0036349297)
-metadata/_edit_lock_ = true
 
 [node name="Node3D" parent="WheelBL" instance=ExtResource("4_20k7n")]
 transform = Transform3D(-4.8082526e-08, 0, 1.4, 0, 1.1, 0, -1.1, 0, -6.119594e-08, 0.009042919, -0.50363076, -0.003934622)

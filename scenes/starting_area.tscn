@@ -22,3 +22,22 @@ transparency = 0.46
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_bert1")
 surface_material_override/0 = ExtResource("3_iru23")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 282.43335, -0.5499954, 142.09665)
+material_overlay = ExtResource("3_iru23")
+transparency = 0.46
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_bert1")
+surface_material_override/0 = ExtResource("3_iru23")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(500, 0, 0, 0, 1, 0, 0, 0, 800, 514.89667, -1.6186295, 142.09665)
+material_overlay = ExtResource("3_iru23")
+transparency = 0.46
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_bert1")
+surface_material_override/0 = ExtResource("3_iru23")
+metadata/_edit_group_ = true
