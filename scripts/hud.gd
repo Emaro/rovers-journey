@@ -5,6 +5,8 @@ extends Control
 @onready var rocks_label: Label = $RocksLabel
 @onready var sandstone_label: Label = $SandstoneLabel
 @onready var metalscrap_label: Label = $MetalscrapLabel
+@onready var wood_label: Label = $WoodLabel
+@onready var crystal_label: Label = $CrystalLabel
 
 @onready var alien_dialog: PanelContainer = $AlienDialog
 @onready var msg_label: Label = $AlienDialog/VBox/Msg
@@ -139,10 +141,14 @@ func _refresh() -> void:
 	var rocks := Inventory.get_count("rock")
 	var sandstone := Inventory.get_count("sandstone")
 	var metalscrap := Inventory.get_count("metalscrap")
+	var wood := Inventory.get_count("wood")
+	var crystal := Inventory.get_count("crystal")
 
 	rocks_label.text = "Rocks: %d" % rocks
 	sandstone_label.text = "Sandstones: %d" % sandstone
 	metalscrap_label.text = "Metalscraps: %d" % metalscrap
+	wood_label.text = "Wood: %d" % wood
+	crystal_label.text = "Crystal: %d" % crystal
 
 
 func show_message(text: String, duration: float = 3.0) -> void:

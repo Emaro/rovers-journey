@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=28 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien_1.tscn" id="4_jyhfs"]
@@ -6,8 +6,10 @@
 [ext_resource type="Script" uid="uid://bso0ngaucisw3" path="res://scenes/camera_arm.gd" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bmhlq50ko23ih" path="res://resources/RockResource.tscn" id="6_tipki"]
 [ext_resource type="PackedScene" uid="uid://dxsgfnjoxo0bf" path="res://resources/SandstoneResource.tscn" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://437odqqfoey1" path="res://resources/WoodResource.tscn" id="8_0ld40"]
 [ext_resource type="PackedScene" uid="uid://cmmmoxstg8f1b" path="res://resources/MetalScrapResource.tscn" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://ixdaxlkbmvmq" path="res://scenes/alien_t1.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://djbuj76cunh6w" path="res://resources/CrystalResource.tscn" id="9_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://dqddng704tpxf" path="res://scenes/tower_part_1.tscn" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://3vafua04vy5h" path="res://scenes/alien_t2.tscn" id="11_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://bdcwncw53o5eh" path="res://scenes/tower_part_2.tscn" id="12_trceg"]
@@ -255,6 +257,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
 
 [node name="MetalScrapResource8" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
+
+[node name="Wood" type="Node3D" parent="Resources"]
+
+[node name="WoodResource" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 0)
+
+[node name="Crystal" type="Node3D" parent="Resources"]
+
+[node name="CrystalResource" parent="Resources/Crystal" instance=ExtResource("9_gqmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 0)
 
 [node name="Alien_T" type="Node3D" parent="."]
 

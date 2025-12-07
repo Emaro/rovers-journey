@@ -4,6 +4,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_rbyyf"]
 font_names = PackedStringArray("Consolas")
+subpixel_positioning = 0
 
 [node name="HUD" type="Control" groups=["hud"]]
 layout_mode = 3
@@ -97,6 +98,24 @@ offset_right = 211.0
 offset_bottom = 122.0
 theme_override_font_sizes/font_size = 30
 text = "Metalscraps: 0"
+
+[node name="WoodLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 120.0
+offset_right = 119.0
+offset_bottom = 162.0
+theme_override_font_sizes/font_size = 30
+text = "Wood: 0"
+
+[node name="CrystalLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 160.0
+offset_right = 135.0
+offset_bottom = 202.0
+theme_override_font_sizes/font_size = 30
+text = "Crystal: 0"
 
 [node name="StartScreen" type="Control" parent="."]
 layout_mode = 1

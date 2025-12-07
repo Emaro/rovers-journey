@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://437odqqfoey1"]
+
+[ext_resource type="Script" uid="uid://csj772a87swfs" path="res://scripts/wood_resource.gd" id="1_t16f7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sntmt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t16f7"]
+albedo_color = Color(0.16862746, 0.09019608, 0, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h8t7d"]
+
+[node name="WoodResource" type="Area3D"]
+script = ExtResource("1_t16f7")
+
+[node name="WoodMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7713452, 0, 0.68943995, 0, 0.7, 0, -0.91925335, 0, 0.57850885, 0, 0, 0)
+mesh = SubResource("CylinderMesh_sntmt")
+surface_material_override/0 = SubResource("StandardMaterial3D_t16f7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_h8t7d")
