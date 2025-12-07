@@ -1,6 +1,5 @@
-[gd_scene load_steps=30 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=26 format=3 uid="uid://b8h0h8nkkq1yv"]
 
-[ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien_1.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c1yrv7iljhb0h" path="res://scenes/new_rover.tscn" id="5_tbgi4"]
@@ -15,17 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://cpirfnsewblna" path="res://scenes/alien_t3.tscn" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://cqnhyt7o6klmf" path="res://scenes/tower_part_3.tscn" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://bxtjow2u3t7p8" path="res://scripts/tower_end_trigger.gd" id="15_0ld40"]
+[ext_resource type="Texture2D" uid="uid://5w6jmb6s6jtk" path="res://assets/textures/sky_27_2k/sky_27_2k.png" id="15_muem4"]
 [ext_resource type="PackedScene" uid="uid://bhlus1o4fqfxd" path="res://scenes/terrain_desert.tscn" id="16_jbj1t"]
-[ext_resource type="Texture2D" uid="uid://c00ehqfqittii" path="res://assets/textures/sky_46_2k/sky_46_2k.png" id="16_muem4"]
 [ext_resource type="Script" uid="uid://brahuilm236c7" path="res://scripts/dark_area.gd" id="18_dp3eg"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tefeu"]
-albedo_texture = ExtResource("1_tbgi4")
-uv1_scale = Vector3(10, 10, 10)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_sgp6g"]
-material = SubResource("StandardMaterial3D_tefeu")
-size = Vector2(20, 20)
 
 [sub_resource type="Animation" id="Animation_o6xl0"]
 length = 0.001
@@ -123,13 +114,10 @@ _data = {
 &"alien_interaction": SubResource("Animation_tefeu")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tbgi4"]
-size = Vector3(200, 2, 200)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ld40"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jbj1t"]
-panorama = ExtResource("16_muem4")
+panorama = ExtResource("15_muem4")
 
 [sub_resource type="Sky" id="Sky_muem4"]
 sky_material = SubResource("PanoramaSkyMaterial_jbj1t")
@@ -152,11 +140,6 @@ radius = 37.55175
 
 [node name="Main" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-visible = false
-mesh = SubResource("PlaneMesh_sgp6g")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
 light_volumetric_fog_energy = 0.0
@@ -164,6 +147,7 @@ light_specular = 2.0
 shadow_enabled = true
 
 [node name="HUD" parent="." instance=ExtResource("3_sugp2")]
+visible = false
 
 [node name="Alien_1" parent="." node_paths=PackedStringArray("next_alien") instance=ExtResource("4_jyhfs")]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 30, 1.541, 30)
@@ -176,29 +160,24 @@ libraries = {
 }
 
 [node name="Rover" parent="." instance=ExtResource("5_tbgi4")]
-transform = Transform3D(-0.013962217, 0, -0.99990255, 0, 1, 0, 0.99990255, 0, -0.013962217, 86.832756, 1.709422, -58.557938)
+transform = Transform3D(0.007906224, 0, -0.9999687, 0, 1, 0, 0.9999687, 0, 0.007906224, -129.4758, 11.850445, 87.5809)
 linear_damp_mode = 1
 acceleration = 400.0
 max_speed = 30.0
 lower_center_of_mass = 0.2
 show_debug = false
+metadata/_edit_lock_ = true
 
 [node name="CameraPivot" type="Node3D" parent="Rover"]
 
 [node name="Camera3D2" type="Camera3D" parent="Rover/CameraPivot" node_paths=PackedStringArray("hud")]
-transform = Transform3D(-0.32168737, 0.32384035, -0.88974416, 4.9511728e-11, 0.9396927, 0.34202012, 0.94684595, 0.110023566, -0.30228725, 39.99951, 7.6411, -29.93019)
+transform = Transform3D(0.039992224, -0.34174654, 0.9389408, -1.4816521e-08, 0.9396927, 0.34202012, -0.99920005, -0.0136781605, 0.037580393, 87.177505, 4.8664794, -65.33232)
 top_level = true
 current = true
 near = 0.15
 script = ExtResource("6_tefeu")
 height = 2.5
 hud = NodePath("../../../HUD")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-shape = SubResource("BoxShape3D_tbgi4")
 
 [node name="Resources" type="Node3D" parent="."]
 
@@ -318,6 +297,7 @@ shape = SubResource("BoxShape3D_0ld40")
 environment = SubResource("Environment_dp3eg")
 
 [node name="TerrainDesert" parent="." instance=ExtResource("16_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.950966, -114.50533, 29.449638)

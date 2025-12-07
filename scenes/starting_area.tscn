@@ -1,12 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6eewk8djck30"]
+[gd_scene load_steps=5 format=3 uid="uid://c6eewk8djck30"]
 
 [ext_resource type="Terrain3DMaterial" uid="uid://d1msp1cmqgwgm" path="res://terrain_data/terrain_main/new_terrain_3d_material.res" id="1_ru252"]
 [ext_resource type="Terrain3DAssets" uid="uid://cprhb2r4jey5g" path="res://terrain_data/terrain_main/new_terrain_3d_assets.res" id="2_iru23"]
-[ext_resource type="Material" uid="uid://cfc4up0xgcv5h" path="res://assets/textures/Lava/9/lava.tres" id="3_fk3b5"]
-[ext_resource type="PackedScene" uid="uid://c1yrv7iljhb0h" path="res://scenes/new_rover.tscn" id="3_iru23"]
-[ext_resource type="PackedScene" uid="uid://bu7iua6j64p0x" path="res://entities/rock_type_1_01.tscn" id="4_bert1"]
+[ext_resource type="Material" uid="uid://b36k4ru0b7mca" path="res://assets/water.tres" id="3_iru23"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_opx81"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_bert1"]
 
 [node name="StartingArea" type="Node3D"]
 
@@ -17,17 +15,10 @@ assets = ExtResource("2_iru23")
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain3D"]
-transform = Transform3D(74.54619, 0, 0, 0, 1, 0, 0, 0, 68.97775, -16.298168, 12.5279045, 186.70746)
-material_override = ExtResource("3_fk3b5")
-mesh = SubResource("BoxMesh_opx81")
-
-[node name="RigidBody3D" parent="." instance=ExtResource("3_iru23")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1963086, 0)
-script = null
-
-[node name="Rock Type1 01" parent="." instance=ExtResource("4_bert1")]
-transform = Transform3D(0.97988987, -0.19953896, 0, 0.19953896, 0.97988987, 0, 0, 0, 1, 102.81381, 2.4369555, -66.40538)
-
-[node name="Rock Type1 02" parent="." instance=ExtResource("4_bert1")]
-transform = Transform3D(2.965711, -0.43704963, 0.11638794, 0.43463442, 2.9675581, 0.06847978, -0.12510571, -0.050835133, 2.996959, 92.78857, 2.7451797, -83.08985)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(17.823782, 0, 0, 0, 1, 0, 0, 0, 15.766732, 435.71765, -0.92276, -138.25394)
+material_overlay = ExtResource("3_iru23")
+transparency = 0.46
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_bert1")
+surface_material_override/0 = ExtResource("3_iru23")
