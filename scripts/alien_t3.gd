@@ -102,5 +102,9 @@ func perform_build() -> void:
 		if hud and hud.has_method("show_message"):
 			hud.show_message("Communication tower completed!", 4.0)
 
+	# >>> NEW: tell HUD that the full tower is now completed
+	if hud and hud.has_method("on_tower_completed"):
+		hud.on_tower_completed()
+
 	hide()
 	queue_free()

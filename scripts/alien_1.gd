@@ -10,9 +10,23 @@ var disappear := false
 
 func _ready() -> void:
 	monitoring = true
-	print("Alien ready (interaction v3)")
+
+	var rover = get_tree().get_first_node_in_group("rover")
+	if rover:
+		global_position = rover.global_position + Vector3(0, 2.0, 0)
+
+	visible = true
+	for child in get_children():
+		if child is Node3D:
+			child.visible = true
+			child.scale = Vector3.ONE
+
+	print("Alien_1 ready at:", global_position)
+
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+
+
 
 
 func _is_rover_body(body: Node) -> bool:

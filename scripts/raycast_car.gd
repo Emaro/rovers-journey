@@ -11,39 +11,61 @@ class_name RaycastCar
 
 @export var skid_marks : Array[GPUParticles3D]
 @export var show_debug := false
-@export var disable_nav := false
+@export var disable_nav := true
 
 @onready var total_wheels := wheels.size()
 
 var motor_input := 0.0
-var handbrake := false # probably remove
+var handbrake := false
 var is_slipping := false
 
+
 func _ready() -> void:
-	# Optional but useful later to find the rover:
 	add_to_group("rover")
-	# anything else you need here
+
 
 func _unhandled_input(event: InputEvent) -> void:
+	if disable_nav:
+		return  # ignore all driving-related input while nav is disabled
+
 	if event.is_action_pressed("handbrake"):
 		is_slipping = true
 	
+
 func _process(delta: float) -> void:
+	if disable_nav:
+		# No driving input when navigation is disabled
+		motor_input = 0.0
+		handbrake = true          # hold car in place
+		return
+
 	motor_input = Input.get_axis("move_back", "move_forward")
 	handbrake = Input.is_action_pressed("handbrake")
 
+
 func basic_steering_rotation(wheel: RaycastWheel, delta: float) -> void:
-	if not wheel.is_steer: return
+	if not wheel.is_steer:
+		return
+
+	if disable_nav:
+		# keep wheels centered when nav is disabled
+		wheel.rotation.y = move_toward(wheel.rotation.y, 0, tire_turn_speed * delta)
+		return
 	
 	var turn_input := Input.get_axis("move_right", "move_left") * tire_turn_speed
 	if turn_input:
-		wheel.rotation.y = clampf(wheel.rotation.y + turn_input * delta,
-			deg_to_rad(-tire_max_turn_degrees), deg_to_rad(tire_max_turn_degrees))
+		wheel.rotation.y = clampf(
+			wheel.rotation.y + turn_input * delta,
+			deg_to_rad(-tire_max_turn_degrees),
+			deg_to_rad(tire_max_turn_degrees)
+		)
 	else:
 		wheel.rotation.y = move_toward(wheel.rotation.y, 0, tire_turn_speed * delta)
 
-func do_single_wheel_traction(ray: RaycastWheel,id : int):
-	if not ray.is_colliding(): return
+
+func do_single_wheel_traction(ray: RaycastWheel, id: int) -> void:
+	if not ray.is_colliding():
+		return
 	
 	var steer_side_dir := ray.global_basis.x
 	var tire_vel := get_point_velocity(ray.wheel.global_position)
@@ -62,27 +84,23 @@ func do_single_wheel_traction(ray: RaycastWheel,id : int):
 	elif is_slipping:
 		x_traction = 0.1
 		 
-	# F = M * A
-	var g : float = ProjectSettings.get_setting("physics/3d/default_gravity")
-	# make more responsive by applying to global_basis.x instead of steer_side_dir
-	# var x_force := -global_basis.x * steering_x_vel * x_traction * (mass*g/4)
-	var x_force := -steer_side_dir * steering_x_vel * x_traction * (mass*g/4)
+	var g: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+	var x_force := -steer_side_dir * steering_x_vel * x_traction * (mass * g / 4.0)
 	
-	# z force traction
 	var f_vel := -ray.global_basis.z.dot(tire_vel)
 	var z_traction := 0.05
-	# can also use ray.global_basis
-	var z_force := global_basis.z * f_vel * z_traction * (mass*g/4)
+	var z_force := global_basis.z * f_vel * z_traction * (mass * g / 4.0)
 	
 	var force_pos := ray.wheel.global_position - global_position
 	apply_force(x_force, force_pos)
 	apply_force(z_force, force_pos)
-	DebugDraw3D.draw_arrow_ray(ray.wheel.global_position, x_force/mass, 1.0, Color.GREEN, 0.05)
-	DebugDraw3D.draw_arrow_ray(ray.wheel.global_position, z_force/mass, 1.0, Color.PURPLE, 0.05)
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	DebugDraw3D.draw_arrow_ray(ray.wheel.global_position, x_force / mass, 1.0, Color.GREEN, 0.05)
+	DebugDraw3D.draw_arrow_ray(ray.wheel.global_position, z_force / mass, 1.0, Color.PURPLE, 0.05)
+
+
 func _physics_process(delta: float) -> void:
-	if show_debug: DebugDraw3D.draw_arrow_ray(global_position, linear_velocity, 1.0, Color.YELLOW, 0.05)
+	if show_debug:
+		DebugDraw3D.draw_arrow_ray(global_position, linear_velocity, 1.0, Color.YELLOW, 0.05)
 	
 	var id := 0
 	var grounded := false
@@ -112,11 +130,14 @@ func _physics_process(delta: float) -> void:
 		center_of_mass_mode = RigidBody3D.CENTER_OF_MASS_MODE_CUSTOM
 		center_of_mass = Vector3.DOWN * lower_center_of_mass
 
-func do_single_wheel_acceleration(ray: RaycastWheel) -> void:		
+
+func do_single_wheel_acceleration(ray: RaycastWheel) -> void:
 	var forward_dir := ray.global_basis.z
 	var vel := forward_dir.dot(linear_velocity)
-	ray.wheel.rotate_x((vel * get_process_delta_time()) /  ray.wheel_radius)
-			
+	ray.wheel.rotate_x((vel * get_process_delta_time()) / ray.wheel_radius)
+	
+	if disable_nav:
+		return  # no acceleration forces when nav disabled
 	
 	if ray.is_colliding():
 		var contact := ray.wheel.global_position
@@ -127,11 +148,11 @@ func do_single_wheel_acceleration(ray: RaycastWheel) -> void:
 			var acc := acceleration_curve.sample_baked(speed_ratio)
 			var force_vector := forward_dir * acceleration * motor_input * acc
 			apply_force(force_vector, force_pos)
-			DebugDraw3D.draw_arrow_ray(contact, force_vector/mass, 1.0, Color.RED, 0.05)
-			
+			DebugDraw3D.draw_arrow_ray(contact, force_vector / mass, 1.0, Color.RED, 0.05)
+
+
 func do_single_wheel_suspension(ray: RaycastWheel) -> void:
-	if (ray.is_colliding()):
-		# remove pulling force
+	if ray.is_colliding():
 		ray.target_position.y = -(ray.rest_dist + ray.wheel_radius + ray.over_extend)
 		
 		var contact := ray.get_collision_point()
@@ -154,7 +175,8 @@ func do_single_wheel_suspension(ray: RaycastWheel) -> void:
 		var force_pos_offset := contact - global_position
 		apply_force(force_vector, force_pos_offset)
 
-		DebugDraw3D.draw_arrow_ray(contact, force_vector/mass, 1.0, Color.BLUE, 0.05)
+		DebugDraw3D.draw_arrow_ray(contact, force_vector / mass, 1.0, Color.BLUE, 0.05)
 		
+
 func get_point_velocity(point: Vector3) -> Vector3:
 	return linear_velocity + angular_velocity.cross(point - global_position)
