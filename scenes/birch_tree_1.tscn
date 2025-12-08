@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx3ydd8mpj06y"]
+
+[ext_resource type="PackedScene" uid="uid://cjluqsnhgshmk" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/BirchTree_1.fbx" id="1_gdxn6"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pox6w"]
+height = 4.8623047
+radius = 0.30029297
+
+[node name="BirchTree_1" instance=ExtResource("1_gdxn6")]
+
+[node name="BirchTree_1" parent="." index="0"]
+transform = Transform3D(300, 0, 0, 0, -1.3113417e-05, 300, 0, -300, -1.3113417e-05, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.9154239, 0.4024911, 0, -0.4024911, 0.9154239, 0.39345455, 2.3579378, -0.89203167)
+shape = SubResource("CylinderShape3D_pox6w")

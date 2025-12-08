@@ -7,17 +7,17 @@
 albedo_texture = ExtResource("2_ex66d")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_w8diw"]
-height = 5.7213745
-radius = 0.6040039
+height = 13.493011
+radius = 1.5097656
 
 [node name="Tree Type6 03" instance=ExtResource("1_o4nvv")]
 
 [node name="Tree_Type6_03_mesh" parent="." index="0"]
-transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 0, 0)
+transform = Transform3D(8, 0, 0, 0, -3.496911e-07, -8, 0, 8, -3.496911e-07, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_3y8wc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20850068, 2.7541165, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20850068, 6.639935, 0)
 shape = SubResource("CylinderShape3D_w8diw")
