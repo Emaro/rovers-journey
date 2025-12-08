@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvfn51u0mwgey"]
+
+[ext_resource type="PackedScene" uid="uid://dauynva6dhdvs" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Cactus_3.fbx" id="1_fy5iu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3uwn4"]
+height = 2.250122
+radius = 0.25830078
+
+[node name="Cactus_3" instance=ExtResource("1_fy5iu")]
+
+[node name="Cactus_3" parent="." index="0"]
+transform = Transform3D(250, 0, 0, 0, -1.0927847e-05, 250, 0, -250, -1.0927847e-05, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1.479562, 0, 0, 0, 1.479562, 0, 0, 0, 1.479562, 0, 1.6722806, 0)
+shape = SubResource("CylinderShape3D_3uwn4")

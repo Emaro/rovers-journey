@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b44ybtmsvguta"]
+
+[ext_resource type="PackedScene" uid="uid://bes83ipp5lgff" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/CactusFlowers_2.fbx" id="1_agj5e"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_16ddt"]
+height = 3.3376465
+radius = 0.38476563
+
+[node name="CactusFlowers_2" instance=ExtResource("1_agj5e")]
+
+[node name="CactusFlowers_2" parent="." index="0"]
+transform = Transform3D(200, 0, 0, 0, -8.742278e-06, 200, 0, -200, -8.742278e-06, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625222, 0)
+shape = SubResource("CylinderShape3D_16ddt")

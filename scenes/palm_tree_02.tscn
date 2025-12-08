@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://csdujpjcvoldn"]
+
+[ext_resource type="PackedScene" uid="uid://dpvic7ll84y73" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/PalmTree_1.fbx" id="1_mmlns"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_o3di3"]
+height = 2.4597168
+radius = 0.21386719
+
+[node name="PalmTree_1" instance=ExtResource("1_mmlns")]
+
+[node name="PalmTree_1" parent="." index="0"]
+transform = Transform3D(200, 0, 0, 0, -8.742278e-06, 200, 0, -200, -8.742278e-06, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15997267, 1.1824859, 0)
+shape = SubResource("CylinderShape3D_o3di3")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.897751, -0.44050333, 0, 0.44050333, 0.897751, -0.17063808, 2.9677691, 0.6277571)
+shape = SubResource("CylinderShape3D_o3di3")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://btithhprhdxny"]
+
+[ext_resource type="PackedScene" uid="uid://b6j8s0c4ayn20" path="res://assets/models/Ultimate Nature Pack by Quaternius/Blends/Grass_2.blend" id="1_e1kak"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1kak"]
+resource_name = "Green"
+cull_mode = 2
+albedo_color = Color(0.3254902, 0.7254902, 0.27058825, 1)
+roughness = 0.5
+
+[node name="Grass_22" instance=ExtResource("1_e1kak")]
+
+[node name="Grass_2" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_e1kak")
