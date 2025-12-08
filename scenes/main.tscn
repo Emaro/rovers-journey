@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=31 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien_1.tscn" id="4_jyhfs"]
@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://c2suk4ky5e7mq" path="res://scenes/alien_info_lava.tscn" id="20_yc10j"]
 [ext_resource type="PackedScene" uid="uid://cv22yn5ht4yp4" path="res://scenes/alien_info_water.tscn" id="21_jscy8"]
 [ext_resource type="PackedScene" uid="uid://e4tbo2c0vtg1" path="res://assets/crystal_light.tscn" id="22_jscy8"]
-[ext_resource type="PackedScene" uid="uid://b25tuhpvvctha" path="res://scenes/lava.tscn" id="23_pm3ni"]
 
 [sub_resource type="Animation" id="Animation_o6xl0"]
 length = 0.001
@@ -141,8 +140,8 @@ fog_density = 0.0735
 volumetric_fog_enabled = true
 volumetric_fog_length = 10.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_0ld40"]
-radius = 88.669914
+[sub_resource type="BoxShape3D" id="BoxShape3D_jscy8"]
+size = Vector3(161, 35, 149)
 
 [node name="Main" type="Node3D"]
 
@@ -344,8 +343,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.94104, 0, 161.42108)
 script = ExtResource("18_dp3eg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.373947, 0, -2.955511)
-shape = SubResource("SphereShape3D_0ld40")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.126053, -4.5, -4.4555054)
+shape = SubResource("BoxShape3D_jscy8")
 
 [node name="Info_Aliens" type="Node3D" parent="."]
 
@@ -367,9 +366,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.13236, 8.632917, 185.130
 light_color = Color(0.8022955, 0.43777448, 0.8432384, 1)
 shadow_enabled = true
 omni_range = 16.307486
-
-[node name="Lava" parent="." instance=ExtResource("23_pm3ni")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.057846, 4.5945625, -33.006565)
 
 [node name="Spawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.82175, 2.2798433, -66.15085)

@@ -70,7 +70,7 @@ func _ready() -> void:
 
 	upgrade_btn.pressed.connect(_on_upgrade_pressed)
 	cancel_btn.pressed.connect(_on_cancel_pressed)
-	start_button.pressed.connect(_on_start_button_pressed)
+	# start_button.pressed.connect(_on_start_button_pressed)
 
 	story_next_button.pressed.connect(_on_story_next_pressed)
 	call_home_button.pressed.connect(_on_call_home_pressed)

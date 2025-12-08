@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=4 uid="uid://bhlus1o4fqfxd"]
+[gd_scene load_steps=162 format=4 uid="uid://bhlus1o4fqfxd"]
 
 [ext_resource type="Terrain3DMaterial" uid="uid://jhie1oni47jk" path="res://terrain_data/terrain_desert/terrain_desert_material.res" id="2_e1alf"]
 [ext_resource type="Terrain3DAssets" uid="uid://07flg1gdbrp2" path="res://terrain_data/terrain_desert/terrain_desert.res" id="3_3lhbf"]
@@ -139,6 +139,8 @@
 [ext_resource type="PackedScene" uid="uid://bhl37mca84mtm" path="res://entities/weird_ring.tscn" id="136_e1alf"]
 [ext_resource type="PackedScene" uid="uid://c52bi7l6tadfc" path="res://assets/models/Stylized Nature MegaKit[Standard]/FBX/Petal_4.fbx" id="136_xkv5a"]
 [ext_resource type="PackedScene" uid="uid://c6eewk8djck30" path="res://scenes/starting_area.tscn" id="140_3lhbf"]
+[ext_resource type="PackedScene" uid="uid://b25tuhpvvctha" path="res://scenes/lava.tscn" id="140_c16b8"]
+[ext_resource type="Texture2D" uid="uid://dkus8ohxfasuh" path="res://assets/textures/Metal Plates/1/1_diffuseOriginal.bmp" id="141_c16b8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0m2d"]
 resource_name = "Starfish"
@@ -324,6 +326,17 @@ shadow_mesh = SubResource("ArrayMesh_3wg2l")
 size = Vector3(3.9838257, 0.076660156, 4.019043)
 
 [sub_resource type="BoxMesh" id="BoxMesh_c5wes"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8cimk"]
+albedo_texture = ExtResource("141_c16b8")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_3lhbf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jdo05"]
+size = Vector3(35, 1, 10)
 
 [node name="TerrainDesert" type="Node3D"]
 
@@ -816,3 +829,102 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.196594, -2.6289005, -28.01
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.334175, -2.6289005, -36.968018)
 
 [node name="StartingArea" parent="." instance=ExtResource("140_3lhbf")]
+
+[node name="LavaLakes" type="Node3D" parent="."]
+
+[node name="Lava" parent="LavaLakes" instance=ExtResource("140_c16b8")]
+transform = Transform3D(30.039917, 0, -5.944264, 0, 1, 0, 2.204411, 0, 81.003555, -147.93306, 4.4485855, 159.25331)
+
+[node name="Lava2" parent="LavaLakes" instance=ExtResource("140_c16b8")]
+transform = Transform3D(24.786333, 0, -1.3799591, 0, 1, 0, 1.8188885, 0, 18.80495, -115.21321, 10.123678, 115.10292)
+
+[node name="Lava3" parent="LavaLakes" instance=ExtResource("140_c16b8")]
+transform = Transform3D(24.786333, 0, -1.3799591, 0, 1, 0, 1.8188885, 0, 18.80495, -173.70337, 6.5843678, 106.06002)
+
+[node name="Lava4" parent="LavaLakes" instance=ExtResource("140_c16b8")]
+transform = Transform3D(59.579372, 0, -1.4741219, 0, 1, 0, 4.3720965, 0, 20.088125, -22.466496, 19.584368, 213.03201)
+
+[node name="Lava5" parent="LavaLakes" instance=ExtResource("140_c16b8")]
+transform = Transform3D(21.688435, 0, -1.53938, 0, 1, 0, 1.5915564, 0, 20.977407, -51.721947, 18.043827, 146.35222)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LavaLakes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.26904, 1.0804043, 129.3018)
+light_color = Color(1, 0.5411765, 0.28235295, 1)
+light_energy = 15.0
+light_volumetric_fog_energy = 3.0
+omni_range = 22.288382
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="LavaLakes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.83646, 9.234967, 116.662605)
+light_color = Color(1, 0.5411765, 0.28235295, 1)
+light_energy = 15.0
+light_volumetric_fog_energy = 3.0
+omni_range = 22.087511
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="LavaLakes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.631123, 18.027828, 142.76672)
+light_color = Color(1, 0.5411765, 0.28235295, 1)
+light_energy = 15.0
+light_volumetric_fog_energy = 3.0
+omni_range = 13.755633
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="LavaLakes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.66078, 17.919857, 211.09369)
+light_color = Color(1, 0.5411765, 0.28235295, 1)
+light_energy = 15.0
+light_volumetric_fog_energy = 3.0
+omni_range = 22.087511
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="LavaLakes"]
+transform = Transform3D(0.99982464, 0, 0.018726287, 0, 1, 0, -0.018726287, 0, 0.99982464, -16.876846, 18.275902, 214.61722)
+light_color = Color(1, 0.5411765, 0.28235295, 1)
+light_energy = 15.0
+light_volumetric_fog_energy = 3.0
+omni_range = 22.087511
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="LavaLakes"]
+transform = Transform3D(0.99982464, 0, 0.018726287, 0, 1, 0, -0.018726287, 0, 0.99982464, -2.782669, 18.142147, 214.61722)
+light_color = Color(1, 0.5411765, 0.28235295, 1)
+light_energy = 15.0
+light_volumetric_fog_energy = 3.0
+omni_range = 22.087511
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="LavaLakes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -174.14299, 6.347313, 106.02705)
+light_color = Color(1, 0.5411765, 0.28235295, 1)
+light_energy = 15.0
+light_volumetric_fog_energy = 3.0
+omni_range = 22.087511
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="LavaLakes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.26904, 1.0804043, 167.22285)
+light_color = Color(1, 0.5411765, 0.28235295, 1)
+light_energy = 15.0
+light_volumetric_fog_energy = 3.0
+omni_range = 13.122561
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="LavaLakes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.65836, 3.4410057, 149.20691)
+light_color = Color(1, 0.5411765, 0.28235295, 1)
+light_energy = 15.0
+light_volumetric_fog_energy = 3.0
+omni_range = 14.51425
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="LavaLakes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.48479, 1.0804043, 186.9107)
+light_color = Color(1, 0.5411765, 0.28235295, 1)
+light_energy = 15.0
+light_volumetric_fog_energy = 3.0
+omni_range = 22.288382
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.97335523, 0, -0.22930233, 0, 1, 0, 0.22930233, 0, 0.97335523, -81.79663, 18.678131, 139.73492)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(34.175285, 0, 0, 0, 1, 0, 0, 0, 9.989271, 0, 0.6579704, 0)
+material_override = SubResource("StandardMaterial3D_8cimk")
+mesh = SubResource("BoxMesh_3lhbf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65834427, 0)
+shape = SubResource("BoxShape3D_jdo05")
