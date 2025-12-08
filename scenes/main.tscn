@@ -369,11 +369,12 @@ shadow_enabled = true
 omni_range = 16.307486
 
 [node name="Lava" parent="." instance=ExtResource("23_pm3ni")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.814653, 0.97229576, 106.18353)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.057846, 4.5945625, -33.006565)
 
 [node name="Spawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.82175, 2.2798433, -66.15085)
 
 [connection signal="animation_finished" from="Alien_1/AnimationPlayer" to="Alien_1" method="_on_animation_player_animation_finished"]
+[connection signal="health_changed" from="Rover" to="HUD" method="_on_rover_health_changed"]
 [connection signal="body_entered" from="DarkArea" to="DarkArea" method="_on_body_entered"]
 [connection signal="body_exited" from="DarkArea" to="DarkArea" method="_on_body_exited"]

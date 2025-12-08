@@ -7,7 +7,7 @@ extends Control
 @onready var metalscrap_label: Label = $MetalscrapLabel
 @onready var wood_label: Label = $WoodLabel
 @onready var crystal_label: Label = $CrystalLabel
-
+@onready var health_label: Label = $HealthLabel
 @onready var alien_dialog: PanelContainer = $AlienDialog
 @onready var msg_label: Label = $AlienDialog/VBox/Msg
 @onready var upgrade_btn: Button = $AlienDialog/VBox/Buttons/UpgradeBtn
@@ -363,3 +363,7 @@ func on_tower_completed() -> void:
 
 func _on_dark_area_body_entered(body: Node3D) -> void:
 	pass
+
+
+func _on_rover_health_changed(old_health: Variant, new_health: Variant) -> void:
+	health_label.text = "<3 ".repeat(new_health).trim_suffix(" ")

@@ -20,6 +20,8 @@ class_name RaycastCar
 
 @onready var total_wheels := wheels.size()
 
+signal health_changed(old_health, new_health)
+
 var motor_input := 0.0
 var handbrake := false
 var is_slipping := false
@@ -51,6 +53,7 @@ func kill():
 	health -= 1
 	global_position = spawn.position
 	rotation = spawn.rotation
+	health_changed.emit(health +  1, health)
 
 func basic_steering_rotation(wheel: RaycastWheel, delta: float) -> void:
 	if not wheel.is_steer:

@@ -117,6 +117,19 @@ offset_bottom = 202.0
 theme_override_font_sizes/font_size = 30
 text = "Crystal: 0"
 
+[node name="HealthLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.975
+anchor_right = 1.0
+anchor_bottom = 0.041
+offset_left = -89.10144
+offset_top = 19.36251
+offset_right = -22.476074
+offset_bottom = 17.965775
+grow_horizontal = 0
+text = "<3 <3 <3"
+
 [node name="StartScreen" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
