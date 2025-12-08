@@ -79,6 +79,7 @@ func _ready() -> void:
 	get_tree().node_added.connect(_on_node_added)
 
 	_set_rover_navigation_enabled(false)
+	$RespawnButton.focus_mode = FocusMode.FOCUS_NONE
 
 	_refresh()
 	Inventory.changed.connect(_refresh)
@@ -367,3 +368,9 @@ func _on_dark_area_body_entered(body: Node3D) -> void:
 
 func _on_rover_health_changed(old_health: Variant, new_health: Variant) -> void:
 	health_label.text = "<3 ".repeat(new_health).trim_suffix(" ")
+
+
+func _on_button_pressed() -> void:
+	var rover := get_tree().get_first_node_in_group("rover") as RaycastCar
+	if rover:
+		rover.kill()

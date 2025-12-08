@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8m708uldsn0b"]
+
+[ext_resource type="Script" uid="uid://bf0wiqlw6a6yj" path="res://scenes/lava.gd" id="1_s3811"]
+[ext_resource type="Material" uid="uid://b36k4ru0b7mca" path="res://assets/water.tres" id="2_p1n2c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dw3wf"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_snnrc"]
+
+[node name="Water" type="Area3D"]
+script = ExtResource("1_s3811")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dw3wf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("2_p1n2c")
+mesh = SubResource("BoxMesh_snnrc")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
