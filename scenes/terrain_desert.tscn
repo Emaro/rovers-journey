@@ -1,7 +1,5 @@
-[gd_scene load_steps=162 format=4 uid="uid://bhlus1o4fqfxd"]
+[gd_scene load_steps=160 format=4 uid="uid://bhlus1o4fqfxd"]
 
-[ext_resource type="Terrain3DMaterial" uid="uid://jhie1oni47jk" path="res://terrain_data/terrain_desert/terrain_desert_material.res" id="2_e1alf"]
-[ext_resource type="Terrain3DAssets" uid="uid://07flg1gdbrp2" path="res://terrain_data/terrain_desert/terrain_desert.res" id="3_3lhbf"]
 [ext_resource type="PackedScene" uid="uid://5cgxqj6x36sa" path="res://assets/models/Low poly rocks/Models/Rock Type1 01.dae" id="3_7yfra"]
 [ext_resource type="PackedScene" uid="uid://t67xrerhxbsy" path="res://assets/models/Low poly rocks/Models/Rock Type1 02.dae" id="4_a3jnr"]
 [ext_resource type="PackedScene" uid="uid://4ljvy7h7bh4" path="res://assets/models/Low poly rocks/Models/Rock Type1 03.dae" id="5_5orao"]
@@ -342,15 +340,6 @@ size = Vector3(35, 1, 10)
 
 [node name="Rock Type1 05" parent="." instance=ExtResource("8_up6qc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0358696, 0.012912273, 5.208581)
-
-[node name="Terrain3D" type="Terrain3D" parent="."]
-data_directory = "res://terrain_data/terrain_desert"
-material = ExtResource("2_e1alf")
-assets = ExtResource("3_3lhbf")
-collision_mode = 0
-top_level = true
-visible = false
-metadata/_edit_lock_ = true
 
 [node name="Rock Type6 02" parent="." instance=ExtResource("25_nmrnd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70011425, 0, 24.170982)
@@ -917,14 +906,14 @@ light_energy = 15.0
 light_volumetric_fog_energy = 3.0
 omni_range = 22.288382
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Bridge" type="StaticBody3D" parent="."]
 transform = Transform3D(0.97335523, 0, -0.22930233, 0, 1, 0, 0.22930233, 0, 0.97335523, -81.79663, 18.678131, 139.73492)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bridge"]
 transform = Transform3D(34.175285, 0, 0, 0, 1, 0, 0, 0, 9.989271, 0, 0.6579704, 0)
 material_override = SubResource("StandardMaterial3D_8cimk")
 mesh = SubResource("BoxMesh_3lhbf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65834427, 0)
 shape = SubResource("BoxShape3D_jdo05")

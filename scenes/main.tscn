@@ -312,7 +312,7 @@ shape = SubResource("BoxShape3D_0ld40")
 environment = SubResource("Environment_dp3eg")
 
 [node name="TerrainDesert" parent="." instance=ExtResource("16_jbj1t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0029296875, -0.01159668, 0.9862366)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.950966, -114.50533, 29.449638)
@@ -369,6 +369,18 @@ omni_range = 16.307486
 
 [node name="Spawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.82175, 2.2798433, -66.15085)
+
+[node name="MetalScrapResource" parent="." instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 0, -1)
+
+[node name="RockResource" parent="." instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 0, -1)
+
+[node name="SandstoneResource" parent="." instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 0, -2)
+
+[node name="WoodResource" parent="." instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 0, 3)
 
 [connection signal="animation_finished" from="Alien_1/AnimationPlayer" to="Alien_1" method="_on_animation_player_animation_finished"]
 [connection signal="health_changed" from="Rover" to="HUD" method="_on_rover_health_changed"]
