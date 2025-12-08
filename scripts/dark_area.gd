@@ -1,5 +1,6 @@
 extends Area3D
 
+@export var volumetric_dark_length_max : float = 50.0
 @onready var env: Environment = $"../WorldEnvironment".environment
 
 var fog : bool = false;
@@ -15,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (fog and t < 1):
 		t += delta * 0.2
-		env.volumetric_fog_length = lerpf(start_val, 100, t)
+		env.volumetric_fog_length = lerpf(start_val, volumetric_dark_length_max, t)
 	elif !fog and t < 1:
 		t += delta * 0.2
 		env.volumetric_fog_length = lerpf(start_val, 10, t)

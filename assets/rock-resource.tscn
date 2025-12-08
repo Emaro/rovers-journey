@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://66pni2vgvdo1"]
+
+[ext_resource type="PackedScene" uid="uid://b0mxwt032af3c" path="res://assets/models/Low poly rocks/Models/Rock Type3 04.dae" id="1_58ap4"]
+[ext_resource type="Texture2D" uid="uid://bp138qtr1u3yv" path="res://assets/models/Low poly rocks/Textures/Colorsheet Rock Green.png" id="2_aeg2r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sb50e"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 1, 1, 1)
+grow = true
+grow_amount = 0.02
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05k5j"]
+next_pass = SubResource("StandardMaterial3D_sb50e")
+albedo_texture = ExtResource("2_aeg2r")
+emission = Color(0, 0.78431374, 0.93333334, 1)
+emission_energy_multiplier = 0.2
+ao_enabled = true
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0, 1, 1, 1)
+stencil_outline_thickness = 0.02
+
+[node name="Rock Type3 04" instance=ExtResource("1_58ap4")]
+
+[node name="Rock_Type3_04_mesh" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_05k5j")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22977233, 0)
+light_color = Color(0, 1, 1, 1)
+light_volumetric_fog_energy = 0.5

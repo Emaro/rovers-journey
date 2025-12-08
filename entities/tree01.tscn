@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://weoyf5gy6wfw"]
+[gd_scene load_steps=6 format=3 uid="uid://weoyf5gy6wfw"]
 
 [ext_resource type="PackedScene" uid="uid://chkhv10td1ad" path="res://assets/models/Low poly trees/Models/Tree Type0 03.dae" id="1_eek0x"]
 [ext_resource type="Texture2D" uid="uid://bshrw6hu2xid8" path="res://assets/models/Low poly trees/Textures/Colorsheet Tree Normal.png" id="2_nmn2t"]
@@ -7,6 +7,10 @@
 albedo_color = Color(1, 0.5803922, 0.88235295, 1)
 albedo_texture = ExtResource("2_nmn2t")
 metallic_specular = 0.48
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kpx8b"]
+friction = 0.0
+bounce = 0.7
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_eek0x"]
 height = 7.8793945
@@ -17,6 +21,7 @@ height = 7.8793945
 surface_material_override/0 = SubResource("StandardMaterial3D_yk6tr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+physics_material_override = SubResource("PhysicsMaterial_kpx8b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8947754, 0)

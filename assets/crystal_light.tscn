@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://e4tbo2c0vtg1"]
+
+[node name="OmniLight3D" type="OmniLight3D"]
+light_color = Color(0.779968, 0.3958898, 0.82094204, 1)
+light_energy = 10.0
+
+[node name="CrystalLight" type="Node3D" parent="."]

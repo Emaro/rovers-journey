@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=31 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien_1.tscn" id="4_jyhfs"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://brahuilm236c7" path="res://scripts/dark_area.gd" id="18_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://c2suk4ky5e7mq" path="res://scenes/alien_info_lava.tscn" id="20_yc10j"]
 [ext_resource type="PackedScene" uid="uid://cv22yn5ht4yp4" path="res://scenes/alien_info_water.tscn" id="21_jscy8"]
+[ext_resource type="PackedScene" uid="uid://e4tbo2c0vtg1" path="res://assets/crystal_light.tscn" id="22_jscy8"]
 
 [sub_resource type="Animation" id="Animation_o6xl0"]
 length = 0.001
@@ -140,15 +141,17 @@ volumetric_fog_enabled = true
 volumetric_fog_length = 10.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0ld40"]
-radius = 37.55175
+radius = 88.669914
 
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+transform = Transform3D(-0.7419642, -0.47407246, 0.47407246, 0, 0.7071068, 0.7071068, -0.6704396, 0.52464783, -0.52464783, 0, 7.7081947, 0)
+light_energy = 0.9
 light_volumetric_fog_energy = 0.0
-light_specular = 2.0
 shadow_enabled = true
+shadow_normal_bias = 0.0
+shadow_opacity = 0.85
 
 [node name="HUD" parent="." instance=ExtResource("3_sugp2")]
 
@@ -163,10 +166,9 @@ libraries = {
 }
 
 [node name="Rover" parent="." instance=ExtResource("5_tbgi4")]
-transform = Transform3D(0.007906224, 0, -0.9999687, 0, 1, 0, 0.9999687, 0, 0.007906224, 182.5242, 11.850445, 111.5809)
+transform = Transform3D(0.007906224, 0, -0.9999687, 0, 1, 0, 0.9999687, 0, 0.007906224, -40.91223, 11.850445, 111.5809)
 linear_damp_mode = 1
-acceleration = 400.0
-max_speed = 30.0
+max_speed = 20.0
 lower_center_of_mass = 0.2
 show_debug = false
 
@@ -186,7 +188,7 @@ hud = NodePath("../../../HUD")
 [node name="Rocks" type="Node3D" parent="Resources"]
 
 [node name="RockResource" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.5, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.867823, 0.064933896, 27)
 
 [node name="RockResource2" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, -32.458)
@@ -198,7 +200,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.225, 0.5, -40.982)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, 54)
 
 [node name="RockResource5" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.5, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -0.058657885, 28.384092)
 
 [node name="RockResource6" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 27)
@@ -207,13 +209,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 27)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.5, 27)
 
 [node name="RockResource8" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.5, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.11865091, 22.48265)
 
 [node name="RockResource9" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, 54)
 
 [node name="RockResource10" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.5, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.740486, 0.08133626, 27)
 
 [node name="Sandstones" type="Node3D" parent="Resources"]
 
@@ -336,7 +338,7 @@ light_volumetric_fog_energy = 4.94
 omni_range = 8.404954
 
 [node name="DarkArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.802006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.94104, 0, 161.42108)
 script = ExtResource("18_dp3eg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DarkArea"]
@@ -350,6 +352,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 1, 0)
 
 [node name="Alien_Info_Water" parent="Info_Aliens" instance=ExtResource("21_jscy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 1, 0)
+
+[node name="CrystalLight" parent="." instance=ExtResource("22_jscy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.143234, 6.232647, 200.50607)
+light_energy = 50.0
+light_volumetric_fog_energy = 0.5
+shadow_enabled = true
+omni_range = 20.306171
+
+[node name="CrystalLight2" parent="." instance=ExtResource("22_jscy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.13236, 8.632917, 185.13095)
+light_color = Color(0.8022955, 0.43777448, 0.8432384, 1)
+shadow_enabled = true
+omni_range = 16.307486
 
 [connection signal="animation_finished" from="Alien_1/AnimationPlayer" to="Alien_1" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="DarkArea" to="DarkArea" method="_on_body_entered"]

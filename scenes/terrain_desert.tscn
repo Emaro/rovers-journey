@@ -351,7 +351,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130126, 0, 20.551945)
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="Rock Type1 01" parent="Node3D" instance=ExtResource("3_7yfra")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.944374, 0, 1.7476578)
+auto_translate_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.944374, 3.1051989, 1.7476578)
 
 [node name="Rock Type1 02" parent="Node3D" instance=ExtResource("4_a3jnr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.935728, 0, 1.470911)
@@ -696,7 +697,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.759796, 0, 59.93492)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.725698, 0, 54.9143)
 
 [node name="WoodLog_Snow4" parent="Node3D2/WoodLog_Snow" instance=ExtResource("107_14b70")]
-transform = Transform3D(-2.2802088, 23.062754, 1.1602672, 24.709412, 2.40797, -1.6965439, -3.685792, 1.8752013, -12.091362, 7.4246926, 5.2784014, 20.450508)
+transform = Transform3D(-2.2802088, 23.062754, 1.1602672, 24.709412, 2.40797, -1.6965439, -3.685792, 1.8752013, -12.091362, 15.789976, 5.2784014, 20.450508)
 
 [node name="WoodLog_Snow5" parent="Node3D2/WoodLog_Snow" instance=ExtResource("107_14b70")]
 transform = Transform3D(-24.269922, 4.558058, 1.9647955, 4.063844, 22.46634, -2.4877594, -4.878046, -3.961429, -11.8480425, 37.2032, -9.650931, 20.450508)
@@ -708,7 +709,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5328426, 0, 0)
 transform = Transform3D(3, 0, 0, 0, -0.23062688, 2.991122, 0, -2.991122, -0.23062688, 7.4246926, 3.203452, 6.0645485)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D2/WoodLog_Snow"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.9526, 2.6289005, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.9526, 3.5641823, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2/WoodLog_Snow/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.96515363, 0.26168388, 0, -0.26168388, 0.96515363, -0.38363647, -2.16671, -1.5095215)
