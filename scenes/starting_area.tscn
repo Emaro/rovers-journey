@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6eewk8djck30"]
+[gd_scene load_steps=4 format=3 uid="uid://c6eewk8djck30"]
 
 [ext_resource type="Terrain3DMaterial" uid="uid://d1msp1cmqgwgm" path="res://terrain_data/terrain_main/new_terrain_3d_material.res" id="1_ru252"]
 [ext_resource type="Terrain3DAssets" uid="uid://cprhb2r4jey5g" path="res://terrain_data/terrain_main/new_terrain_3d_assets.res" id="2_iru23"]
-[ext_resource type="Material" uid="uid://b36k4ru0b7mca" path="res://assets/water.tres" id="3_iru23"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_bert1"]
+[ext_resource type="PackedScene" uid="uid://b8m708uldsn0b" path="res://scenes/water.tscn" id="3_bert1"]
 
 [node name="StartingArea" type="Node3D"]
 
@@ -15,29 +13,13 @@ assets = ExtResource("2_iru23")
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(17.823782, 0, 0, 0, 1, 0, 0, 0, 15.766732, 435.71765, -0.92276, -138.25394)
-material_overlay = ExtResource("3_iru23")
-transparency = 0.46
-cast_shadow = 0
-mesh = SubResource("PlaneMesh_bert1")
-surface_material_override/0 = ExtResource("3_iru23")
+[node name="WaterLakes" type="Node3D" parent="."]
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 282.43335, -0.5499954, 142.09665)
-material_overlay = ExtResource("3_iru23")
-transparency = 0.46
-cast_shadow = 0
-mesh = SubResource("PlaneMesh_bert1")
-surface_material_override/0 = ExtResource("3_iru23")
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
+[node name="Water" parent="WaterLakes" instance=ExtResource("3_bert1")]
+transform = Transform3D(29.531193, 0, 0, 0, 1, 0, 0, 0, 26.90474, 435.71765, -1.4913769, -138.25394)
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(500, 0, 0, 0, 1, 0, 0, 0, 800, 514.89667, -1.6186295, 142.09665)
-material_overlay = ExtResource("3_iru23")
-transparency = 0.46
-cast_shadow = 0
-mesh = SubResource("PlaneMesh_bert1")
-surface_material_override/0 = ExtResource("3_iru23")
-metadata/_edit_group_ = true
+[node name="Water2" parent="WaterLakes" instance=ExtResource("3_bert1")]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 284.52878, -0.7000656, 148.46823)
+
+[node name="Water3" parent="WaterLakes" instance=ExtResource("3_bert1")]
+transform = Transform3D(1000, 0, 0, 0, 1, 0, 0, 0, 1200, 230.20737, -1.3510208, 192.67407)
