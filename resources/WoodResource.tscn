@@ -1,21 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://437odqqfoey1"]
+[gd_scene load_steps=7 format=3 uid="uid://437odqqfoey1"]
 
 [ext_resource type="Script" uid="uid://csj772a87swfs" path="res://scripts/wood_resource.gd" id="1_t16f7"]
+[ext_resource type="Texture2D" uid="uid://dq0tya4nt25kv" path="res://assets/textures/bark_02_2k/bark_02_color_2k.png" id="2_sntmt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8t7d"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(5.510971e-06, 0.6315113, 3.85046e-07, 1)
+grow = true
+grow_amount = 0.01
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uh0ds"]
+next_pass = SubResource("StandardMaterial3D_h8t7d")
+diffuse_mode = 3
+albedo_color = Color(0.9647059, 1, 1, 1)
+albedo_texture = ExtResource("2_sntmt")
+metallic_specular = 0.0
+roughness = 0.46
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(5.510971e-06, 0.6315113, 3.85046e-07, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_sntmt"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t16f7"]
-albedo_color = Color(0.16862746, 0.09019608, 0, 1)
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_h8t7d"]
+height = 0.9063721
+radius = 0.6689453
 
 [node name="WoodResource" type="Area3D"]
 script = ExtResource("1_t16f7")
 
 [node name="WoodMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.7713452, 0, 0.68943995, 0, 0.7, 0, -0.91925335, 0, 0.57850885, 0, 0, 0)
+transform = Transform3D(1.1954336, -1.3382553e-08, 0.078440145, 0.10458678, -1.3382548e-08, -0.8965751, 1.7193965e-08, 0.43297148, -4.583433e-08, 0, 0.34819442, 0)
+material_override = SubResource("StandardMaterial3D_uh0ds")
 mesh = SubResource("CylinderMesh_sntmt")
-surface_material_override/0 = SubResource("StandardMaterial3D_t16f7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.033643615, -0.9994339, 0, 0.9994339, -0.033643615, 0, 0.5921332, 0.015555158)
 shape = SubResource("CylinderShape3D_h8t7d")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6822221, 0)
+light_color = Color(5.77569e-06, 0.82510924, 3.85046e-07, 1)
+omni_range = 1.6827849

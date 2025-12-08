@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://w13j8qwto5sm"]
+
+[ext_resource type="PackedScene" uid="uid://ci20r3821kuad" path="res://assets/models/Low poly rocks/Models/Rock Type2 01.dae" id="1_y6vy8"]
+[ext_resource type="Texture2D" uid="uid://sjacjey3anht" path="res://assets/models/Low poly rocks/Textures/Colorsheet Rock Sand.png" id="2_wggtw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wggtw"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.48235294, 0, 1)
+grow = true
+grow_amount = 0.01
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ov62"]
+next_pass = SubResource("StandardMaterial3D_wggtw")
+albedo_texture = ExtResource("2_wggtw")
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(1, 0.48235294, 0, 1)
+
+[node name="Rock Type2 01" instance=ExtResource("1_y6vy8")]
+
+[node name="Rock_Type2_01_mesh" parent="." index="0"]
+transform = Transform3D(0.7, 0, 0, 0, -3.059797e-08, -0.7, 0, 0.7, -3.059797e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_2ov62")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39254737, 0)
+light_color = Color(1, 0.5803922, 0.10980392, 1)
+omni_range = 2.6925004

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxsgfnjoxo0bf"]
+[gd_scene load_steps=6 format=3 uid="uid://dxsgfnjoxo0bf"]
 
 [ext_resource type="Script" uid="uid://cgaxwbmbbg7yo" path="res://scripts/sandstone_resource.gd" id="1_gj6t0"]
+[ext_resource type="PackedScene" uid="uid://du6gamrxxjmnl" path="res://entities/sandstone.tscn" id="2_wgcwf"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_08epp"]
 
@@ -14,8 +15,18 @@ script = ExtResource("1_gj6t0")
 
 [node name="SandstoneMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7713452, 0, 0.68943995, 0, 0.7, 0, -0.91925335, 0, 0.57850885, 0, 0, 0)
+visible = false
 mesh = SubResource("SphereMesh_08epp")
 surface_material_override/0 = SubResource("StandardMaterial3D_gj6t0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36743546, 0)
 shape = SubResource("SphereShape3D_08epp")
+
+[node name="Rock Type6 04" parent="." instance=ExtResource("2_wgcwf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056663513, 0, -0.03852254)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11563873, 0)
+light_color = Color(1, 1, 0, 1)
+omni_range = 1.6912388

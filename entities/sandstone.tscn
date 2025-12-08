@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://du6gamrxxjmnl"]
+
+[ext_resource type="PackedScene" uid="uid://dp7vnn2ax4txw" path="res://assets/models/Low poly rocks/Models/Rock Type6 04.dae" id="1_3gsdu"]
+[ext_resource type="Texture2D" uid="uid://sjacjey3anht" path="res://assets/models/Low poly rocks/Textures/Colorsheet Rock Sand.png" id="2_ynldg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynldg"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+grow = true
+grow_amount = 0.01
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emi3q"]
+next_pass = SubResource("StandardMaterial3D_ynldg")
+albedo_color = Color(1, 1, 0.7490196, 1)
+albedo_texture = ExtResource("2_ynldg")
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(1, 1, 0, 1)
+
+[node name="Rock Type6 04" instance=ExtResource("1_3gsdu")]
+
+[node name="Rock_Type6_04_mesh" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_emi3q")
