@@ -15,4 +15,6 @@ normal_enabled = true
 normal_texture = ExtResource("4_0pqfi")
 ao_enabled = true
 ao_texture = ExtResource("2_7tx83")
+uv1_triplanar = true
+uv1_world_triplanar = true
 grow_amount = 0.199

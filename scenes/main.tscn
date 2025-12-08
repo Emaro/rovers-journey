@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=32 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien_1.tscn" id="4_jyhfs"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://c2suk4ky5e7mq" path="res://scenes/alien_info_lava.tscn" id="20_yc10j"]
 [ext_resource type="PackedScene" uid="uid://cv22yn5ht4yp4" path="res://scenes/alien_info_water.tscn" id="21_jscy8"]
 [ext_resource type="PackedScene" uid="uid://e4tbo2c0vtg1" path="res://assets/crystal_light.tscn" id="22_jscy8"]
+[ext_resource type="PackedScene" uid="uid://b25tuhpvvctha" path="res://scenes/lava.tscn" id="23_pm3ni"]
 
 [sub_resource type="Animation" id="Animation_o6xl0"]
 length = 0.001
@@ -165,9 +166,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_tipki")
 }
 
-[node name="Rover" parent="." instance=ExtResource("5_tbgi4")]
+[node name="Rover" parent="." node_paths=PackedStringArray("spawn") instance=ExtResource("5_tbgi4")]
 transform = Transform3D(0.007906224, 0, -0.9999687, 0, 1, 0, 0.9999687, 0, 0.007906224, -40.91223, 11.850445, 111.5809)
 linear_damp_mode = 1
+spawn = NodePath("../Spawn")
 max_speed = 20.0
 lower_center_of_mass = 0.2
 show_debug = false
@@ -365,6 +367,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.13236, 8.632917, 185.130
 light_color = Color(0.8022955, 0.43777448, 0.8432384, 1)
 shadow_enabled = true
 omni_range = 16.307486
+
+[node name="Lava" parent="." instance=ExtResource("23_pm3ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.814653, 0.97229576, 106.18353)
+
+[node name="Spawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.82175, 2.2798433, -66.15085)
 
 [connection signal="animation_finished" from="Alien_1/AnimationPlayer" to="Alien_1" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="DarkArea" to="DarkArea" method="_on_body_entered"]

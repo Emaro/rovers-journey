@@ -1,6 +1,11 @@
 extends RigidBody3D
 class_name RaycastCar
 
+@export_group("Health")
+@export var health := 3
+@export var spawn : Node3D
+
+@export_group("Motor")
 @export var wheels: Array[RaycastWheel]
 @export var acceleration := 600.0
 @export var max_speed := 20.0
@@ -42,6 +47,10 @@ func _process(delta: float) -> void:
 	motor_input = Input.get_axis("move_back", "move_forward")
 	handbrake = Input.is_action_pressed("handbrake")
 
+func kill():
+	health -= 1
+	global_position = spawn.position
+	rotation = spawn.rotation
 
 func basic_steering_rotation(wheel: RaycastWheel, delta: float) -> void:
 	if not wheel.is_steer:
