@@ -1,62 +1,60 @@
 extends Area3D
 
-@export var cost_amount := 3
-@export var cost_item_id := "rock"   # which resource the alien wants
-@export var next_alien: Node3D       # NEW: assign AlienT1 here in the editor
+@export var required_metalscrap: int = 5
+@export var required_rocks: int = 2
+@export var next_alien: Node3D   # Assign Alien_T1 (mountain alien) in the editor
 
 var rover_near := false
-var rover_body: Node = null
-var disappear := false
+var rover_body: Node3D = null
+var drivetrain_upgraded: bool = false
+
 
 func _ready() -> void:
 	monitoring = true
-
-	var rover = get_tree().get_first_node_in_group("rover")
-	if rover:
-		global_position = rover.global_position + Vector3(0, 2.0, 0)
-
-	visible = true
-	for child in get_children():
-		if child is Node3D:
-			child.visible = true
-			child.scale = Vector3.ONE
-
-	print("Alien_1 ready at:", global_position)
-
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	print("Alien_1 ready at:", global_position)
 
 
-
-
-func _is_rover_body(body: Node) -> bool:
-	if body.name == "Rover":
+func _is_rover(body: Node) -> bool:
+	if body.is_in_group("rover"):
 		return true
+
 	var parent := body.get_parent()
-	return parent != null and parent.name == "Rover"
+	while parent:
+		if parent.is_in_group("rover"):
+			return true
+		parent = parent.get_parent()
+
+	return false
 
 
-func _get_rover_root(body: Node) -> Node:
-	if body.name == "Rover":
+func _get_rover_root(body: Node3D) -> Node3D:
+	if body.is_in_group("rover"):
 		return body
-	return body.get_parent()
+
+	var parent := body.get_parent()
+	while parent and not parent.is_in_group("rover"):
+		parent = parent.get_parent()
+
+	return parent
 
 
-func _on_body_entered(body: Node) -> void:
-	if _is_rover_body(body):
+func _on_body_entered(body: Node3D) -> void:
+	if _is_rover(body):
 		rover_near = true
 		rover_body = _get_rover_root(body)
 		var hud = get_tree().get_first_node_in_group("hud")
-		if hud and hud.has_method("show_interact_prompt"):
+		if hud:
 			hud.show_interact_prompt()
 
 
-func _on_body_exited(body: Node) -> void:
-	if _is_rover_body(body):
+func _on_body_exited(body: Node3D) -> void:
+	if _is_rover(body):
 		rover_near = false
 		rover_body = null
 		var hud = get_tree().get_first_node_in_group("hud")
-		if hud and hud.has_method("hide_interact_prompt"):
+		if hud:
 			hud.hide_interact_prompt()
 
 
@@ -67,52 +65,69 @@ func _process(_delta: float) -> void:
 
 func _talk() -> void:
 	var hud = get_tree().get_first_node_in_group("hud")
-	if hud == null or not hud.has_method("show_alien_dialog"):
+	if hud == null or not hud.has_method("show_alien1_dialog"):
+		print("HUD missing or show_alien1_dialog missing!")
 		return
 
-	var available := Inventory.get_count(cost_item_id)
-	var has_enough := available >= cost_amount
-	hud.show_alien_dialog(self, cost_amount, has_enough)
-	$AnimationPlayer.play("alien_interaction")
+	var available_metalscrap := Inventory.get_count("metalscrap")
+	var available_rocks := Inventory.get_count("rock")
+
+	var has_enough := (
+		available_metalscrap >= required_metalscrap
+		and available_rocks >= required_rocks
+	)
+
+	hud.show_alien1_dialog(
+		self,
+		has_enough,
+		required_metalscrap,
+		required_rocks,
+		available_metalscrap,
+		available_rocks,
+		drivetrain_upgraded
+	)
 
 
 func perform_upgrade() -> void:
-	if Inventory.get_count(cost_item_id) < cost_amount:
-		print("Alien: not enough %s at upgrade time." % cost_item_id)
+	if drivetrain_upgraded:
+		print("Alien_1: Drivetrain already upgraded.")
 		return
 
-	# pay the cost
-	Inventory.add_item(cost_item_id, -cost_amount)
+	var have_metalscrap := Inventory.get_count("metalscrap")
+	var have_rocks := Inventory.get_count("rock")
 
-	# actual rover upgrade logic
-	if rover_body != null:
-		if rover_body is RaycastCar:
-			var car := rover_body as RaycastCar
-			car.max_speed *= 2
-			car.acceleration *= 2
-			print("Alien: upgraded rover. New max_speed = %s new acceleration = %s"
-				% [car.max_speed, car.acceleration])
-		else:
-			if rover_body.has_variable("max_speed"):
-				rover_body.max_speed *= 1.3
-			if rover_body.has_variable("acceleration"):
-				rover_body.acceleration *= 1.3
-			print("Alien: upgraded generic rover body.")
+	if have_metalscrap < required_metalscrap or have_rocks < required_rocks:
+		print("Alien_1: Not enough resources at upgrade time.")
+		return
+
+	Inventory.add_item("metalscrap", -required_metalscrap)
+	Inventory.add_item("rock", -required_rocks)
+
+	if rover_body and rover_body is RaycastCar:
+		var car := rover_body as RaycastCar
+		car.max_speed *= 2.0
+		car.acceleration *= 2.0
+		print("Alien_1: Upgraded rover drivetrain.")
 	else:
-		print("Alien: no rover_body set during upgrade.")
+		print("Alien_1: Rover body missing or incompatible.")
 
-	# ---------------------
-	# NEW: Activate next alien (AlienT1)
-	# ---------------------
+	drivetrain_upgraded = true
+
 	if next_alien:
 		next_alien.visible = true
 		if next_alien is Area3D:
 			next_alien.monitoring = true
 
-	disappear = true
-	$AnimationPlayer.play("alien_interaction")
-
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if disappear:
-		queue_free()
+	var hud = get_tree().get_first_node_in_group("hud")
+	if hud and hud.has_method("show_alien1_dialog"):
+		var new_metals := Inventory.get_count("metalscrap")
+		var new_rocks := Inventory.get_count("rock")
+		hud.show_alien1_dialog(
+			self,
+			true,
+			required_metalscrap,
+			required_rocks,
+			new_metals,
+			new_rocks,
+			true
+		)

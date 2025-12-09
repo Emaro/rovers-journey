@@ -1,19 +1,17 @@
 extends Area3D
 
-@export var required_sandstone: int = 3
-@export var required_metalscrap: int = 1
+@export var required_wood: int = 7
 @export var tower_part: Node3D
 @export var next_alien: Node3D
 
-
 var rover_near := false
 var rover_body: Node = null
+var part_built := false
 
 func _ready() -> void:
 	monitoring = false
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
-
 
 func _is_rover_body(body: Node) -> bool:
 	if body.name == "Rover":
@@ -21,12 +19,10 @@ func _is_rover_body(body: Node) -> bool:
 	var parent := body.get_parent()
 	return parent != null and parent.name == "Rover"
 
-
 func _get_rover_root(body: Node) -> Node:
 	if body.name == "Rover":
 		return body
 	return body.get_parent()
-
 
 func _on_body_entered(body: Node) -> void:
 	if _is_rover_body(body):
@@ -36,7 +32,6 @@ func _on_body_entered(body: Node) -> void:
 		if hud and hud.has_method("show_interact_prompt"):
 			hud.show_interact_prompt()
 
-
 func _on_body_exited(body: Node) -> void:
 	if _is_rover_body(body):
 		rover_near = false
@@ -45,46 +40,31 @@ func _on_body_exited(body: Node) -> void:
 		if hud and hud.has_method("hide_interact_prompt"):
 			hud.hide_interact_prompt()
 
-
 func _process(_delta: float) -> void:
 	if rover_near and Input.is_action_just_pressed("interact"):
 		_talk()
 
-
 func _talk() -> void:
 	var hud = get_tree().get_first_node_in_group("hud")
-	if hud == null or not hud.has_method("show_alien_dialog_tower"):
+	if hud == null or not hud.has_method("show_alien_t2_dialog"):
 		return
 
-	var available_sandstone := Inventory.get_count("sandstone")
-	var available_metalscrap := Inventory.get_count("metalscrap")
-	var has_enough := (
-		available_sandstone >= required_sandstone
-		and available_metalscrap >= required_metalscrap
-	)
+	var available_wood := Inventory.get_count("wood")
+	var has_enough := available_wood >= required_wood
 
-	hud.show_alien_dialog_tower(
+	hud.show_alien_t2_dialog(
 		self,
-		"second",          # which tower part
-		"sandstones",      # label for resource 1
-		required_sandstone,
-		available_sandstone,
-		"metalscraps",     # label for resource 2
-		required_metalscrap,
-		available_metalscrap,
-		has_enough
+		has_enough,
+		required_wood,
+		available_wood,
+		part_built
 	)
-
-
 
 func perform_build() -> void:
-	if Inventory.get_count("sandstone") < required_sandstone \
-		or Inventory.get_count("metalscrap") < required_metalscrap:
-		print("AlienT2: not enough resources at build time.")
+	if Inventory.get_count("wood") < required_wood:
 		return
 
-	Inventory.add_item("sandstone", -required_sandstone)
-	Inventory.add_item("metalscrap", -required_metalscrap)
+	Inventory.add_item("wood", -required_wood)
 
 	var hud = get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("update_resource_labels"):
@@ -92,12 +72,10 @@ func perform_build() -> void:
 
 	if tower_part:
 		tower_part.visible = true
-		print("AlienT2: Tower part 2 constructed.")
 
 	if next_alien:
 		next_alien.visible = true
 		if next_alien is Area3D:
 			next_alien.monitoring = true
 
-	hide()
-	queue_free()
+	part_built = true

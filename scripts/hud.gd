@@ -139,6 +139,10 @@ func _refresh() -> void:
 	crystal_label.text = "Crystal: %d" % crystal
 
 
+func update_resource_labels() -> void:
+	_refresh()
+
+
 func show_message(text: String, duration: float = 3.0) -> void:
 	message_time_left = duration
 	rocks_label.text = text
@@ -152,10 +156,17 @@ func hide_interact_prompt() -> void:
 	interact_label.visible = false
 
 
-func show_alien_dialog(alien: Node, cost: int, has_enough: bool) -> void:
+func show_alien1_dialog(
+	alien: Node,
+	has_enough: bool,
+	required_metalscrap: int,
+	required_rocks: int,
+	available_metalscrap: int,
+	available_rocks: int,
+	drivetrain_upgraded: bool
+) -> void:
 	current_mode = "upgrade"
 	current_alien = alien
-	current_cost = cost
 	current_has_enough = has_enough
 	message_time_left = 0.0
 
@@ -164,33 +175,42 @@ func show_alien_dialog(alien: Node, cost: int, has_enough: bool) -> void:
 	interact_label.visible = false
 	alien_dialog.visible = true
 
-	if has_enough:
-		msg_label.text = "I like your rocks! Give me %d and I'll upgrade your drivetrain." % cost
-		upgrade_btn.disabled = false
-		upgrade_btn.text = "Upgrade"
-		cancel_btn.text = "Cancel"
-	else:
-		msg_label.text = "Oh no, not enough rocks. You need %d." % cost
+	if drivetrain_upgraded:
+		msg_label.text = "Your drivetrain is fixed now.\n" \
+			+ "You should be able to drive as fast as you used to!\n" \
+			+ "If you follow the path up into the mountains, you might " \
+			+ "find someone who knows how to build a communication tower."
 		upgrade_btn.disabled = true
-		upgrade_btn.text = "Upgrade"
+		upgrade_btn.text = "Upgraded"
 		cancel_btn.text = "Close"
+	else:
+		if has_enough:
+			msg_label.text = "Whoa, I saw you crash-land! Your drivetrain looks really beat up.\n" \
+				+ "I can fix it for you.\n" \
+				+ "Bring me 5 metal scraps and 2 rocks."
+			upgrade_btn.disabled = false
+			upgrade_btn.text = "Upgrade drivetrain"
+			cancel_btn.text = "Cancel"
+		else:
+			msg_label.text = "Whoa, I saw you crash-land! Your drivetrain looks really beat up.\n" \
+				+ "I can fix it for you.\n" \
+				+ "Bring me 5 metal scraps and 2 rocks.\n" \
+				+ "Come back when you've gathered enough."
+			upgrade_btn.disabled = true
+			upgrade_btn.text = "Upgrade drivetrain"
+			cancel_btn.text = "Close"
 
 
-func show_alien_dialog_tower(
+func show_alien_t1_dialog(
 	alien: Node,
-	part_name: String,
-	res1_label: String,
-	required_res1: int,
-	available_res1: int,
-	res2_label: String,
-	required_res2: int,
-	available_res2: int,
 	has_enough: bool,
-	res3_label: String = "",
-	required_res3: int = 0,
-	available_res3: int = 0
+	required_rock: int,
+	required_sandstone: int,
+	available_rock: int,
+	available_sandstone: int,
+	part_built: bool
 ) -> void:
-	current_mode = "tower"
+	current_mode = "tower1"
 	current_alien = alien
 	current_has_enough = has_enough
 	message_time_left = 0.0
@@ -200,23 +220,159 @@ func show_alien_dialog_tower(
 	interact_label.visible = false
 	alien_dialog.visible = true
 
-	var msg := "To build the %s tower part I need:\n" % part_name
-	msg += "- %d %s (you have %d)\n" % [required_res1, res1_label, available_res1]
-	msg += "- %d %s (you have %d)" % [required_res2, res2_label, available_res2]
-
-	if res3_label != "" and required_res3 > 0:
-		msg += "\n- %d %s (you have %d)" % [required_res3, res3_label, available_res3]
+	if part_built:
+		msg_label.text = (
+			"I built the Foundation Core near your crash site.\n"
+			+ "Go check it out when you have time!\n\n"
+			+ "If you cross the grass plains, you'll find someone\n"
+			+ "who can help you build the tower frame."
+		)
+		upgrade_btn.disabled = true
+		upgrade_btn.text = "Built"
+		cancel_btn.text = "Close"
+		return
 
 	if has_enough:
-		msg_label.text = msg
+		msg_label.text = (
+			"Oh, my friend near your crash site told me about you.\n"
+			+ "I can help you build the Foundation Core.\n\n"
+			+ "Bring me:\n"
+			+ "- %d rocks\n"
+			+ "- %d sandstones"
+		) % [required_rock, required_sandstone]
 		upgrade_btn.disabled = false
-		upgrade_btn.text = "Build"
+		upgrade_btn.text = "Build Foundation Core"
 		cancel_btn.text = "Cancel"
-	else:
-		msg_label.text = msg + "\n\nCome back when you have enough."
+		return
+
+	msg_label.text = (
+		"Oh, my friend near your crash site told me about you.\n"
+		+ "I'd love to help you build the Foundation Core, but I need:\n"
+		+ "- %d rocks (you have %d)\n"
+		+ "- %d sandstones (you have %d)\n\n"
+		+ "Come back when you've gathered enough."
+	) % [required_rock, available_rock, required_sandstone, available_sandstone]
+	upgrade_btn.disabled = true
+	upgrade_btn.text = "Build Foundation Core"
+	cancel_btn.text = "Close"
+
+
+
+func show_alien_t2_dialog(
+	alien: Node,
+	has_enough: bool,
+	required_wood: int,
+	available_wood: int,
+	part_built: bool
+) -> void:
+	current_mode = "tower2"
+	current_alien = alien
+	current_has_enough = has_enough
+	message_time_left = 0.0
+
+	_set_rover_navigation_enabled(false)
+
+	interact_label.visible = false
+	alien_dialog.visible = true
+
+	if part_built:
+		msg_label.text = (
+			"The tower frame is in place now.\n"
+			+ "Your signal reaches much farther already.\n\n"
+			+ "Deep in the crystal fields, someone can help you\n"
+			+ "build the tower transmitter."
+		)
 		upgrade_btn.disabled = true
-		upgrade_btn.text = "Build"
+		upgrade_btn.text = "Built"
 		cancel_btn.text = "Close"
+		return
+
+	if has_enough:
+		msg_label.text = (
+			"Oh, the mountain builder told me about you.\n"
+			+ "I can help you build the tower frame.\n\n"
+			+ "Bring me:\n"
+			+ "- %d pieces of wood."
+		) % required_wood
+		upgrade_btn.disabled = false
+		upgrade_btn.text = "Build tower frame"
+		cancel_btn.text = "Cancel"
+		return
+
+	msg_label.text = (
+		"Oh, the mountain builder told me about you.\n"
+		+ "I'd love to help you build the tower frame, but I need:\n"
+		+ "- %d pieces of wood (you have %d)\n\n"
+		+ "Come back when you've gathered enough."
+	) % [required_wood, available_wood]
+	upgrade_btn.disabled = true
+	upgrade_btn.text = "Build tower frame"
+	cancel_btn.text = "Close"
+
+
+func show_alien_t3_dialog(
+	alien: Node,
+	has_enough: bool,
+	required_crystal: int,
+	required_metalscrap: int,
+	required_rocks: int,
+	available_crystal: int,
+	available_metalscrap: int,
+	available_rocks: int,
+	part_built: bool
+) -> void:
+	current_mode = "tower3"
+	current_alien = alien
+	current_has_enough = has_enough
+	message_time_left = 0.0
+
+	_set_rover_navigation_enabled(false)
+
+	interact_label.visible = false
+	alien_dialog.visible = true
+
+	if part_built:
+		msg_label.text = (
+			"The tower transmitter is complete.\n"
+			+ "Your signal now reaches the stars.\n\n"
+			+ "When you're ready, return to your crash site\n"
+			+ "and see what happens next."
+		)
+		upgrade_btn.disabled = true
+		upgrade_btn.text = "Built"
+		cancel_btn.text = "Close"
+		return
+
+	if has_enough:
+		msg_label.text = (
+			"So, you found me in the crystal fields.\n"
+			+ "I can help you build the tower transmitter.\n\n"
+			+ "Bring me:\n"
+			+ "- %d crystals\n"
+			+ "- %d metal scraps\n"
+			+ "- %d rocks"
+		) % [required_crystal, required_metalscrap, required_rocks]
+		upgrade_btn.disabled = false
+		upgrade_btn.text = "Build transmitter"
+		cancel_btn.text = "Cancel"
+		return
+
+	msg_label.text = (
+		"So, you found me in the crystal fields.\n"
+		+ "I can help you build the tower transmitter, but I need:\n"
+		+ "- %d crystals (you have %d)\n"
+		+ "- %d metal scraps (you have %d)\n"
+		+ "- %d rocks (you have %d)\n\n"
+		+ "Come back when you've gathered enough."
+	) % [
+		required_crystal,  available_crystal,
+		required_metalscrap, available_metalscrap,
+		required_rocks, available_rocks
+	]
+	upgrade_btn.disabled = true
+	upgrade_btn.text = "Build transmitter"
+	cancel_btn.text = "Close"
+
 
 
 func _on_upgrade_pressed() -> void:
@@ -226,9 +382,60 @@ func _on_upgrade_pressed() -> void:
 	if current_mode == "upgrade":
 		if current_alien.has_method("perform_upgrade"):
 			current_alien.perform_upgrade()
-	elif current_mode == "tower":
+
+			if current_alien.name == "Alien_1":
+				show_alien1_dialog(
+					current_alien,
+					true,
+					0,
+					0,
+					0,
+					0,
+					true
+				)
+				return
+
+	if current_mode == "tower1":
 		if current_alien.has_method("perform_build"):
 			current_alien.perform_build()
+			show_alien_t1_dialog(
+				current_alien,
+				true,
+				0,
+				0,
+				0,
+				0,
+				true
+			)
+			return
+
+	if current_mode == "tower2":
+		if current_alien.has_method("perform_build"):
+			current_alien.perform_build()
+			show_alien_t2_dialog(
+				current_alien,
+				true,
+				0,
+				0,
+				true
+			)
+			return
+
+	if current_mode == "tower3":
+		if current_alien.has_method("perform_build"):
+			current_alien.perform_build()
+			show_alien_t3_dialog(
+				current_alien,
+				true,
+				0,
+				0,
+				0,
+				0,
+				0,
+				0,
+				true
+			)
+			return
 
 	alien_dialog.visible = false
 	_refresh()

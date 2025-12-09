@@ -168,7 +168,7 @@ libraries = {
 }
 
 [node name="Rover" parent="." node_paths=PackedStringArray("spawn") instance=ExtResource("5_tbgi4")]
-transform = Transform3D(0.007906224, 0, -0.9999687, 0, 1, 0, 0.9999687, 0, 0.007906224, -40.91223, 11.850445, 111.5809)
+transform = Transform3D(0.007906224, 0, -0.9999687, 0, 1, 0, 0.9999687, 0, 0.007906224, 20, 1, 110)
 linear_damp_mode = 1
 spawn = NodePath("../Spawn")
 max_speed = 20.0
@@ -191,102 +191,141 @@ hud = NodePath("../../../HUD")
 [node name="Rocks" type="Node3D" parent="Resources"]
 
 [node name="RockResource" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.867823, 0.064933896, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.065, 111)
 
 [node name="RockResource2" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, -32.458)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.5, 111)
 
 [node name="RockResource3" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.225, 0.5, -40.982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.5, 111)
 
 [node name="RockResource4" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, 54)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1, 111)
 
 [node name="RockResource5" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -0.058657885, 28.384092)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -0.059, 111)
 
 [node name="RockResource6" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.5, 111)
 
 [node name="RockResource7" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.5, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.5, 111)
 
 [node name="RockResource8" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.11865091, 22.48265)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.119, 111)
 
 [node name="RockResource9" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, 54)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1, 111)
 
 [node name="RockResource10" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.740486, 0.08133626, 27)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0.081, 111)
 
 [node name="Sandstones" type="Node3D" parent="Resources"]
 
 [node name="SandstoneResource" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0.5, 111)
 
 [node name="SandstoneResource2" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, 40)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0.5, 111)
 
 [node name="SandstoneResource3" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -8.749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0.5, 111)
 
 [node name="SandstoneResource4" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0.5, 111)
 
 [node name="SandstoneResource5" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.5, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0.5, 111)
 
 [node name="Metalscraps" type="Node3D" parent="Resources"]
 
 [node name="MetalScrapResource" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.5, 111)
 
 [node name="MetalScrapResource2" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.5, 111)
 
 [node name="MetalScrapResource3" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.5, -50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.5, 111)
 
 [node name="MetalScrapResource4" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.5, 111)
 
 [node name="MetalScrapResource5" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1, 111)
 
 [node name="MetalScrapResource6" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.5, 111)
 
 [node name="MetalScrapResource7" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.5, 111)
 
 [node name="MetalScrapResource8" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.5, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.5, 111)
 
 [node name="Wood" type="Node3D" parent="Resources"]
 
 [node name="WoodResource" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 111)
+
+[node name="WoodResource2" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 111)
+
+[node name="WoodResource3" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 111)
+
+[node name="WoodResource4" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 111)
+
+[node name="WoodResource5" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 111)
+
+[node name="WoodResource6" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 111)
+
+[node name="WoodResource7" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 111)
+
+[node name="WoodResource8" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 111)
+
+[node name="WoodResource9" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 111)
+
+[node name="WoodResource10" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 111)
 
 [node name="Crystal" type="Node3D" parent="Resources"]
 
 [node name="CrystalResource" parent="Resources/Crystal" instance=ExtResource("9_gqmmt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 111)
+
+[node name="CrystalResource2" parent="Resources/Crystal" instance=ExtResource("9_gqmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 111)
+
+[node name="CrystalResource3" parent="Resources/Crystal" instance=ExtResource("9_gqmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 111)
+
+[node name="CrystalResource4" parent="Resources/Crystal" instance=ExtResource("9_gqmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 111)
+
+[node name="CrystalResource5" parent="Resources/Crystal" instance=ExtResource("9_gqmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 111)
 
 [node name="Alien_T" type="Node3D" parent="."]
 
 [node name="Alien_T1" parent="Alien_T" node_paths=PackedStringArray("tower_part", "next_alien") instance=ExtResource("9_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1.5, 60)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1.5, 100)
 tower_part = NodePath("../../Tower_Parts/TowerPart_1")
 next_alien = NodePath("../Alien_T2")
 
 [node name="Alien_T2" parent="Alien_T" node_paths=PackedStringArray("tower_part", "next_alien") instance=ExtResource("11_eb6dy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.5, -50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1.5, 90)
 tower_part = NodePath("../../Tower_Parts/TowerPart_2")
 next_alien = NodePath("../Alien_T3")
 
 [node name="Alien_T3" parent="Alien_T" node_paths=PackedStringArray("tower_part") instance=ExtResource("13_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1.5, 8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1.5, 80)
 tower_part = NodePath("../../Tower_Parts/TowerPart_3")
 
 [node name="Tower_Parts" type="Node3D" parent="."]

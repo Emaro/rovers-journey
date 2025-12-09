@@ -33,7 +33,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if disable_nav:
-		return  # ignore all driving-related input while nav is disabled
+		return  # ignore driving input while dialog is active
 
 	if event.is_action_pressed("handbrake"):
 		is_slipping = true
@@ -41,26 +41,31 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	if disable_nav:
-		# No driving input when navigation is disabled
+		# ------------------------------------------
+		# ➤ CHANGED: NO handbrake during dialogs!
+		# (handbrake = drift mode = VERY slippery)
+		# ------------------------------------------
 		motor_input = 0.0
-		handbrake = true          # hold car in place
+		handbrake = false
 		return
 
 	motor_input = Input.get_axis("move_back", "move_forward")
 	handbrake = Input.is_action_pressed("handbrake")
 
+
 func kill():
 	health -= 1
 	global_position = spawn.position
 	rotation = spawn.rotation
-	health_changed.emit(health +  1, health)
+	health_changed.emit(health + 1, health)
+
 
 func basic_steering_rotation(wheel: RaycastWheel, delta: float) -> void:
 	if not wheel.is_steer:
 		return
 
 	if disable_nav:
-		# keep wheels centered when nav is disabled
+		# keep wheels centered during dialog
 		wheel.rotation.y = move_toward(wheel.rotation.y, 0, tire_turn_speed * delta)
 		return
 	
@@ -101,11 +106,19 @@ func do_single_wheel_traction(ray: RaycastWheel, id: int) -> void:
 	
 	var f_vel := -ray.global_basis.z.dot(tire_vel)
 	var z_traction := 0.05
+
+	# ------------------------------------------
+	# ➤ ADDED: stronger braking when dialog open
+	# ------------------------------------------
+	if disable_nav:
+		z_traction = 3.0   # feels like "wheel lock" without freezing physics
+
 	var z_force := global_basis.z * f_vel * z_traction * (mass * g / 4.0)
 	
 	var force_pos := ray.wheel.global_position - global_position
 	apply_force(x_force, force_pos)
 	apply_force(z_force, force_pos)
+
 	DebugDraw3D.draw_arrow_ray(ray.wheel.global_position, x_force / mass, 1.0, Color.GREEN, 0.05)
 	DebugDraw3D.draw_arrow_ray(ray.wheel.global_position, z_force / mass, 1.0, Color.PURPLE, 0.05)
 
@@ -120,7 +133,11 @@ func _physics_process(delta: float) -> void:
 		wheel.apply_wheel_physics(self)
 		basic_steering_rotation(wheel, delta)
 		
-		wheel.is_braking = disable_nav || Input.is_action_pressed("full_brake")
+		# ------------------------------------------
+		# ➤ CHANGED: brake wheels while in dialog
+		# ------------------------------------------
+		wheel.is_braking = disable_nav or Input.is_action_pressed("full_brake")
+		
 		skid_marks[id].global_position = wheel.get_collision_point() + Vector3.UP * 0.01
 		skid_marks[id].look_at(skid_marks[id].global_position + global_basis.z)
 	
@@ -149,7 +166,7 @@ func do_single_wheel_acceleration(ray: RaycastWheel) -> void:
 	ray.wheel.rotate_x((vel * get_process_delta_time()) / ray.wheel_radius)
 	
 	if disable_nav:
-		return  # no acceleration forces when nav disabled
+		return  # no acceleration forces during dialog
 	
 	if ray.is_colliding():
 		var contact := ray.wheel.global_position
