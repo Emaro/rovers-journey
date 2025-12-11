@@ -590,7 +590,6 @@ func _on_button_pressed() -> void:
 func show_start_hint_popup() -> void:
 	await get_tree().create_timer(5.0).timeout
 
-	# If some other dialog is already open, don't show the hint
 	if alien_dialog.visible:
 		return
 
@@ -616,11 +615,3 @@ func show_start_hint_popup() -> void:
 		+ "  X – Full brake\n\n"
 		+ "Explore the crash site and look for someone who can help you!\n"
 	)
-
-	var timer := get_tree().create_timer(15.0)
-	await timer.timeout
-
-	if current_mode == "hint" and alien_dialog.visible:
-		alien_dialog.visible = false
-		_set_rover_navigation_enabled(true)
-		_refresh()
