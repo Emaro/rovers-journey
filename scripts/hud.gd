@@ -37,7 +37,7 @@ var story_lines_intro := [
 	"Mission Log 042: Emergency landing complete.",
 	"I have crash-landed on an unknown planet.",
 	"Most of my systems are damaged. I must gather resources to begin repairs.",
-	"I should explore this place, seek help from the locals, and rebuild a tower to signal home."
+	"I should explore this place and build a communication tower to signal home."
 ]
 
 var story_lines_outro := [
@@ -174,31 +174,36 @@ func show_alien1_dialog(
 
 	interact_label.visible = false
 	alien_dialog.visible = true
+	upgrade_btn.visible = true
 
 	if drivetrain_upgraded:
 		msg_label.text = "Your drivetrain is fixed now.\n" \
 			+ "You should be able to drive as fast as you used to!\n" \
 			+ "If you follow the path up into the mountains, you might " \
-			+ "find someone who knows how to build a communication tower."
+			+ "find someone who knows how to build a communication tower.\n"
+		upgrade_btn.visible = false
 		upgrade_btn.disabled = true
-		upgrade_btn.text = "Upgraded"
 		cancel_btn.text = "Close"
 	else:
+		upgrade_btn.visible = true
 		if has_enough:
-			msg_label.text = "Whoa, I saw you crash-land! Your drivetrain looks really beat up.\n" \
+			msg_label.text = "Whoa, I saw you crash-land!\n" \
+				+ "Your drivetrain looks really beat up.\n" \
 				+ "I can fix it for you.\n" \
-				+ "Bring me 5 metal scraps and 2 rocks."
+				+ "Bring me 5 metal scraps and 2 rocks.\n"
 			upgrade_btn.disabled = false
-			upgrade_btn.text = "Upgrade drivetrain"
+			upgrade_btn.text = "Upgrade"
 			cancel_btn.text = "Cancel"
 		else:
-			msg_label.text = "Whoa, I saw you crash-land! Your drivetrain looks really beat up.\n" \
+			msg_label.text = "Whoa, I saw you crash-land!\n" \
+				+ "Your drivetrain looks really beat up.\n" \
 				+ "I can fix it for you.\n" \
 				+ "Bring me 5 metal scraps and 2 rocks.\n" \
-				+ "Come back when you've gathered enough."
+				+ "Come back when you've gathered enough.\n"
 			upgrade_btn.disabled = true
-			upgrade_btn.text = "Upgrade drivetrain"
+			upgrade_btn.text = "Upgrade"
 			cancel_btn.text = "Close"
+
 
 
 func show_alien_t1_dialog(
@@ -219,42 +224,42 @@ func show_alien_t1_dialog(
 
 	interact_label.visible = false
 	alien_dialog.visible = true
+	upgrade_btn.visible = true
 
 	if part_built:
 		msg_label.text = (
 			"I built the Foundation Core near your crash site.\n"
-			+ "Go check it out when you have time!\n\n"
-			+ "If you cross the grass plains, you'll find someone\n"
-			+ "who can help you build the tower frame."
+			+ "Take a look when you have a moment!\n"
+			+ "If you cross the grass plains, you’ll find someone\n"
+			+ "who can help you build the tower frame.\n"
 		)
+		upgrade_btn.visible = false
 		upgrade_btn.disabled = true
-		upgrade_btn.text = "Built"
 		cancel_btn.text = "Close"
 		return
 
+	upgrade_btn.visible = true
 	if has_enough:
 		msg_label.text = (
 			"Oh, my friend near your crash site told me about you.\n"
-			+ "I can help you build the Foundation Core.\n\n"
-			+ "Bring me:\n"
-			+ "- %d rocks\n"
-			+ "- %d sandstones"
+			+ "I'd love to help you build the Foundation Core!\n"
+			+ "Bring me 4 rocks and 3 sandstones.\n"
 		) % [required_rock, required_sandstone]
 		upgrade_btn.disabled = false
-		upgrade_btn.text = "Build Foundation Core"
+		upgrade_btn.text = "Build"
 		cancel_btn.text = "Cancel"
 		return
 
 	msg_label.text = (
 		"Oh, my friend near your crash site told me about you.\n"
-		+ "I'd love to help you build the Foundation Core, but I need:\n"
-		+ "- %d rocks (you have %d)\n"
-		+ "- %d sandstones (you have %d)\n\n"
-		+ "Come back when you've gathered enough."
+		+ "I'd love to help you build the Foundation Core!\n"
+		+ "Bring me 4 rocks and 3 sandstones.\n"
+		+ "Come back when you've gathered enough.\n"
 	) % [required_rock, available_rock, required_sandstone, available_sandstone]
 	upgrade_btn.disabled = true
-	upgrade_btn.text = "Build Foundation Core"
+	upgrade_btn.text = "Build"
 	cancel_btn.text = "Close"
+
 
 
 
@@ -274,40 +279,41 @@ func show_alien_t2_dialog(
 
 	interact_label.visible = false
 	alien_dialog.visible = true
+	upgrade_btn.visible = true
 
 	if part_built:
 		msg_label.text = (
 			"The tower frame is in place now.\n"
-			+ "Your signal reaches much farther already.\n\n"
-			+ "Deep in the crystal fields, someone can help you\n"
-			+ "build the tower transmitter."
+			+ "Once you add the transmitter, your signal will finally reach out.\n"
+			+ "Deep in the crystal fields, someone can help you build that part.\n"
 		)
+		upgrade_btn.visible = false
 		upgrade_btn.disabled = true
-		upgrade_btn.text = "Built"
 		cancel_btn.text = "Close"
 		return
 
+	upgrade_btn.visible = true
 	if has_enough:
 		msg_label.text = (
-			"Oh, the mountain builder told me about you.\n"
-			+ "I can help you build the tower frame.\n\n"
-			+ "Bring me:\n"
-			+ "- %d pieces of wood."
+			"I got a message from the mountains about you.\n"
+			+ "I can help you build the tower frame!\n"
+			+ "Bring me 7 pieces of wood.\n"
 		) % required_wood
 		upgrade_btn.disabled = false
-		upgrade_btn.text = "Build tower frame"
+		upgrade_btn.text = "Build"
 		cancel_btn.text = "Cancel"
 		return
 
 	msg_label.text = (
-		"Oh, the mountain builder told me about you.\n"
-		+ "I'd love to help you build the tower frame, but I need:\n"
-		+ "- %d pieces of wood (you have %d)\n\n"
-		+ "Come back when you've gathered enough."
+		"I got a message from the mountains about you.\n"
+		+ "I can help you build the tower frame!\n"
+		+ "Bring me 7 wood.\n"
+		+ "Come back when you've gathered enough.\n"
 	) % [required_wood, available_wood]
 	upgrade_btn.disabled = true
-	upgrade_btn.text = "Build tower frame"
+	upgrade_btn.text = "Build"
 	cancel_btn.text = "Close"
+
 
 
 func show_alien_t3_dialog(
@@ -335,42 +341,36 @@ func show_alien_t3_dialog(
 		msg_label.text = (
 			"The tower transmitter is complete.\n"
 			+ "Your signal now reaches the stars.\n\n"
-			+ "When you're ready, return to your crash site\n"
-			+ "and see what happens next."
+			+ "When you're ready, return to your crash site.\n"
 		)
+		upgrade_btn.visible = false
 		upgrade_btn.disabled = true
-		upgrade_btn.text = "Built"
 		cancel_btn.text = "Close"
 		return
 
 	if has_enough:
 		msg_label.text = (
-			"So, you found me in the crystal fields.\n"
-			+ "I can help you build the tower transmitter.\n\n"
-			+ "Bring me:\n"
-			+ "- %d crystals\n"
-			+ "- %d metal scraps\n"
-			+ "- %d rocks"
+			"So, you found me.\n"
+			+ "I can help you build the tower transmitter.\n"
+			+ "Bring me 3 crystals, 5 metal scraps and 3 rocks.\n"
 		) % [required_crystal, required_metalscrap, required_rocks]
 		upgrade_btn.disabled = false
-		upgrade_btn.text = "Build transmitter"
+		upgrade_btn.text = "Build"
 		cancel_btn.text = "Cancel"
 		return
 
 	msg_label.text = (
-		"So, you found me in the crystal fields.\n"
-		+ "I can help you build the tower transmitter, but I need:\n"
-		+ "- %d crystals (you have %d)\n"
-		+ "- %d metal scraps (you have %d)\n"
-		+ "- %d rocks (you have %d)\n\n"
-		+ "Come back when you've gathered enough."
+		"So, you found me.\n"
+		+ "I can help you build the tower transmitter.\n"
+		+ "Bring me 3 crystals, 5 metal scraps and 3 rocks.\n"
+		+ "Come back when you've gathered enough.\n"
 	) % [
 		required_crystal,  available_crystal,
 		required_metalscrap, available_metalscrap,
 		required_rocks, available_rocks
 	]
 	upgrade_btn.disabled = true
-	upgrade_btn.text = "Build transmitter"
+	upgrade_btn.text = "Build"
 	cancel_btn.text = "Close"
 
 
@@ -491,7 +491,7 @@ func _show_current_outro_line() -> void:
 	_start_typewriter(story_lines_outro[story_index])
 
 	if story_index == story_lines_outro.size() - 1:
-		story_next_button.text = "Continue"
+		story_next_button.text = "Decide"
 	else:
 		story_next_button.text = "Next"
 
