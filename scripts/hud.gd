@@ -446,8 +446,11 @@ func _on_upgrade_pressed() -> void:
 func _on_cancel_pressed() -> void:
 	alien_dialog.visible = false
 	_refresh()
-	interact_label.visible = true
+	if current_mode != "hint":
+		interact_label.visible = true
+
 	_set_rover_navigation_enabled(true)
+
 
 
 func _on_start_button_pressed() -> void:
@@ -514,8 +517,10 @@ func _intro_next_step() -> void:
 	if story_index >= story_lines_intro.size():
 		story_panel.visible = false
 		_set_rover_navigation_enabled(true)
+		show_start_hint_popup()
 	else:
 		_show_current_intro_line()
+
 
 
 func _outro_next_step() -> void:
@@ -581,3 +586,41 @@ func _on_button_pressed() -> void:
 	var rover := get_tree().get_first_node_in_group("rover") as RaycastCar
 	if rover:
 		rover.kill()
+		
+func show_start_hint_popup() -> void:
+	await get_tree().create_timer(5.0).timeout
+
+	# If some other dialog is already open, don't show the hint
+	if alien_dialog.visible:
+		return
+
+	current_mode = "hint"
+
+	interact_label.visible = false
+	alien_dialog.visible = true
+	upgrade_btn.visible = false
+	upgrade_btn.disabled = true
+	cancel_btn.text = "Close"
+
+	msg_label.text = (
+		"Controls Guide\n\n"
+		+ "Movement:\n"
+		+ "  W / ↑  – Move forward\n"
+		+ "  S / ↓  – Move back\n"
+		+ "  A / ←  – Turn left\n"
+		+ "  D / →  – Turn right\n\n"
+		+ "Interaction:\n"
+		+ "  E – Talk to aliens\n\n"
+		+ "Driving:\n"
+		+ "  Space – Drift mode\n"
+		+ "  X – Full brake\n\n"
+		+ "Explore the crash site and look for someone who can help you!\n"
+	)
+
+	var timer := get_tree().create_timer(15.0)
+	await timer.timeout
+
+	if current_mode == "hint" and alien_dialog.visible:
+		alien_dialog.visible = false
+		_set_rover_navigation_enabled(true)
+		_refresh()
