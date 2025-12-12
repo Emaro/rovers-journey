@@ -1,76 +1,16 @@
-[gd_scene load_steps=126 format=4 uid="uid://bhlus1o4fqfxd"]
+[gd_scene load_steps=58 format=4 uid="uid://bhlus1o4fqfxd"]
 
-[ext_resource type="PackedScene" uid="uid://5cgxqj6x36sa" path="res://assets/models/Low poly rocks/Models/Rock Type1 01.dae" id="3_7yfra"]
-[ext_resource type="PackedScene" uid="uid://t67xrerhxbsy" path="res://assets/models/Low poly rocks/Models/Rock Type1 02.dae" id="4_a3jnr"]
-[ext_resource type="PackedScene" uid="uid://4ljvy7h7bh4" path="res://assets/models/Low poly rocks/Models/Rock Type1 03.dae" id="5_5orao"]
-[ext_resource type="PackedScene" uid="uid://c0fnc4jrlcni4" path="res://assets/models/Low poly rocks/Models/Rock Type1 04.dae" id="6_8vnbg"]
-[ext_resource type="PackedScene" uid="uid://ci20r3821kuad" path="res://assets/models/Low poly rocks/Models/Rock Type2 01.dae" id="7_wigko"]
 [ext_resource type="PackedScene" uid="uid://bu7iua6j64p0x" path="res://entities/rock_type_1_01.tscn" id="8_up6qc"]
-[ext_resource type="PackedScene" uid="uid://dln0w1glqibls" path="res://assets/models/Low poly rocks/Models/Rock Type2 02.dae" id="9_2onxh"]
-[ext_resource type="PackedScene" uid="uid://dx8mm3r35n30o" path="res://assets/models/Low poly rocks/Models/Rock Type2 03.dae" id="10_sat4p"]
-[ext_resource type="PackedScene" uid="uid://cmxy0pitmc3xu" path="res://assets/models/Low poly rocks/Models/Rock Type2 04.dae" id="11_pejsk"]
-[ext_resource type="PackedScene" uid="uid://bhq4xj1ijlyyi" path="res://assets/models/Low poly rocks/Models/Rock Type3 01.dae" id="12_gmatd"]
-[ext_resource type="PackedScene" uid="uid://cnlvanb2n2ylq" path="res://assets/models/Low poly rocks/Models/Rock Type3 02.dae" id="13_tkj4y"]
-[ext_resource type="PackedScene" uid="uid://7vcrcqwfco2c" path="res://assets/models/Low poly rocks/Models/Rock Type3 03.dae" id="14_hwau3"]
-[ext_resource type="PackedScene" uid="uid://b0mxwt032af3c" path="res://assets/models/Low poly rocks/Models/Rock Type3 04.dae" id="15_6bh1h"]
-[ext_resource type="PackedScene" uid="uid://cbwiwst11brky" path="res://assets/models/Low poly rocks/Models/Rock Type4 01.dae" id="16_4hn78"]
-[ext_resource type="PackedScene" uid="uid://lwgoa8hc0htd" path="res://assets/models/Low poly rocks/Models/Rock Type4 02.dae" id="17_yntcc"]
-[ext_resource type="PackedScene" uid="uid://lyenoslk0b2i" path="res://assets/models/Low poly rocks/Models/Rock Type4 04.dae" id="18_dlloj"]
-[ext_resource type="PackedScene" uid="uid://bajconcwefwpq" path="res://assets/models/Low poly rocks/Models/Rock Type4 03.dae" id="19_blebd"]
-[ext_resource type="PackedScene" uid="uid://3yval2skyq3g" path="res://assets/models/Low poly rocks/Models/Rock Type5 01.dae" id="20_444sv"]
-[ext_resource type="PackedScene" uid="uid://b5x1a3lbdi25e" path="res://assets/models/Low poly rocks/Models/Rock Type5 02.dae" id="21_qbh7x"]
-[ext_resource type="PackedScene" uid="uid://roqvws45go1b" path="res://assets/models/Low poly rocks/Models/Rock Type5 04.dae" id="22_s54bf"]
-[ext_resource type="PackedScene" uid="uid://c8csjtpigrfy3" path="res://assets/models/Low poly rocks/Models/Rock Type5 03.dae" id="23_rhrei"]
-[ext_resource type="PackedScene" uid="uid://bvsvs0t4b66hx" path="res://assets/models/Low poly rocks/Models/Rock Type6 01.dae" id="24_u2wqf"]
-[ext_resource type="PackedScene" uid="uid://bf2ngghd7ag60" path="res://assets/models/Low poly rocks/Models/Rock Type6 02.dae" id="25_nmrnd"]
 [ext_resource type="PackedScene" uid="uid://b44ybtmsvguta" path="res://scenes/cactus_flowers_2.tscn" id="26_b3s3f"]
-[ext_resource type="PackedScene" uid="uid://pqf4najlaayq" path="res://assets/models/Low poly rocks/Models/Rock Type6 03.dae" id="26_g7pn4"]
-[ext_resource type="PackedScene" uid="uid://dp7vnn2ax4txw" path="res://assets/models/Low poly rocks/Models/Rock Type6 04.dae" id="27_15pbc"]
 [ext_resource type="PackedScene" uid="uid://weoyf5gy6wfw" path="res://entities/tree01.tscn" id="28_tkj4y"]
-[ext_resource type="PackedScene" uid="uid://chkhv10td1ad" path="res://assets/models/Low poly trees/Models/Tree Type0 03.dae" id="30_xbkw0"]
-[ext_resource type="PackedScene" uid="uid://ct317b0vobwmq" path="res://assets/models/Low poly trees/Models/Tree Type0 01.dae" id="31_18yd3"]
-[ext_resource type="PackedScene" uid="uid://deywg1ocdo78e" path="res://assets/models/Low poly trees/Models/Tree Type0 04.dae" id="32_aohxl"]
-[ext_resource type="PackedScene" uid="uid://bvvsitpqbv63v" path="res://assets/models/Low poly trees/Models/Tree Type0 06.dae" id="34_sautm"]
-[ext_resource type="PackedScene" uid="uid://csyqtq684waoc" path="res://assets/models/Low poly trees/Models/Tree Type1 01.dae" id="35_eblgi"]
-[ext_resource type="PackedScene" uid="uid://beoad8yk0c2im" path="res://assets/models/Low poly trees/Models/Tree Type1 02.dae" id="36_h7dmc"]
-[ext_resource type="PackedScene" uid="uid://c1ih27e1mmsfi" path="res://assets/models/Low poly trees/Models/Tree Type1 03.dae" id="37_gobdu"]
-[ext_resource type="PackedScene" uid="uid://c3p0kk0vors4x" path="res://assets/models/Low poly trees/Models/Tree Type1 04.dae" id="38_f0fcs"]
-[ext_resource type="PackedScene" uid="uid://dw1i2m6im7got" path="res://assets/models/Low poly trees/Models/Tree Type1 05.dae" id="39_win7n"]
-[ext_resource type="PackedScene" uid="uid://b2i3qk58lev0b" path="res://assets/models/Low poly trees/Models/Tree Type2 01.dae" id="40_rte88"]
 [ext_resource type="PackedScene" uid="uid://dvhfm1hjrdc5h" path="res://assets/models/Low poly trees/Models/Tree Type2 02.dae" id="41_bck7e"]
-[ext_resource type="PackedScene" uid="uid://c2unjwtisw3no" path="res://assets/models/Low poly trees/Models/Tree Type2 03.dae" id="42_oq10i"]
-[ext_resource type="PackedScene" uid="uid://dj4pyiwofk033" path="res://assets/models/Low poly trees/Models/Tree Type2 04.dae" id="43_3sop5"]
-[ext_resource type="PackedScene" uid="uid://n5dvnb0r7l8m" path="res://assets/models/Low poly trees/Models/Tree Type2 05.dae" id="44_4w3ag"]
-[ext_resource type="PackedScene" uid="uid://bweesxceotoea" path="res://assets/models/Low poly trees/Models/Tree Type3 01.dae" id="45_w2hhf"]
-[ext_resource type="PackedScene" uid="uid://o84alflyasq0" path="res://assets/models/Low poly trees/Models/Tree Type3 02.dae" id="46_i84x7"]
-[ext_resource type="PackedScene" uid="uid://cdj1ncouo6n3x" path="res://assets/models/Low poly trees/Models/Tree Type3 03.dae" id="47_p5ba4"]
-[ext_resource type="PackedScene" uid="uid://byfeq7qojohpq" path="res://assets/models/Low poly trees/Models/Tree Type3 04.dae" id="48_c747a"]
-[ext_resource type="PackedScene" uid="uid://8qbfifrr6may" path="res://assets/models/Low poly trees/Models/Tree Type3 05.dae" id="49_escdu"]
-[ext_resource type="PackedScene" uid="uid://gdi0isns5ms3" path="res://assets/models/Low poly trees/Models/Tree Type4 01.dae" id="50_84wh6"]
-[ext_resource type="PackedScene" uid="uid://b5sdevfd0si3e" path="res://assets/models/Low poly trees/Models/Tree Type4 02.dae" id="51_sm1i7"]
-[ext_resource type="PackedScene" uid="uid://brjvm75ehl42a" path="res://assets/models/Low poly trees/Models/Tree Type4 03.dae" id="52_wdptq"]
-[ext_resource type="PackedScene" uid="uid://bprs1ucgd77f4" path="res://assets/models/Low poly trees/Models/Tree Type4 04.dae" id="53_2erg8"]
-[ext_resource type="PackedScene" uid="uid://bbbu8233raot3" path="res://assets/models/Low poly trees/Models/Tree Type4 05.dae" id="54_ky7ij"]
-[ext_resource type="PackedScene" uid="uid://ynhle6ss3hph" path="res://assets/models/Low poly trees/Models/Tree Type5 01.dae" id="55_lgq3s"]
-[ext_resource type="PackedScene" uid="uid://davsy1rsd2uta" path="res://assets/models/Low poly trees/Models/Tree Type5 02.dae" id="56_a55ia"]
-[ext_resource type="PackedScene" uid="uid://dtbocmcsyr0dk" path="res://assets/models/Low poly trees/Models/Tree Type5 03.dae" id="57_kx4sr"]
-[ext_resource type="PackedScene" uid="uid://b18fphmdwdx2m" path="res://assets/models/Low poly trees/Models/Tree Type5 04.dae" id="58_tro8p"]
-[ext_resource type="PackedScene" uid="uid://cx7kv2i0s83m2" path="res://assets/models/Low poly trees/Models/Tree Type6 01.dae" id="59_w8x64"]
-[ext_resource type="PackedScene" uid="uid://dbdl6yu7qkqgd" path="res://assets/models/Low poly trees/Models/Tree Type6 02.dae" id="60_erk3c"]
-[ext_resource type="PackedScene" uid="uid://pjhvc8buvb06" path="res://assets/models/Low poly trees/Models/Tree Type6 03.dae" id="61_lel5v"]
-[ext_resource type="PackedScene" uid="uid://dqtvgfw452vd3" path="res://assets/models/Low poly trees/Models/Tree Type6 04.dae" id="62_nrft2"]
 [ext_resource type="PackedScene" uid="uid://cim33c3t5qcns" path="res://entities/tree_2.tscn" id="63_miux7"]
-[ext_resource type="PackedScene" uid="uid://dknm4mbuy82c7" path="res://assets/models/Low poly trees/Models/Tree Type7 01.dae" id="64_vnhan"]
-[ext_resource type="PackedScene" uid="uid://dlk3nh7jti547" path="res://assets/models/Low poly trees/Models/Tree Type7 02.dae" id="65_70g15"]
-[ext_resource type="PackedScene" uid="uid://dehijrpa3183w" path="res://assets/models/Low poly trees/Models/Tree Type7 03.dae" id="66_wlkpk"]
-[ext_resource type="PackedScene" uid="uid://d1j5pp8jmwkhb" path="res://assets/models/Low poly trees/Models/Tree Type7 04.dae" id="67_ktc2w"]
 [ext_resource type="PackedScene" uid="uid://dn7d0w7ixnld3" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/BirchTree_4.fbx" id="69_c5wes"]
 [ext_resource type="PackedScene" uid="uid://dwbrxl6wpav04" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/BirchTree_Autumn_2.fbx" id="70_wpj7b"]
 [ext_resource type="PackedScene" uid="uid://c5tid88uu4qg5" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/BirchTree_Dead_1.fbx" id="71_a2wdf"]
 [ext_resource type="PackedScene" uid="uid://byh5hcbgg0lfg" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/BirchTree_Dead_5.fbx" id="72_uu2h0"]
 [ext_resource type="PackedScene" uid="uid://brrros8kakhg" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/BirchTree_Dead_Snow_2.fbx" id="73_6ulsg"]
 [ext_resource type="PackedScene" uid="uid://bwqcfqocgw565" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/BirchTree_Dead_Snow_4.fbx" id="74_exe5i"]
-[ext_resource type="PackedScene" uid="uid://bswj3yeb27u1j" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/BirchTree_Snow_2.fbx" id="75_q5ipg"]
 [ext_resource type="PackedScene" uid="uid://bqyjbo0wo4jxp" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/BushBerries_1.fbx" id="76_epd3v"]
 [ext_resource type="PackedScene" uid="uid://dyafbqpt23o2r" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Bush_1.fbx" id="77_uw8m6"]
 [ext_resource type="PackedScene" uid="uid://ckxjkru3q5aoo" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/CactusFlower_1.fbx" id="80_ti0ou"]
@@ -81,16 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cuxuhg2sorgof" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Grass_2.fbx" id="87_qjxgo"]
 [ext_resource type="PackedScene" uid="uid://buk58fnju70xb" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Lilypad.fbx" id="88_6jia4"]
 [ext_resource type="PackedScene" uid="uid://los0gblximvv" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/PalmTree_2.fbx" id="90_fdd08"]
-[ext_resource type="PackedScene" uid="uid://cmikqiwlhsxcg" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/PineTree_3.fbx" id="91_yohxc"]
-[ext_resource type="PackedScene" uid="uid://dwwtk10pycdcx" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Plant_1.fbx" id="92_ra0fy"]
-[ext_resource type="PackedScene" uid="uid://dbapmwi6u83j0" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Plant_3.fbx" id="93_uc13j"]
 [ext_resource type="PackedScene" uid="uid://deslopjk13xb0" path="res://scenes/palm_tree_03.tscn" id="93_v8pyf"]
-[ext_resource type="PackedScene" uid="uid://cjbthl0nbfoe8" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Rock_2.fbx" id="94_00hfq"]
-[ext_resource type="PackedScene" uid="uid://cl2udaded54qw" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Rock_1.fbx" id="95_66puw"]
-[ext_resource type="PackedScene" uid="uid://b3gccs272hecr" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Rock_3.fbx" id="96_12nwo"]
-[ext_resource type="PackedScene" uid="uid://bfjyehjtroexl" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Rock_6.fbx" id="97_ku80d"]
-[ext_resource type="PackedScene" uid="uid://bm1yustmw5j46" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Rock_Moss_1.fbx" id="98_ot1ei"]
-[ext_resource type="PackedScene" uid="uid://csks26ck1modj" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Rock_Moss_3.fbx" id="99_wvnc0"]
 [ext_resource type="PackedScene" uid="uid://dvyv0xkbbo8cc" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/Rock_Moss_7.fbx" id="100_e1alf"]
 [ext_resource type="PackedScene" uid="uid://deuuo116ikd04" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/TreeStump.fbx" id="101_3lhbf"]
 [ext_resource type="PackedScene" uid="uid://dvfn51u0mwgey" path="res://scenes/cactus.tscn" id="101_v8pyf"]
@@ -288,6 +219,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3wg2l")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rhrei"]
+size = Vector3(4.9677124, 7.1245117, 5.1154785)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8cimk"]
 albedo_texture = ExtResource("141_c16b8")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
@@ -304,202 +238,24 @@ size = Vector3(35, 1, 10)
 [node name="Rock Type1 05" parent="." instance=ExtResource("8_up6qc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0358696, 0.012912273, 5.208581)
 
-[node name="Rock Type6 02" parent="." instance=ExtResource("25_nmrnd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70011425, 0, 24.170982)
-
-[node name="Rock Type6 03" parent="." instance=ExtResource("26_g7pn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3862906, 0, 21.803143)
-
-[node name="Rock Type6 04" parent="." instance=ExtResource("27_15pbc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130126, 0, 20.551945)
-
 [node name="Node3D" type="Node3D" parent="."]
-
-[node name="Rock Type1 01" parent="Node3D" instance=ExtResource("3_7yfra")]
-auto_translate_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.944374, 3.1051989, 1.7476578)
-
-[node name="Rock Type1 02" parent="Node3D" instance=ExtResource("4_a3jnr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.935728, 0, 1.470911)
-
-[node name="Rock Type1 03" parent="Node3D" instance=ExtResource("5_5orao")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.160358, 0, -0.76853514)
-
-[node name="Rock Type1 04" parent="Node3D" instance=ExtResource("6_8vnbg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.628147, 0, 1.8455343)
-
-[node name="Rock Type2 01" parent="Node3D" instance=ExtResource("7_wigko")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.959042, 4.7683716e-07, 5.208581)
-
-[node name="Rock Type2 02" parent="Node3D" instance=ExtResource("9_2onxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5386715, 0, 5.406671)
-
-[node name="Rock Type2 03" parent="Node3D" instance=ExtResource("10_sat4p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.18433, 0, 5.2784405)
-
-[node name="Rock Type2 04" parent="Node3D" instance=ExtResource("11_pejsk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.044144, 0, 5.060951)
-
-[node name="Rock Type3 01" parent="Node3D" instance=ExtResource("12_gmatd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.85634, 0, 10.119052)
-
-[node name="Rock Type3 02" parent="Node3D" instance=ExtResource("13_tkj4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.161378, 0, 10.491151)
-
-[node name="Rock Type3 03" parent="Node3D" instance=ExtResource("14_hwau3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9542, 0, 10.495453)
-
-[node name="Rock Type3 04" parent="Node3D" instance=ExtResource("15_6bh1h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.989418, 0, 10.027666)
-
-[node name="Rock Type4 01" parent="Node3D" instance=ExtResource("16_4hn78")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.247713, 0, 14.89694)
-
-[node name="Rock Type4 02" parent="Node3D" instance=ExtResource("17_yntcc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.993427, 0, 14.6139145)
-
-[node name="Rock Type4 04" parent="Node3D" instance=ExtResource("18_dlloj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0657234, 0, 14.305816)
-
-[node name="Rock Type4 03" parent="Node3D" instance=ExtResource("19_blebd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9589896, 0, 16.137527)
-
-[node name="Rock Type5 01" parent="Node3D" instance=ExtResource("20_444sv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.858265, 0, 21.64542)
-
-[node name="Rock Type5 02" parent="Node3D" instance=ExtResource("21_qbh7x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.304878, 0, 22.950306)
-
-[node name="Rock Type5 04" parent="Node3D" instance=ExtResource("22_s54bf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.929632, 0, 23.316833)
-
-[node name="Rock Type5 03" parent="Node3D" instance=ExtResource("20_444sv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.361423, 0, 26.149118)
-
-[node name="Rock Type5 05" parent="Node3D" instance=ExtResource("21_qbh7x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.666518, 0, 25.627401)
-
-[node name="Rock Type5 06" parent="Node3D" instance=ExtResource("23_rhrei")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.379509, 0, 24.691216)
-
-[node name="Rock Type6 01" parent="Node3D" instance=ExtResource("24_u2wqf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3844461, 0, 22.791218)
 
 [node name="CactusFlowers_2" parent="Node3D" instance=ExtResource("26_b3s3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.610397, 1.9942188, -81.1178)
 
 [node name="Node3D2" type="Node3D" parent="."]
 
-[node name="Tree Type0 07" parent="Node3D2" instance=ExtResource("30_xbkw0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -11)
+[node name="Tree Type2 06" parent="Node3D2" instance=ExtResource("41_bck7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.83647, 19.805893, 145.0484)
 
-[node name="Tree Type0 01" parent="Node3D2" instance=ExtResource("31_18yd3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.751009, -8)
+[node name="Tree Type2 08" parent="Node3D2" instance=ExtResource("41_bck7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.103455, 19.805893, 142.26923)
 
-[node name="Tree Type0 08" parent="Node3D2" instance=ExtResource("32_aohxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -7)
+[node name="Tree Type2 09" parent="Node3D2" instance=ExtResource("41_bck7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.36592, 6.659193, 156.61784)
 
-[node name="Tree Type0 10" parent="Node3D2" instance=ExtResource("34_sautm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -16)
-
-[node name="Tree Type1 01" parent="Node3D2" instance=ExtResource("35_eblgi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -15)
-
-[node name="Tree Type1 02" parent="Node3D2" instance=ExtResource("36_h7dmc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -15)
-
-[node name="Tree Type1 03" parent="Node3D2" instance=ExtResource("37_gobdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -16)
-
-[node name="Tree Type1 04" parent="Node3D2" instance=ExtResource("38_f0fcs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -15)
-
-[node name="Tree Type1 05" parent="Node3D2" instance=ExtResource("39_win7n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 5)
-
-[node name="Tree Type2 01" parent="Node3D2" instance=ExtResource("40_rte88")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 9)
-
-[node name="Tree Type2 02" parent="Node3D2" instance=ExtResource("41_bck7e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 11)
-
-[node name="Tree Type2 03" parent="Node3D2" instance=ExtResource("42_oq10i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 13)
-
-[node name="Tree Type2 04" parent="Node3D2" instance=ExtResource("43_3sop5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 15)
-
-[node name="Tree Type2 05" parent="Node3D2" instance=ExtResource("44_4w3ag")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 10)
-
-[node name="Tree Type3 01" parent="Node3D2" instance=ExtResource("45_w2hhf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, 24)
-
-[node name="Tree Type3 02" parent="Node3D2" instance=ExtResource("46_i84x7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 27)
-
-[node name="Tree Type3 03" parent="Node3D2" instance=ExtResource("47_p5ba4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 33)
-
-[node name="Tree Type3 04" parent="Node3D2" instance=ExtResource("48_c747a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 39)
-
-[node name="Tree Type3 05" parent="Node3D2" instance=ExtResource("49_escdu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 42)
-
-[node name="Tree Type4 01" parent="Node3D2" instance=ExtResource("50_84wh6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 44)
-
-[node name="Tree Type4 02" parent="Node3D2" instance=ExtResource("51_sm1i7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 48)
-
-[node name="Tree Type4 03" parent="Node3D2" instance=ExtResource("52_wdptq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 51)
-
-[node name="Tree Type4 04" parent="Node3D2" instance=ExtResource("53_2erg8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 50)
-
-[node name="Tree Type4 05" parent="Node3D2" instance=ExtResource("54_ky7ij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 44)
-
-[node name="Tree Type5 01" parent="Node3D2" instance=ExtResource("55_lgq3s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 40)
-
-[node name="Tree Type5 02" parent="Node3D2" instance=ExtResource("56_a55ia")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 37)
-
-[node name="Tree Type5 03" parent="Node3D2" instance=ExtResource("57_kx4sr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 36)
-
-[node name="Tree Type5 04" parent="Node3D2" instance=ExtResource("58_tro8p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 30)
-
-[node name="Tree Type6 01" parent="Node3D2" instance=ExtResource("59_w8x64")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, 26)
-
-[node name="Tree Type6 02" parent="Node3D2" instance=ExtResource("60_erk3c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 33)
-
-[node name="Tree Type6 03" parent="Node3D2" instance=ExtResource("61_lel5v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 25)
-
-[node name="Tree Type6 04" parent="Node3D2" instance=ExtResource("62_nrft2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 0, 17)
-
-[node name="Tree Type7 01" parent="Node3D2" instance=ExtResource("64_vnhan")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 47)
-
-[node name="Tree Type7 02" parent="Node3D2" instance=ExtResource("65_70g15")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 46)
-
-[node name="Tree Type7 03" parent="Node3D2" instance=ExtResource("66_wlkpk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 43)
-
-[node name="Tree Type7 04" parent="Node3D2" instance=ExtResource("67_ktc2w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 40)
-
-[node name="Tree Type7 05" parent="Node3D2" instance=ExtResource("67_ktc2w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.82436, 0, 11.80419)
+[node name="Tree Type2 07" parent="Node3D2" instance=ExtResource("41_bck7e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.566183, 19.177319, 142.62225)
 
 [node name="BeachPropStarfish2" type="MeshInstance3D" parent="Node3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 78)
@@ -526,6 +282,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.865314, 0.03342724, 79.20
 mesh = SubResource("ArrayMesh_wsl0k")
 skeleton = NodePath("../..")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D2/Mountain3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2/Mountain3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047454834, 3.0622559, -0.15246582)
+shape = SubResource("BoxShape3D_rhrei")
+
 [node name="BirchTree_4" parent="Node3D2" instance=ExtResource("69_c5wes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.467606, 0, 66.26671)
 
@@ -543,9 +305,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.264499, -9.536743e-07, 72
 
 [node name="BirchTree_Dead_Snow_4" parent="Node3D2" instance=ExtResource("74_exe5i")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.32865, 0, 73.03012)
-
-[node name="BirchTree_Snow_2" parent="Node3D2" instance=ExtResource("75_q5ipg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.147681, 0, 72.12105)
 
 [node name="BushBerries_1" parent="Node3D2" instance=ExtResource("76_epd3v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.79787, 0, 75.00107)
@@ -566,34 +325,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.355103, 0, 78.73604)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.282715, 0, 80.29118)
 
 [node name="Lilypad" parent="Node3D2" instance=ExtResource("88_6jia4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.744654, 0, 59.472164)
-
-[node name="PineTree_3" parent="Node3D2" instance=ExtResource("91_yohxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.444662, 0.04611826, 55.428616)
-
-[node name="Plant_1" parent="Node3D2" instance=ExtResource("92_ra0fy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.964812, 0, 58.72196)
-
-[node name="Plant_3" parent="Node3D2" instance=ExtResource("93_uc13j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.69626, 0, 57.507187)
-
-[node name="Rock_2" parent="Node3D2" instance=ExtResource("94_00hfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.464163, 0, 56.334442)
-
-[node name="Rock_1" parent="Node3D2" instance=ExtResource("95_66puw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.395247, 0, 57.8697)
-
-[node name="Rock_3" parent="Node3D2" instance=ExtResource("96_12nwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.147999, 0, 57.135536)
-
-[node name="Rock_6" parent="Node3D2" instance=ExtResource("97_ku80d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.841972, 0, 55.910767)
-
-[node name="Rock_Moss_1" parent="Node3D2" instance=ExtResource("98_ot1ei")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.464098, 0, 54.649654)
-
-[node name="Rock_Moss_3" parent="Node3D2" instance=ExtResource("99_wvnc0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.68702, 0, 57.10166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.63658, 0, 126.00145)
 
 [node name="Rock_Moss_7" parent="Node3D2" instance=ExtResource("100_e1alf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.119423, 0, 96.561775)
@@ -787,9 +519,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.485733, 1.7523311, -129.75
 [node name="Tree Type7 06" parent="Desert" instance=ExtResource("93_v8pyf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 437.4152, 0, -162.61484)
 
-[node name="CactusFlowers_2" parent="Desert" instance=ExtResource("26_b3s3f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.900375, 0, 20.515255)
-
 [node name="CactusFlowers_3" parent="Desert" instance=ExtResource("26_b3s3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.90312, 0, -183.40526)
 
@@ -939,11 +668,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 233.28323, 3.2721996, 343.044
 [node name="Tree Type0 15" parent="Forest" instance=ExtResource("106_b3s3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.30606, 0, 160.8632)
 
-[node name="Grass_22" parent="." instance=ExtResource("107_wpj7b")]
+[node name="Grass_22" parent="Forest" instance=ExtResource("107_wpj7b")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 326.90994, -0.7777691, 134.66597)
 
-[node name="Grass_23" parent="." instance=ExtResource("107_wpj7b")]
+[node name="Grass_23" parent="Forest" instance=ExtResource("107_wpj7b")]
 transform = Transform3D(4.359962, 0, -2.4475973, 0, 5, 0, 2.4475973, 0, 4.359962, 326.90994, -0.7777691, 130.46375)
 
-[node name="Grass_24" parent="." instance=ExtResource("107_wpj7b")]
+[node name="Grass_24" parent="Forest" instance=ExtResource("107_wpj7b")]
 transform = Transform3D(5.659729, 0, 2.5577266, 0, 7.478132, 0, -3.0743895, 0, 4.7085896, 326.90994, -0.7777691, 131.88081)
+
+[node name="Mountains" type="Node3D" parent="."]
+
+[node name="Rock Type1 01" parent="Mountains" instance=ExtResource("8_up6qc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.22309, 3.623931, -217.71605)
+
+[node name="Rock Type1 02" parent="Mountains" instance=ExtResource("8_up6qc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.13947, 0, -189.16428)
+
+[node name="Rock Type1 03" parent="Mountains" instance=ExtResource("8_up6qc")]
+transform = Transform3D(-0.7317633, 0, 0.5884062, 0, 1.7498437, 0, -0.59642893, 0, -0.72192013, -44.177246, -2.3841858e-07, -191.09615)

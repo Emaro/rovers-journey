@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=36 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien_1.tscn" id="4_jyhfs"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://r57qh2lyujvu" path="res://scenes/dead_tree.tscn" id="23_og1vs"]
 [ext_resource type="PackedScene" uid="uid://b5rmhhrk4hup2" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/WoodLog.fbx" id="24_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://cim33c3t5qcns" path="res://entities/tree_2.tscn" id="25_vxglm"]
+[ext_resource type="PackedScene" uid="uid://dvfn51u0mwgey" path="res://scenes/cactus.tscn" id="26_vxglm"]
+[ext_resource type="PackedScene" uid="uid://b44ybtmsvguta" path="res://scenes/cactus_flowers_2.tscn" id="27_2f3dj"]
 
 [sub_resource type="Animation" id="Animation_o6xl0"]
 length = 0.001
@@ -329,18 +331,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1.5, 80)
 tower_part = NodePath("../../Tower_Parts/TowerPart_3")
 
 [node name="Tower_Parts" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.4658155, 3.4351768)
 
 [node name="TowerPart_1" parent="Tower_Parts" instance=ExtResource("10_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.5, -20)
-visible = false
 
 [node name="TowerPart_2" parent="Tower_Parts" instance=ExtResource("12_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4.5, -20)
-visible = false
 
 [node name="TowerPart_3" parent="Tower_Parts" instance=ExtResource("14_jkv2x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 7.5, -20)
-visible = false
 
 [node name="EndTrigger" type="Area3D" parent="Tower_Parts"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -20, 1, -20)
@@ -356,20 +356,12 @@ environment = SubResource("Environment_dp3eg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0029296875, -0.01159668, 0.9862366)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.950966, -114.50533, 29.449638)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.645739, 7.1128225, 29.449638)
 light_color = Color(1, 0.7294118, 0, 1)
 light_energy = 5.566
 light_indirect_energy = 2.0
 light_volumetric_fog_energy = 9.651
 omni_range = 34.695477
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3731937, -0.33578157, -10.082807)
-light_color = Color(1, 0.7294118, 0, 1)
-light_energy = 2.0
-light_indirect_energy = 2.0
-light_volumetric_fog_energy = 4.94
-omni_range = 8.404954
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.525171, -0.33578157, -18.737545)
@@ -512,6 +504,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.61707, 20.007906, 111.54
 
 [node name="MetalScrapResource7" parent="." instance=ExtResource("8_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.0501, 20.057108, 81.877754)
+
+[node name="Cactus_3" parent="." instance=ExtResource("26_vxglm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.91458, 0, -134.09421)
+
+[node name="CactusFlowers_2" parent="." instance=ExtResource("27_2f3dj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.13739, 1.9073486e-06, -136.50037)
 
 [connection signal="animation_finished" from="Alien_1/AnimationPlayer" to="Alien_1" method="_on_animation_player_animation_finished"]
 [connection signal="health_changed" from="Rover" to="HUD" method="_on_rover_health_changed"]

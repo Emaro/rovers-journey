@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu7iua6j64p0x"]
+[gd_scene load_steps=5 format=3 uid="uid://bu7iua6j64p0x"]
 
 [ext_resource type="PackedScene" uid="uid://5cgxqj6x36sa" path="res://assets/models/Low poly rocks/Models/Rock Type1 01.dae" id="1_ai1di"]
 [ext_resource type="Texture2D" uid="uid://d3mvmg6vp7lgs" path="res://assets/models/Low poly rocks/Textures/Colorsheet Rock Orange.png" id="2_0b2df"]
@@ -6,8 +6,17 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4vtp"]
 albedo_texture = ExtResource("2_0b2df")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2pgpb"]
+size = Vector3(2.3257446, 1.2547607, 1.251709)
+
 [node name="Rock Type1 01" instance=ExtResource("1_ai1di")]
 
 [node name="Rock_Type1_01_mesh" parent="." index="0"]
 material_override = SubResource("StandardMaterial3D_t4vtp")
 metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043304443, 0.12738037, 0.07873535)
+shape = SubResource("BoxShape3D_2pgpb")
