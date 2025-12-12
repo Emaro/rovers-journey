@@ -335,12 +335,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.4658155, 3.4351768)
 
 [node name="TowerPart_1" parent="Tower_Parts" instance=ExtResource("10_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.5, -20)
+visible = false
 
 [node name="TowerPart_2" parent="Tower_Parts" instance=ExtResource("12_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4.5, -20)
+visible = false
 
 [node name="TowerPart_3" parent="Tower_Parts" instance=ExtResource("14_jkv2x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 7.5, -20)
+visible = false
 
 [node name="EndTrigger" type="Area3D" parent="Tower_Parts"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -20, 1, -20)

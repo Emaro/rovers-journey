@@ -91,7 +91,6 @@ over_extend = 0.2
 is_motor = true
 is_steer = true
 grip_curve = SubResource("Curve_7ddre")
-show_debug = true
 
 [node name="wheel" parent="WheelFL" instance=ExtResource("7_2jort")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, -0.62681943, 0.0036349297)
@@ -120,7 +119,6 @@ over_extend = 0.2
 is_motor = true
 is_steer = true
 grip_curve = SubResource("Curve_7ddre")
-show_debug = true
 
 [node name="wheel" parent="WheelFR" instance=ExtResource("7_2jort")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0, -0.62681943, 0.0036349297)
@@ -149,7 +147,6 @@ over_extend = 0.2
 wheel_radius = 0.45
 is_motor = true
 grip_curve = SubResource("Curve_7ddre")
-show_debug = true
 
 [node name="wheel" parent="WheelBR" instance=ExtResource("7_2jort")]
 transform = Transform3D(-2.1855692e-08, 0, -0.49999997, 0, 0.49999997, 0, 0.49999997, 0, -2.1855692e-08, 0, -0.62681943, 0.0036349297)
@@ -178,7 +175,6 @@ over_extend = 0.2
 wheel_radius = 0.45
 is_motor = true
 grip_curve = SubResource("Curve_7ddre")
-show_debug = true
 
 [node name="wheel" parent="WheelBL" instance=ExtResource("7_2jort")]
 transform = Transform3D(-2.185569e-08, 0, -0.4999999, 0, 0.4999999, 0, 0.4999999, 0, -2.185569e-08, 0, -0.47791636, 0.0036349297)

@@ -354,6 +354,7 @@ func show_alien_t3_dialog(
 			+ "I can help you build the tower transmitter.\n"
 			+ "Bring me 3 crystals, 5 metal scraps and 3 rocks.\n"
 		) % [required_crystal, required_metalscrap, required_rocks]
+		upgrade_btn.visible = true
 		upgrade_btn.disabled = false
 		upgrade_btn.text = "Build"
 		cancel_btn.text = "Cancel"
