@@ -1,9 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1cq10wl1t6rd"]
 
+[ext_resource type="Theme" uid="uid://b34nxovytc5r4" path="res://ui/hud.tres" id="1_276te"]
 [ext_resource type="Script" uid="uid://dbpiahylhqnt2" path="res://scripts/hud.gd" id="1_rbyyf"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_rbyyf"]
-font_size = 24
 
 [sub_resource type="SystemFont" id="SystemFont_rbyyf"]
 font_names = PackedStringArray("Consolas")
@@ -16,12 +14,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.0269814, 1.0329239)
+theme = ExtResource("1_276te")
 script = ExtResource("1_rbyyf")
 
 [node name="AlienDialog" type="PanelContainer" parent="."]
-visible = false
-custom_minimum_size = Vector2(500, 200)
+custom_minimum_size = Vector2(800, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -42,6 +39,7 @@ alignment = 1
 [node name="Msg" type="Label" parent="AlienDialog/VBox"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+text = "Alien Dialog"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -60,6 +58,33 @@ text = "Upgrade"
 layout_mode = 2
 text = "Cancel"
 
+[node name="Resources" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 231.0
+offset_bottom = 213.0
+
+[node name="RocksLabel" type="Label" parent="Resources"]
+layout_mode = 2
+text = "Rocks: 0"
+
+[node name="SandstoneLabel" type="Label" parent="Resources"]
+layout_mode = 2
+text = "Sandstones: 0"
+
+[node name="MetalscrapLabel" type="Label" parent="Resources"]
+layout_mode = 2
+text = "Metalscraps: 0"
+
+[node name="WoodLabel" type="Label" parent="Resources"]
+layout_mode = 2
+text = "Wood: 0"
+
+[node name="CrystalLabel" type="Label" parent="Resources"]
+layout_mode = 2
+text = "Crystal: 0"
+
 [node name="InteractLabel" type="Label" parent="."]
 visible = false
 layout_mode = 1
@@ -76,66 +101,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "[E] Talk"
 
-[node name="RocksLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_right = 65.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 30
-text = "Rocks: 0"
-
-[node name="SandstoneLabel" type="Label" parent="."]
-layout_mode = 1
-offset_left = 2.0
-offset_top = 40.0
-offset_right = 203.0
-offset_bottom = 82.0
-theme_override_font_sizes/font_size = 30
-text = "Sandstones: 0"
-
-[node name="MetalscrapLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 80.0
-offset_right = 211.0
-offset_bottom = 122.0
-theme_override_font_sizes/font_size = 30
-text = "Metalscraps: 0"
-
-[node name="WoodLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 120.0
-offset_right = 119.0
-offset_bottom = 162.0
-theme_override_font_sizes/font_size = 30
-text = "Wood: 0"
-
-[node name="CrystalLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 160.0
-offset_right = 135.0
-offset_bottom = 202.0
-theme_override_font_sizes/font_size = 30
-text = "Crystal: 0"
-
-[node name="HealthLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.74700004
-anchor_right = 1.0
-anchor_bottom = 0.080000006
-offset_left = 58.654663
-offset_top = 16.458134
-offset_right = -101.34802
-offset_bottom = 35.291283
-grow_horizontal = 0
-text = "<3 <3 <3"
-label_settings = SubResource("LabelSettings_rbyyf")
-horizontal_alignment = 2
-
 [node name="StartScreen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -191,7 +158,11 @@ grow_vertical = 2
 layout_mode = 2
 alignment = 1
 
-[node name="StoryLabel" type="Label" parent="StoryPanel/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="StoryPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 24
+
+[node name="StoryLabel" type="Label" parent="StoryPanel/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
@@ -199,7 +170,14 @@ size_flags_horizontal = 4
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Next"
+text = "Start Mission"
+
+[node name="StartMissionButton" type="Button" parent="StoryPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start mission"
 
 [node name="ChoiceButtons" type="HBoxContainer" parent="StoryPanel/VBoxContainer"]
 visible = false
@@ -219,6 +197,7 @@ size_flags_vertical = 4
 text = "Stay here"
 
 [node name="EndScreen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -256,18 +235,33 @@ size_flags_horizontal = 4
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RespawnButton" type="Button" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Health" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.90400004
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.048
-offset_left = -70.601746
-offset_top = 62.928158
-offset_right = -70.1936
-offset_bottom = 62.82416
+offset_top = 24.0
+offset_right = -24.0
 grow_horizontal = 0
+
+[node name="HealthLabel" type="Label" parent="Health"]
+layout_mode = 2
+text = "<3 <3 <3"
+horizontal_alignment = 2
+
+[node name="RespawnButton" type="Button" parent="Health"]
+layout_mode = 2
 text = "Respawn (<3)"
 
 [connection signal="pressed" from="StartScreen/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="RespawnButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Health/RespawnButton" to="." method="_on_button_pressed"]

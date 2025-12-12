@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://col0pop6no44"
 path.s3tc="res://.godot/imported/3_height.bmp-93c08a26a9088d7499c3743357f00645.s3tc.ctex"
+path.etc2="res://.godot/imported/3_height.bmp-93c08a26a9088d7499c3743357f00645.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Monster Skin/3/3_height.bmp"
-dest_files=["res://.godot/imported/3_height.bmp-93c08a26a9088d7499c3743357f00645.s3tc.ctex"]
+dest_files=["res://.godot/imported/3_height.bmp-93c08a26a9088d7499c3743357f00645.s3tc.ctex", "res://.godot/imported/3_height.bmp-93c08a26a9088d7499c3743357f00645.etc2.ctex"]
 
 [params]
 

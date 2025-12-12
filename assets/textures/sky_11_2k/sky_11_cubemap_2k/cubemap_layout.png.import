@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://oluvd31xojho"
 path.s3tc="res://.godot/imported/cubemap_layout.png-178a77d1a03a657809afd18e60fa42a2.s3tc.ctex"
+path.etc2="res://.godot/imported/cubemap_layout.png-178a77d1a03a657809afd18e60fa42a2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/sky_11_2k/sky_11_cubemap_2k/cubemap_layout.png"
-dest_files=["res://.godot/imported/cubemap_layout.png-178a77d1a03a657809afd18e60fa42a2.s3tc.ctex"]
+dest_files=["res://.godot/imported/cubemap_layout.png-178a77d1a03a657809afd18e60fa42a2.s3tc.ctex", "res://.godot/imported/cubemap_layout.png-178a77d1a03a657809afd18e60fa42a2.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxalionyb5ik"
 path.s3tc="res://.godot/imported/packed_albedo_height.png-b1392630d14363c684e5a423f21e7aa5.s3tc.ctex"
+path.etc2="res://.godot/imported/packed_albedo_height.png-b1392630d14363c684e5a423f21e7aa5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Desert_01_2k/packed_albedo_height.png"
-dest_files=["res://.godot/imported/packed_albedo_height.png-b1392630d14363c684e5a423f21e7aa5.s3tc.ctex"]
+dest_files=["res://.godot/imported/packed_albedo_height.png-b1392630d14363c684e5a423f21e7aa5.s3tc.ctex", "res://.godot/imported/packed_albedo_height.png-b1392630d14363c684e5a423f21e7aa5.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b545wc05k5tkm"
 path.s3tc="res://.godot/imported/packed_albedo_height.png-abe0fcedbbe3b01775d9d8e596e1b278.s3tc.ctex"
+path.etc2="res://.godot/imported/packed_albedo_height.png-abe0fcedbbe3b01775d9d8e596e1b278.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Stone_Tiles_01_2k/packed_albedo_height.png"
-dest_files=["res://.godot/imported/packed_albedo_height.png-abe0fcedbbe3b01775d9d8e596e1b278.s3tc.ctex"]
+dest_files=["res://.godot/imported/packed_albedo_height.png-abe0fcedbbe3b01775d9d8e596e1b278.s3tc.ctex", "res://.godot/imported/packed_albedo_height.png-abe0fcedbbe3b01775d9d8e596e1b278.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://hjftdn1ysmra"
 path.s3tc="res://.godot/imported/packed_albedo_height.png-529039c1389e946e72391bae811b3da2.s3tc.ctex"
+path.etc2="res://.godot/imported/packed_albedo_height.png-529039c1389e946e72391bae811b3da2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Rock_02_2k/packed_albedo_height.png"
-dest_files=["res://.godot/imported/packed_albedo_height.png-529039c1389e946e72391bae811b3da2.s3tc.ctex"]
+dest_files=["res://.godot/imported/packed_albedo_height.png-529039c1389e946e72391bae811b3da2.s3tc.ctex", "res://.godot/imported/packed_albedo_height.png-529039c1389e946e72391bae811b3da2.etc2.ctex"]
 
 [params]
 

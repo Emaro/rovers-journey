@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjs4cajudbfp4"
 path.s3tc="res://.godot/imported/Leaves.png-563da5097911a391e6ac47ab9defff66.s3tc.ctex"
+path.etc2="res://.godot/imported/Leaves.png-563da5097911a391e6ac47ab9defff66.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/Stylized Nature MegaKit[Standard]/glTF/Leaves.png"
-dest_files=["res://.godot/imported/Leaves.png-563da5097911a391e6ac47ab9defff66.s3tc.ctex"]
+dest_files=["res://.godot/imported/Leaves.png-563da5097911a391e6ac47ab9defff66.s3tc.ctex", "res://.godot/imported/Leaves.png-563da5097911a391e6ac47ab9defff66.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dw356id4il7fb"
 path.s3tc="res://.godot/imported/1_ao.bmp-4308f5522298345d25c6e3799bc4b467.s3tc.ctex"
+path.etc2="res://.godot/imported/1_ao.bmp-4308f5522298345d25c6e3799bc4b467.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Magical Forrest/1/1_ao.bmp"
-dest_files=["res://.godot/imported/1_ao.bmp-4308f5522298345d25c6e3799bc4b467.s3tc.ctex"]
+dest_files=["res://.godot/imported/1_ao.bmp-4308f5522298345d25c6e3799bc4b467.s3tc.ctex", "res://.godot/imported/1_ao.bmp-4308f5522298345d25c6e3799bc4b467.etc2.ctex"]
 
 [params]
 

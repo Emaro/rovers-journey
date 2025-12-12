@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsciaomulhqcj"
 path.s3tc="res://.godot/imported/Sand_01_2k_Height.jpg-d03958cd4391b17ad520fb4a082870e3.s3tc.ctex"
+path.etc2="res://.godot/imported/Sand_01_2k_Height.jpg-d03958cd4391b17ad520fb4a082870e3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Sand_01_2k/Sand_01_2k_Height.jpg"
-dest_files=["res://.godot/imported/Sand_01_2k_Height.jpg-d03958cd4391b17ad520fb4a082870e3.s3tc.ctex"]
+dest_files=["res://.godot/imported/Sand_01_2k_Height.jpg-d03958cd4391b17ad520fb4a082870e3.s3tc.ctex", "res://.godot/imported/Sand_01_2k_Height.jpg-d03958cd4391b17ad520fb4a082870e3.etc2.ctex"]
 
 [params]
 

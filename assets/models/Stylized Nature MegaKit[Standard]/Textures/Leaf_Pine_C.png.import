@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://kmdpx4a6ntmu"
 path.s3tc="res://.godot/imported/Leaf_Pine_C.png-487403b907c3bce0ae814fdb8bc5c875.s3tc.ctex"
+path.etc2="res://.godot/imported/Leaf_Pine_C.png-487403b907c3bce0ae814fdb8bc5c875.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/Stylized Nature MegaKit[Standard]/Textures/Leaf_Pine_C.png"
-dest_files=["res://.godot/imported/Leaf_Pine_C.png-487403b907c3bce0ae814fdb8bc5c875.s3tc.ctex"]
+dest_files=["res://.godot/imported/Leaf_Pine_C.png-487403b907c3bce0ae814fdb8bc5c875.s3tc.ctex", "res://.godot/imported/Leaf_Pine_C.png-487403b907c3bce0ae814fdb8bc5c875.etc2.ctex"]
 
 [params]
 

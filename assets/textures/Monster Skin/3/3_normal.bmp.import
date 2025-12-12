@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://sod4vi3f16fj"
 path.s3tc="res://.godot/imported/3_normal.bmp-cab6256556a30ef09e94081ea6ce1e6d.s3tc.ctex"
+path.etc2="res://.godot/imported/3_normal.bmp-cab6256556a30ef09e94081ea6ce1e6d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Monster Skin/3/3_normal.bmp"
-dest_files=["res://.godot/imported/3_normal.bmp-cab6256556a30ef09e94081ea6ce1e6d.s3tc.ctex"]
+dest_files=["res://.godot/imported/3_normal.bmp-cab6256556a30ef09e94081ea6ce1e6d.s3tc.ctex", "res://.godot/imported/3_normal.bmp-cab6256556a30ef09e94081ea6ce1e6d.etc2.ctex"]
 
 [params]
 

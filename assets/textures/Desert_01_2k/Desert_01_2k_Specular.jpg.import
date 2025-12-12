@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg6xyv3dua5b3"
 path.s3tc="res://.godot/imported/Desert_01_2k_Specular.jpg-5dc520785575ff7201b817c2bce11417.s3tc.ctex"
+path.etc2="res://.godot/imported/Desert_01_2k_Specular.jpg-5dc520785575ff7201b817c2bce11417.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Desert_01_2k/Desert_01_2k_Specular.jpg"
-dest_files=["res://.godot/imported/Desert_01_2k_Specular.jpg-5dc520785575ff7201b817c2bce11417.s3tc.ctex"]
+dest_files=["res://.godot/imported/Desert_01_2k_Specular.jpg-5dc520785575ff7201b817c2bce11417.s3tc.ctex", "res://.godot/imported/Desert_01_2k_Specular.jpg-5dc520785575ff7201b817c2bce11417.etc2.ctex"]
 
 [params]
 

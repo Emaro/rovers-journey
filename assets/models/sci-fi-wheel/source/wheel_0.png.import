@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfmt31c34254n"
 path.s3tc="res://.godot/imported/wheel_0.png-6827d0c59fa7decd6f501c63b35f9786.s3tc.ctex"
+path.etc2="res://.godot/imported/wheel_0.png-6827d0c59fa7decd6f501c63b35f9786.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/models/sci-fi-wheel/source/wheel_0.png"
-dest_files=["res://.godot/imported/wheel_0.png-6827d0c59fa7decd6f501c63b35f9786.s3tc.ctex"]
+dest_files=["res://.godot/imported/wheel_0.png-6827d0c59fa7decd6f501c63b35f9786.s3tc.ctex", "res://.godot/imported/wheel_0.png-6827d0c59fa7decd6f501c63b35f9786.etc2.ctex"]
 
 [params]
 

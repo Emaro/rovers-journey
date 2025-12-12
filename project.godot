@@ -25,7 +25,10 @@ settings/addon_root_folder="res://addons/debug_draw_3d"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 
@@ -34,6 +37,10 @@ project/assembly_name="RoversJourney"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
+
+[gui]
+
+theme/custom="uid://b34nxovytc5r4"
 
 [input]
 
@@ -80,3 +87,7 @@ full_brake={
 [physics]
 
 3d/solver/solver_iterations=32
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

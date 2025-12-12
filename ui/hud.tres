@@ -1,0 +1,34 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://b34nxovytc5r4"]
+
+[ext_resource type="FontFile" uid="uid://cnd1j415qpveo" path="res://assets/ArrowType-Recursive-1.085/Recursive_Web/woff2_static/RecursiveSansCslSt-Bold.woff2" id="1_ls0po"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ls0po"]
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+bg_color = Color(0.33945242, 0.20475432, 0.22292775, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_meaxu"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.69411767)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[resource]
+default_font = ExtResource("1_ls0po")
+default_font_size = 30
+Button/constants/h_separation = 40
+Button/constants/outline_size = 10
+Button/styles/normal = SubResource("StyleBoxFlat_ls0po")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_meaxu")
+VBoxContainer/constants/separation = 8

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cd3xyl4afetrv"
 path.s3tc="res://.godot/imported/Desert_01_2k_AmbientOcclusion.jpg-c2f601c591dbd0f42083473693582fcc.s3tc.ctex"
+path.etc2="res://.godot/imported/Desert_01_2k_AmbientOcclusion.jpg-c2f601c591dbd0f42083473693582fcc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Desert_01_2k/Desert_01_2k_AmbientOcclusion.jpg"
-dest_files=["res://.godot/imported/Desert_01_2k_AmbientOcclusion.jpg-c2f601c591dbd0f42083473693582fcc.s3tc.ctex"]
+dest_files=["res://.godot/imported/Desert_01_2k_AmbientOcclusion.jpg-c2f601c591dbd0f42083473693582fcc.s3tc.ctex", "res://.godot/imported/Desert_01_2k_AmbientOcclusion.jpg-c2f601c591dbd0f42083473693582fcc.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://256w33bs4gr2"
 path.s3tc="res://.godot/imported/AllTyres_Tyres.jpg-ec9d41ea7d0c14760051e87b2b574d23.s3tc.ctex"
+path.etc2="res://.godot/imported/AllTyres_Tyres.jpg-ec9d41ea7d0c14760051e87b2b574d23.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/models/car-wheels-pack/Tyres/AllTyres_Tyres.jpg"
-dest_files=["res://.godot/imported/AllTyres_Tyres.jpg-ec9d41ea7d0c14760051e87b2b574d23.s3tc.ctex"]
+dest_files=["res://.godot/imported/AllTyres_Tyres.jpg-ec9d41ea7d0c14760051e87b2b574d23.s3tc.ctex", "res://.godot/imported/AllTyres_Tyres.jpg-ec9d41ea7d0c14760051e87b2b574d23.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://csmwcd6va4veg"
 path.s3tc="res://.godot/imported/Bark_TwistedTree_Normal.png-5d5b87867797f2f8dde5fca6b9f8acb5.s3tc.ctex"
+path.etc2="res://.godot/imported/Bark_TwistedTree_Normal.png-5d5b87867797f2f8dde5fca6b9f8acb5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/Stylized Nature MegaKit[Standard]/Textures/Bark_TwistedTree_Normal.png"
-dest_files=["res://.godot/imported/Bark_TwistedTree_Normal.png-5d5b87867797f2f8dde5fca6b9f8acb5.s3tc.ctex"]
+dest_files=["res://.godot/imported/Bark_TwistedTree_Normal.png-5d5b87867797f2f8dde5fca6b9f8acb5.s3tc.ctex", "res://.godot/imported/Bark_TwistedTree_Normal.png-5d5b87867797f2f8dde5fca6b9f8acb5.etc2.ctex"]
 
 [params]
 

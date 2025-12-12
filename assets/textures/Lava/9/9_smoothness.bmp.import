@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5vdbvgwmxbo4"
 path.s3tc="res://.godot/imported/9_smoothness.bmp-d4439c6e9cbd4196c234e98400f8ff31.s3tc.ctex"
+path.etc2="res://.godot/imported/9_smoothness.bmp-d4439c6e9cbd4196c234e98400f8ff31.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Lava/9/9_smoothness.bmp"
-dest_files=["res://.godot/imported/9_smoothness.bmp-d4439c6e9cbd4196c234e98400f8ff31.s3tc.ctex"]
+dest_files=["res://.godot/imported/9_smoothness.bmp-d4439c6e9cbd4196c234e98400f8ff31.s3tc.ctex", "res://.godot/imported/9_smoothness.bmp-d4439c6e9cbd4196c234e98400f8ff31.etc2.ctex"]
 
 [params]
 

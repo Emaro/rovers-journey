@@ -25,6 +25,7 @@ signal health_changed(old_health, new_health)
 var motor_input := 0.0
 var handbrake := false
 var is_slipping := false
+var reset_position := false
 
 
 func _ready() -> void:
@@ -55,8 +56,7 @@ func _process(delta: float) -> void:
 
 func kill():
 	health -= 1
-	global_position = spawn.position
-	rotation = spawn.rotation
+	reset_position = true
 	health_changed.emit(health + 1, health)
 
 
@@ -127,6 +127,12 @@ func _physics_process(delta: float) -> void:
 	if show_debug:
 		DebugDraw3D.draw_arrow_ray(global_position, linear_velocity, 1.0, Color.YELLOW, 0.05)
 	
+	if reset_position:
+		reset_position = false
+		global_position = spawn.global_position
+		rotation = spawn.rotation
+		return
+		
 	var id := 0
 	var grounded := false
 	for wheel in wheels:

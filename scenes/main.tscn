@@ -404,7 +404,7 @@ shadow_enabled = true
 omni_range = 16.307486
 
 [node name="Spawn" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.82175, 2.2798433, -66.15085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.82175, 5.2712297, -66.15085)
 
 [node name="MetalScrapResource" parent="." instance=ExtResource("8_choun")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 0, -1)

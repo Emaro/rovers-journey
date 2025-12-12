@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf2qjrn8vg77f"
 path.s3tc="res://.godot/imported/Desert_01_2k_BaseColor.jpg-5c9ddd089a4395001f58e35b07d52335.s3tc.ctex"
+path.etc2="res://.godot/imported/Desert_01_2k_BaseColor.jpg-5c9ddd089a4395001f58e35b07d52335.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Desert_01_2k/Desert_01_2k_BaseColor.jpg"
-dest_files=["res://.godot/imported/Desert_01_2k_BaseColor.jpg-5c9ddd089a4395001f58e35b07d52335.s3tc.ctex"]
+dest_files=["res://.godot/imported/Desert_01_2k_BaseColor.jpg-5c9ddd089a4395001f58e35b07d52335.s3tc.ctex", "res://.godot/imported/Desert_01_2k_BaseColor.jpg-5c9ddd089a4395001f58e35b07d52335.etc2.ctex"]
 
 [params]
 

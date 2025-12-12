@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c63xixvxoraw1"
 path.s3tc="res://.godot/imported/Bark_DeadTree.png-a3245e914070d3f4db508623c64a3e78.s3tc.ctex"
+path.etc2="res://.godot/imported/Bark_DeadTree.png-a3245e914070d3f4db508623c64a3e78.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/Stylized Nature MegaKit[Standard]/glTF/Bark_DeadTree.png"
-dest_files=["res://.godot/imported/Bark_DeadTree.png-a3245e914070d3f4db508623c64a3e78.s3tc.ctex"]
+dest_files=["res://.godot/imported/Bark_DeadTree.png-a3245e914070d3f4db508623c64a3e78.s3tc.ctex", "res://.godot/imported/Bark_DeadTree.png-a3245e914070d3f4db508623c64a3e78.etc2.ctex"]
 
 [params]
 

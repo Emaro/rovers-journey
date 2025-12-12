@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://5iy2a5k3w8mx"
 path.s3tc="res://.godot/imported/Colorsheet Tree Fall.png-6018e36017953ba45f5c6c0ef6cc875e.s3tc.ctex"
+path.etc2="res://.godot/imported/Colorsheet Tree Fall.png-6018e36017953ba45f5c6c0ef6cc875e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/Low poly trees/Textures/Colorsheet Tree Fall.png"
-dest_files=["res://.godot/imported/Colorsheet Tree Fall.png-6018e36017953ba45f5c6c0ef6cc875e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Colorsheet Tree Fall.png-6018e36017953ba45f5c6c0ef6cc875e.s3tc.ctex", "res://.godot/imported/Colorsheet Tree Fall.png-6018e36017953ba45f5c6c0ef6cc875e.etc2.ctex"]
 
 [params]
 

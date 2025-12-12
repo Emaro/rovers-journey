@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://drtvdbbw3y8ku"
 path.s3tc="res://.godot/imported/Leaves_TwistedTree_C.png-08bfbf4922f460f92739aca0f96d5ee0.s3tc.ctex"
+path.etc2="res://.godot/imported/Leaves_TwistedTree_C.png-08bfbf4922f460f92739aca0f96d5ee0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/Stylized Nature MegaKit[Standard]/Textures/Leaves_TwistedTree_C.png"
-dest_files=["res://.godot/imported/Leaves_TwistedTree_C.png-08bfbf4922f460f92739aca0f96d5ee0.s3tc.ctex"]
+dest_files=["res://.godot/imported/Leaves_TwistedTree_C.png-08bfbf4922f460f92739aca0f96d5ee0.s3tc.ctex", "res://.godot/imported/Leaves_TwistedTree_C.png-08bfbf4922f460f92739aca0f96d5ee0.etc2.ctex"]
 
 [params]
 

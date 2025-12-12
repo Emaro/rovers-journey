@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://btrpmyvm35ct"
 path.s3tc="res://.godot/imported/2_normal.bmp-b8ff512c7d3389ec33547bdc9e627dee.s3tc.ctex"
+path.etc2="res://.godot/imported/2_normal.bmp-b8ff512c7d3389ec33547bdc9e627dee.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Metal Plates/2/2_normal.bmp"
-dest_files=["res://.godot/imported/2_normal.bmp-b8ff512c7d3389ec33547bdc9e627dee.s3tc.ctex"]
+dest_files=["res://.godot/imported/2_normal.bmp-b8ff512c7d3389ec33547bdc9e627dee.s3tc.ctex", "res://.godot/imported/2_normal.bmp-b8ff512c7d3389ec33547bdc9e627dee.etc2.ctex"]
 
 [params]
 

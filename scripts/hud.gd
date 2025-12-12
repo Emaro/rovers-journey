@@ -2,12 +2,12 @@ extends Control
 
 @onready var interact_label: Label = $InteractLabel
 
-@onready var rocks_label: Label = $RocksLabel
-@onready var sandstone_label: Label = $SandstoneLabel
-@onready var metalscrap_label: Label = $MetalscrapLabel
-@onready var wood_label: Label = $WoodLabel
-@onready var crystal_label: Label = $CrystalLabel
-@onready var health_label: Label = $HealthLabel
+@onready var rocks_label: Label = $Resources/RocksLabel
+@onready var sandstone_label: Label = $Resources/SandstoneLabel
+@onready var metalscrap_label: Label = $Resources/MetalscrapLabel
+@onready var wood_label: Label = $Resources/WoodLabel
+@onready var crystal_label: Label = $Resources/CrystalLabel
+@onready var health_label: Label = $Health/HealthLabel
 @onready var alien_dialog: PanelContainer = $AlienDialog
 @onready var msg_label: Label = $AlienDialog/VBox/Msg
 @onready var upgrade_btn: Button = $AlienDialog/VBox/Buttons/UpgradeBtn
@@ -17,8 +17,9 @@ extends Control
 @onready var start_button: Button = $StartScreen/VBoxContainer/StartButton
 
 @onready var story_panel: PanelContainer = $StoryPanel
-@onready var story_label: Label = $StoryPanel/VBoxContainer/StoryLabel
+@onready var story_label: Label = $StoryPanel/VBoxContainer/MarginContainer/StoryLabel
 @onready var story_next_button: Button = $StoryPanel/VBoxContainer/StoryNextButton
+@onready var start_mission_button: Button = $StoryPanel/VBoxContainer/StartMissionButton
 @onready var choice_buttons: HBoxContainer = $StoryPanel/VBoxContainer/ChoiceButtons
 @onready var call_home_button: Button = $StoryPanel/VBoxContainer/ChoiceButtons/CallHomeButton
 @onready var stay_here_button: Button = $StoryPanel/VBoxContainer/ChoiceButtons/StayHereButton
@@ -73,13 +74,14 @@ func _ready() -> void:
 	# start_button.pressed.connect(_on_start_button_pressed)
 
 	story_next_button.pressed.connect(_on_story_next_pressed)
+	start_mission_button.pressed.connect(_on_story_next_pressed)
 	call_home_button.pressed.connect(_on_call_home_pressed)
 	stay_here_button.pressed.connect(_on_stay_here_pressed)
 
 	get_tree().node_added.connect(_on_node_added)
 
 	_set_rover_navigation_enabled(false)
-	$RespawnButton.focus_mode = FocusMode.FOCUS_NONE
+	$Health/RespawnButton.focus_mode = FocusMode.FOCUS_NONE
 
 	_refresh()
 	Inventory.changed.connect(_refresh)
@@ -175,10 +177,10 @@ func show_alien1_dialog(
 	interact_label.visible = false
 	alien_dialog.visible = true
 	upgrade_btn.visible = true
-
+ 
 	if drivetrain_upgraded:
 		msg_label.text = "Your drivetrain is fixed now.\n" \
-			+ "You should be able to drive as fast as you used to!\n" \
+			+ "You should be able to drive as fast as before your crash!\n" \
 			+ "If you follow the path up into the mountains, you might " \
 			+ "find someone who knows how to build a communication tower.\n"
 		upgrade_btn.visible = false
@@ -473,9 +475,11 @@ func _show_current_intro_line() -> void:
 	_start_typewriter(story_lines_intro[story_index])
 
 	if story_index == story_lines_intro.size() - 1:
-		story_next_button.text = "Start mission"
+		story_next_button.visible = false
+		start_mission_button.visible = true
 	else:
 		story_next_button.text = "Next"
+		story_next_button.reset_size()
 
 
 func start_outro_sequence() -> void:
@@ -510,7 +514,6 @@ func _on_story_next_pressed() -> void:
 		_outro_next_step()
 	else:
 		_intro_next_step()
-
 
 func _intro_next_step() -> void:
 	story_index += 1
@@ -603,7 +606,7 @@ func show_start_hint_popup() -> void:
 	cancel_btn.text = "Close"
 
 	msg_label.text = (
-		"Controls Guide\n\n"
+		"HOW TO PLAY\n\n"
 		+ "Movement:\n"
 		+ "  W / ↑  – Move forward\n"
 		+ "  S / ↓  – Move back\n"

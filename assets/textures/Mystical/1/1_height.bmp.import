@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://brudh2hg5stus"
 path.s3tc="res://.godot/imported/1_height.bmp-cd43dfcce4b549c7153e2262b587ed1e.s3tc.ctex"
+path.etc2="res://.godot/imported/1_height.bmp-cd43dfcce4b549c7153e2262b587ed1e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/Mystical/1/1_height.bmp"
-dest_files=["res://.godot/imported/1_height.bmp-cd43dfcce4b549c7153e2262b587ed1e.s3tc.ctex"]
+dest_files=["res://.godot/imported/1_height.bmp-cd43dfcce4b549c7153e2262b587ed1e.s3tc.ctex", "res://.godot/imported/1_height.bmp-cd43dfcce4b549c7153e2262b587ed1e.etc2.ctex"]
 
 [params]
 

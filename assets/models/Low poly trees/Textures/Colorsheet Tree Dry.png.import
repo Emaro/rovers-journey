@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfxk5lm81uxts"
 path.s3tc="res://.godot/imported/Colorsheet Tree Dry.png-a65b856a270b9efd79cb9c0261bb28c2.s3tc.ctex"
+path.etc2="res://.godot/imported/Colorsheet Tree Dry.png-a65b856a270b9efd79cb9c0261bb28c2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/Low poly trees/Textures/Colorsheet Tree Dry.png"
-dest_files=["res://.godot/imported/Colorsheet Tree Dry.png-a65b856a270b9efd79cb9c0261bb28c2.s3tc.ctex"]
+dest_files=["res://.godot/imported/Colorsheet Tree Dry.png-a65b856a270b9efd79cb9c0261bb28c2.s3tc.ctex", "res://.godot/imported/Colorsheet Tree Dry.png-a65b856a270b9efd79cb9c0261bb28c2.etc2.ctex"]
 
 [params]
 
