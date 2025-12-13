@@ -1,18 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdcwncw53o5eh"]
+[gd_scene load_steps=6 format=3 uid="uid://bdcwncw53o5eh"]
+
+[ext_resource type="Material" uid="uid://b4ig8t2wsrnrn" path="res://assets/bark_moss.tres" id="1_rmojb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6gbet"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcm6x"]
 albedo_color = Color(0.2520276, 0.25202766, 0.25202763, 1)
+metallic = 0.7
+roughness = 0.57
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6gbet"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_eu7me"]
 
 [node name="TowerPart_2" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 6.1988554, 0, 0, 0, 1, 0, 0.4526112, 0)
+mesh = SubResource("BoxMesh_6gbet")
+surface_material_override/0 = SubResource("StandardMaterial3D_pcm6x")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.49801445, 0, -0.43318263, 0, 6.1988554, 0, 0.42284033, 0, 0.5101954, 0, 5.4009304, 0)
 mesh = SubResource("BoxMesh_6gbet")
 surface_material_override/0 = SubResource("StandardMaterial3D_pcm6x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_6gbet")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.6420534, 0, 0, 0, 1, 0.7963565, -0.098502636, 0.076509)
+material_override = ExtResource("1_rmojb")
+mesh = SubResource("CylinderMesh_eu7me")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.6420534, 0, 0, 0, 1, -0.84182614, -0.85598075, 0.25889826)
+material_override = ExtResource("1_rmojb")
+mesh = SubResource("CylinderMesh_eu7me")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6787844, 0, 0, 0, 1.6420534, 0, 0, 0, 0.7853269, -0.4365262, -1.1797729, -0.55186105)
+material_override = ExtResource("1_rmojb")
+mesh = SubResource("CylinderMesh_eu7me")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6787844, 0, 0, 0, 4.924178, 0, 0, 0, 0.7853269, 0.46616492, -0.378572, -0.55186105)
+material_override = ExtResource("1_rmojb")
+mesh = SubResource("CylinderMesh_eu7me")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6787844, 0, 0, 0, 4.924178, 0, 0, 0, 0.7853269, -0.008025199, 0.8143065, 0.39881206)
+material_override = ExtResource("1_rmojb")
+mesh = SubResource("CylinderMesh_eu7me")

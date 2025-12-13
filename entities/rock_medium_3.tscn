@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://biigfatl23guf"]
 
 [ext_resource type="PackedScene" uid="uid://8g36xnn54e4v" path="res://assets/models/Stylized Nature MegaKit[Standard]/FBX/Rock_Medium_3.fbx" id="1_ovhoc"]
-[ext_resource type="Material" uid="uid://hlaecprfy5qe" path="res://assets/entities/weird_mat.tres" id="2_jp185"]
+[ext_resource type="Material" uid="uid://hlaecprfy5qe" path="res://entities/weird_mat.tres" id="2_jp185"]
 [ext_resource type="Texture2D" uid="uid://cfvqor8l04dmi" path="res://assets/textures/Mystical/1/1_diffuseOriginal.bmp" id="2_n8len"]
 [ext_resource type="Texture2D" uid="uid://clfr745he4ft0" path="res://assets/textures/Mystical/1/1_ao.bmp" id="3_jp185"]
 [ext_resource type="Texture2D" uid="uid://ovoyk0wfsnef" path="res://assets/textures/Mystical/1/1_metallic.bmp" id="4_i3xov"]

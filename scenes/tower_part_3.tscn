@@ -1,4 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqnhyt7o6klmf"]
+[gd_scene load_steps=11 format=3 uid="uid://cqnhyt7o6klmf"]
+
+[ext_resource type="PackedScene" uid="uid://cfo0a4hpm36fy" path="res://assets/antenna_part.tscn" id="1_jutkn"]
+[ext_resource type="Texture2D" uid="uid://bmvff670t6sye" path="res://assets/textures/metal_01_2k/metal_01_color_2k.png" id="2_0ucsh"]
+[ext_resource type="Texture2D" uid="uid://b6yjl57sohn17" path="res://assets/textures/metal_01_2k/metal_01_metallic_2k.png" id="3_thxxr"]
+[ext_resource type="Texture2D" uid="uid://nw84air7nou" path="res://assets/textures/metal_01_2k/metal_01_normal_gl_2k.png" id="4_j8d2g"]
+[ext_resource type="Texture2D" uid="uid://cjdjwbuk8xfm5" path="res://assets/textures/metal_01_2k/metal_01_roughness_2k.png" id="5_h7ad0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6gbet"]
 
@@ -7,12 +13,64 @@ albedo_color = Color(0.2520276, 0.25202766, 0.25202763, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6gbet"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ompuh"]
+albedo_color = Color(1, 1, 0.56078434, 1)
+albedo_texture = ExtResource("2_0ucsh")
+metallic = 1.0
+metallic_specular = 0.81
+metallic_texture = ExtResource("3_thxxr")
+roughness_texture = ExtResource("5_h7ad0")
+normal_enabled = true
+normal_scale = -0.37
+normal_texture = ExtResource("4_j8d2g")
+
+[sub_resource type="TorusMesh" id="TorusMesh_4f0ot"]
+inner_radius = 0.9
+outer_radius = 1.05
+rings = 8
+ring_segments = 12
+
 [node name="TowerPart_3" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.90245694, 0, 0, 0, 20.621891, 0, 0, 0, 0.4497949, 0, -9.690715, 0)
+mesh = SubResource("BoxMesh_6gbet")
+surface_material_override/0 = SubResource("StandardMaterial3D_pcm6x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.35850447, 0, 0.3241111, 0, 7.075932, 0, -0.37256733, 0, 0.31187728, -0.18348622, -1.2965872, 0)
 mesh = SubResource("BoxMesh_6gbet")
 surface_material_override/0 = SubResource("StandardMaterial3D_pcm6x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_6gbet")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1.491952, -1.3319457, 0, 1.3319457, 1.491952, 0, 0, 0, 2, -0.29307747, 2.6454453, 0)
+
+[node name="CactusFlower_1" parent="Node3D" instance=ExtResource("1_jutkn")]
+transform = Transform3D(3, 0, 0, 0, 1.8529084, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.8592098, 0)
+material_override = SubResource("StandardMaterial3D_ompuh")
+mesh = SubResource("TorusMesh_4f0ot")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.2423661, 0)
+material_override = SubResource("StandardMaterial3D_ompuh")
+mesh = SubResource("TorusMesh_4f0ot")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.5993974, 0)
+material_override = SubResource("StandardMaterial3D_ompuh")
+mesh = SubResource("TorusMesh_4f0ot")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.9738452, 0)
+material_override = SubResource("StandardMaterial3D_ompuh")
+mesh = SubResource("TorusMesh_4f0ot")
+skeleton = NodePath("../..")

@@ -528,7 +528,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.79753, 0, -212.13828)
 [node name="Forest" type="Node3D" parent="."]
 
 [node name="Tree Type0 03" parent="Forest" instance=ExtResource("28_tkj4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.86461, 4.181525, 86.74912)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.86461, 0.04368496, 86.74912)
 
 [node name="Tree Type0 04" parent="Forest" instance=ExtResource("28_tkj4y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.8489, 0, 73.94101)

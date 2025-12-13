@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=37 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien_1.tscn" id="4_jyhfs"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cqnhyt7o6klmf" path="res://scenes/tower_part_3.tscn" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://bxtjow2u3t7p8" path="res://scripts/tower_end_trigger.gd" id="15_0ld40"]
 [ext_resource type="Texture2D" uid="uid://5w6jmb6s6jtk" path="res://assets/textures/sky_27_2k/sky_27_2k.png" id="15_muem4"]
+[ext_resource type="Script" uid="uid://d3j2bvghbu7cs" path="res://scenes/tower_part_3.gd" id="16_2f3dj"]
 [ext_resource type="PackedScene" uid="uid://bhlus1o4fqfxd" path="res://scenes/terrain_desert.tscn" id="16_jbj1t"]
 [ext_resource type="Script" uid="uid://brahuilm236c7" path="res://scripts/dark_area.gd" id="18_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://c2suk4ky5e7mq" path="res://scenes/alien_info_lava.tscn" id="20_yc10j"]
@@ -331,16 +332,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1.5, 80)
 tower_part = NodePath("../../Tower_Parts/TowerPart_3")
 
 [node name="Tower_Parts" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.4658155, 3.4351768)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.221877, 3.4351768)
 
 [node name="TowerPart_1" parent="Tower_Parts" instance=ExtResource("10_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.5, -20)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.52657986, 0)
 
 [node name="TowerPart_2" parent="Tower_Parts" instance=ExtResource("12_trceg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4.5, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.910199, 0)
 
 [node name="TowerPart_3" parent="Tower_Parts" instance=ExtResource("14_jkv2x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 7.5, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.781747, 0)
+script = ExtResource("16_2f3dj")
 
 [node name="EndTrigger" type="Area3D" parent="Tower_Parts"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -20, 1, -20)

@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://b4ig8t2wsrnrn"]
+
+[ext_resource type="Texture2D" uid="uid://bommd8wrt287a" path="res://assets/textures/bark_08_2k/bark_08_baseColor_2k.png" id="1_045cw"]
+[ext_resource type="Texture2D" uid="uid://grj01eek1c1i" path="res://assets/textures/bark_08_2k/bark_08_ambientOcclusion_2k.png" id="2_ddn4v"]
+[ext_resource type="Texture2D" uid="uid://woutgagq1y2q" path="res://assets/textures/bark_08_2k/bark_08_height_2k.png" id="3_t8db3"]
+[ext_resource type="Texture2D" uid="uid://dlg1dt7w12pii" path="res://assets/textures/bark_08_2k/bark_08_metallic_2k.png" id="4_grfmj"]
+[ext_resource type="Texture2D" uid="uid://nkguv1c4pb6e" path="res://assets/textures/bark_08_2k/bark_08_normal_gl_2k.png" id="5_51rd6"]
+[ext_resource type="Texture2D" uid="uid://b7qxs6afrud2e" path="res://assets/textures/bark_08_2k/bark_08_roughness_2k.png" id="6_vv3ue"]
+
+[resource]
+albedo_texture = ExtResource("1_045cw")
+metallic = 1.0
+metallic_texture = ExtResource("4_grfmj")
+roughness_texture = ExtResource("6_vv3ue")
+normal_enabled = true
+normal_scale = 2.83
+normal_texture = ExtResource("5_51rd6")
+ao_enabled = true
+ao_texture = ExtResource("2_ddn4v")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_t8db3")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
