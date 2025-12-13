@@ -2,7 +2,7 @@ extends RigidBody3D
 class_name RaycastCar
 
 @export_group("Health")
-@export var health := 3
+@export var health := 5
 @export var spawn : Node3D
 
 @export_group("Motor")
@@ -30,6 +30,7 @@ var reset_position := false
 
 func _ready() -> void:
 	add_to_group("rover")
+	health_changed.emit(health, health)
 
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -18,6 +18,7 @@ theme = ExtResource("1_276te")
 script = ExtResource("1_rbyyf")
 
 [node name="AlienDialog" type="PanelContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(800, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -145,6 +146,7 @@ size_flags_horizontal = 4
 text = "Start Game"
 
 [node name="StoryPanel" type="PanelContainer" parent="."]
+visible = false
 z_index = 101
 layout_mode = 1
 anchors_preset = 15
@@ -204,8 +206,27 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Stay here"
 
+[node name="Health" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -263.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 122.0
+grow_horizontal = 0
+
+[node name="HealthLabel" type="Label" parent="Health"]
+layout_mode = 2
+text = "<3 <3 <3 "
+horizontal_alignment = 1
+
+[node name="RespawnButton" type="Button" parent="Health"]
+layout_mode = 2
+text = "Respawn (-❤️)"
+
 [node name="EndScreen" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -220,9 +241,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.69411767, 0.40784314, 0, 0.34117648)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen"]
+[node name="Content" type="VBoxContainer" parent="EndScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -237,11 +258,25 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="EndLabel" type="Label" parent="EndScreen/VBoxContainer"]
+[node name="EndLabel" type="Label" parent="EndScreen/Content"]
 layout_mode = 2
 size_flags_horizontal = 4
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="EndScreen/Content"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayAgainButton" type="Button" parent="EndScreen/Content/Buttons"]
+layout_mode = 2
+text = "Play again"
+
+[node name="QuitButton" type="Button" parent="EndScreen/Content/Buttons"]
+layout_mode = 2
+text = "Quit"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -253,23 +288,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Health" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_top = 24.0
-offset_right = -24.0
-grow_horizontal = 0
-
-[node name="HealthLabel" type="Label" parent="Health"]
-layout_mode = 2
-text = "<3 <3 <3 "
-horizontal_alignment = 2
-
-[node name="RespawnButton" type="Button" parent="Health"]
-layout_mode = 2
-text = "Respawn (<3)"
-
 [connection signal="pressed" from="StartScreen/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Health/RespawnButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="EndScreen/Content/Buttons/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="EndScreen/Content/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]

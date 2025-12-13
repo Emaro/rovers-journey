@@ -26,14 +26,16 @@ extends Control
 @onready var stay_here_button: Button = $StoryPanel/VBoxContainer/ChoiceButtons/StayHereButton
 
 @onready var end_screen: Control = $EndScreen
-@onready var end_label: Label = $EndScreen/VBoxContainer/EndLabel
+@onready var end_label: Label = $EndScreen/Content/EndLabel
+@onready var play_again_button: Button = $EndScreen/Content/Buttons/PlayAgainButton
+@onready var quit_button: Button = $EndScreen/Content/Buttons/QuitButton
 
 var message_time_left: float = 0.0
 var current_alien: Node = null
 var current_cost: int = 0
 var current_has_enough: bool = false
 var current_mode: String = "upgrade"
-var tower_completed: bool = false
+var tower_completed: bool = true
 
 var story_lines_intro := [
 	"Mission Log 042: Emergency landing complete.",
@@ -79,6 +81,7 @@ func _ready() -> void:
 	story_decide_button.pressed.connect(_on_story_next_pressed)
 	call_home_button.pressed.connect(_on_call_home_pressed)
 	stay_here_button.pressed.connect(_on_stay_here_pressed)
+	
 
 	get_tree().node_added.connect(_on_node_added)
 
@@ -505,7 +508,7 @@ func _show_current_outro_line() -> void:
 		story_decide_button.visible = true
 		
 	else:
-		story_next_button.text = "Next"
+		story_decide_button.visible = false
 
 
 func _on_story_next_pressed() -> void:
@@ -538,6 +541,7 @@ func _outro_next_step() -> void:
 	if story_index >= story_lines_outro.size():
 		story_next_button.visible = false
 		choice_buttons.visible = true
+		story_decide_button.visible = false
 	else:
 		_show_current_outro_line()
 
@@ -555,11 +559,12 @@ func _show_thank_you(call_home: bool) -> void:
 	end_screen.visible = true
 	end_label.text = "Thank you for playing our game"
 
+	if call_home:
+		$EndScreen/Content/Buttons.visible = true
+		
 	await get_tree().create_timer(3.0).timeout
 
-	if call_home:
-		get_tree().quit()
-	else:
+	if not call_home:
 		end_screen.visible = false
 		_set_rover_navigation_enabled(true)
 
@@ -588,7 +593,12 @@ func _on_dark_area_body_entered(body: Node3D) -> void:
 
 
 func _on_rover_health_changed(old_health: Variant, new_health: Variant) -> void:
-	health_label.text = "<3 ".repeat(new_health).trim_suffix(" ")
+	health_label.text = "❤️ ".repeat(new_health).trim_suffix(" ")
+	
+	if new_health <= 1:
+		$Health/RespawnButton.text = "Give up (-❤️)"
+	if new_health <= 0:
+		_show_thank_you(true)
 
 
 func _on_button_pressed() -> void:
@@ -597,7 +607,7 @@ func _on_button_pressed() -> void:
 		rover.kill()
 		
 func show_start_hint_popup() -> void:
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(5.0, true, false, true).timeout
 
 	if alien_dialog.visible:
 		return
@@ -624,3 +634,10 @@ func show_start_hint_popup() -> void:
 		+ "  X – Full brake\n\n"
 		+ "Explore the crash site and look for someone who can help you!\n"
 	)
+
+
+func _on_play_again_button_pressed() -> void:
+	get_tree().reload_current_scene()
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
