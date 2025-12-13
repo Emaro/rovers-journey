@@ -241,7 +241,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.69411767, 0.40784314, 0, 0.34117648)
+color = Color(0.24700302, 0.1297487, 1.6845763e-07, 0.72156864)
 
 [node name="Content" type="VBoxContainer" parent="EndScreen"]
 layout_mode = 1
@@ -256,6 +256,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 24
 alignment = 1
 
 [node name="EndLabel" type="Label" parent="EndScreen/Content"]

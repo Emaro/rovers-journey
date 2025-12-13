@@ -557,7 +557,7 @@ func _on_stay_here_pressed() -> void:
 func _show_thank_you(call_home: bool) -> void:
 	story_panel.visible = false
 	end_screen.visible = true
-	end_label.text = "Thank you for playing our game"
+	end_label.text = "Thank you for playing our game!"
 
 	if call_home:
 		$EndScreen/Content/Buttons.visible = true
