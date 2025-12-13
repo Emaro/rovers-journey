@@ -61,6 +61,8 @@ func _on_body_exited(body: Node3D) -> void:
 func _process(_delta: float) -> void:
 	if rover_near and Input.is_action_just_pressed("interact"):
 		_talk()
+	if rover_body:
+		look_at(rover_body.global_position, Vector3.UP, true)
 
 
 func _talk() -> void:

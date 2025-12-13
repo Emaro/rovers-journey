@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://66pni2vgvdo1" path="res://assets/rock-resource.tscn" id="2_kdblw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1feao"]
-size = Vector3(1.3979645, 1.4624634, 1.5855408)
+size = Vector3(1.3979645, 1.8834534, 1.5855408)
 
 [node name="RockResource" type="Area3D"]
 script = ExtResource("1_1feao")
@@ -16,5 +16,5 @@ script = ExtResource("1_1feao")
 visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052375793, 0.54209894, 0.17274475)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052375793, 0.75259393, 0.17274475)
 shape = SubResource("BoxShape3D_1feao")

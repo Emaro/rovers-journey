@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv22yn5ht4yp4"]
+[gd_scene load_steps=7 format=3 uid="uid://cv22yn5ht4yp4"]
 
 [ext_resource type="Script" uid="uid://byg4uwgamkoe0" path="res://scripts/alien_info_water.gd" id="1_8dsr1"]
 [ext_resource type="Material" uid="uid://d34bvh21te5ou" path="res://assets/alienskin.tres" id="2_ejii0"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8dsr1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_decaq"]
 radius = 2.0
@@ -14,19 +16,52 @@ albedo_color = Color(0.86304724, 0.44660252, 0.4209031, 1)
 [node name="Alien_Info_Water" type="Area3D"]
 script = ExtResource("1_8dsr1")
 
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.041100435, 0.11194253, -0.064953506, 0.08819727, -0.080373295, 0.010578153, -0.023065042, -0.10786107, -0.07529374, -0.26496342, 1.5768781, -0.38793778)
+mesh = SubResource("CapsuleMesh_8dsr1")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.03705455, -0.14252494, -0.044654533, 0.08819726, -0.080373295, 0.010578154, -0.029123902, -0.06206267, 0.0888486, 0.14183453, 1.5768781, -0.4568498)
+mesh = SubResource("CapsuleMesh_8dsr1")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.9978218, 0)
 shape = SubResource("SphereShape3D_decaq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9978218, 0)
 material_override = ExtResource("2_ejii0")
 mesh = SubResource("CapsuleMesh_h100l")
 surface_material_override/0 = SubResource("StandardMaterial3D_u8rjw")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9978218, 0)
 pixel_size = 0.01
 billboard = 2
 text = "Watch out, Buddy. 
 The water here is deep. 
 Your wheels are not made for swimming."
+
+[node name="Node3D3" type="Node3D" parent="."]
+transform = Transform3D(-0.0795552, 0, 0.99683046, 0, 1, 0, -0.99683046, 0, -0.0795552, 0, 0.97115123, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D3"]
+transform = Transform3D(0.19999999, 0, 0, 0, 0.17289558, 0.17389381, 0, -0.30431417, 0.0987975, 0, -0.7959263, 0.58138275)
+mesh = SubResource("CapsuleMesh_8dsr1")
+skeleton = NodePath("../..")
+
+[node name="Node3D5" type="Node3D" parent="."]
+transform = Transform3D(0.6484256, 0, -0.7612781, 0, 1, 0, 0.7612781, 0, 0.6484256, 0, 0.97115123, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D5"]
+transform = Transform3D(0.19999999, 0, 0, 0, 0.17289558, 0.17389381, 0, -0.30431417, 0.0987975, 0, -0.7959263, 0.58138275)
+mesh = SubResource("CapsuleMesh_8dsr1")
+skeleton = NodePath("../..")
+
+[node name="Node3D7" type="Node3D" parent="."]
+transform = Transform3D(-0.89010936, 0, -0.45574695, 0, 1, 0, 0.45574695, 0, -0.89010936, 0, 0.97115123, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D7"]
+transform = Transform3D(0.19999999, 0, 0, 0, 0.17289558, 0.17389381, 0, -0.30431417, 0.0987975, 0, -0.7959263, 0.58138275)
+mesh = SubResource("CapsuleMesh_8dsr1")
+skeleton = NodePath("../..")

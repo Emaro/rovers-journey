@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c1yrv7iljhb0h"]
+[gd_scene load_steps=21 format=3 uid="uid://c1yrv7iljhb0h"]
 
 [ext_resource type="Script" uid="uid://cc8fkkc60m7nf" path="res://scripts/raycast_car.gd" id="1_fubay"]
 [ext_resource type="Material" uid="uid://breym7k6v2vb4" path="res://assets/rover_material.tres" id="2_avdik"]
@@ -20,6 +20,9 @@ size = Vector3(1.8, 0.5, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j8ivh"]
 size = Vector3(1.8, 0.5, 2)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2jort"]
+radius = 0.6874445
 
 [sub_resource type="Curve" id="Curve_7ddre"]
 _data = [Vector2(0.019083962, 0.86378515), 0.0, 0.0, 0, 0, Vector2(0.49236643, 0.9872298), 0.0, 0.0, 0, 0, Vector2(1, 0.1784544), 0.0, 0.0, 0, 0]
@@ -53,7 +56,7 @@ vertex_color_use_as_albedo = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_qjeyg"]
 material = SubResource("StandardMaterial3D_7ddre")
-size = Vector2(0.3, 0.5)
+size = Vector2(0.4, 0.3)
 orientation = 1
 
 [node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("wheels", "skid_marks")]
@@ -80,9 +83,13 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_j8ivh")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2593243, -0.070757985)
+shape = SubResource("SphereShape3D_2jort")
+
 [node name="WheelFL" type="RayCast3D" parent="."]
 process_physics_priority = -1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, -0.046770215, 0.9)
 script = ExtResource("3_20k7n")
 spring_strength = 8000.0
 spring_damping = 200.0
@@ -110,7 +117,7 @@ mesh = SubResource("CylinderMesh_j8ivh")
 
 [node name="WheelFR" type="RayCast3D" parent="."]
 process_physics_priority = -1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9030646, 0, 0.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9030646, -0.046770215, 0.9)
 script = ExtResource("3_20k7n")
 spring_strength = 8000.0
 spring_damping = 200.0
@@ -138,7 +145,7 @@ mesh = SubResource("CylinderMesh_j8ivh")
 
 [node name="WheelBR" type="RayCast3D" parent="."]
 process_physics_priority = -1
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.903, 0, -0.9)
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, -0.9, 0, -0.9)
 script = ExtResource("3_20k7n")
 spring_strength = 8000.0
 spring_damping = 200.0
@@ -149,7 +156,7 @@ is_motor = true
 grip_curve = SubResource("Curve_7ddre")
 
 [node name="wheel" parent="WheelBR" instance=ExtResource("7_2jort")]
-transform = Transform3D(-2.1855692e-08, 0, -0.49999997, 0, 0.49999997, 0, 0.49999997, 0, -2.1855692e-08, 0, -0.62681943, 0.0036349297)
+transform = Transform3D(-2.1855692e-08, 0, -0.49999997, 0, 0.49999997, 0, 0.49999997, 0, -2.1855692e-08, 0, -0.6, 0)
 
 [node name="Node3D" parent="WheelBR" instance=ExtResource("4_20k7n")]
 transform = Transform3D(-4.8082526e-08, 0, -1.4, 0, 1.1, 0, 1.1, 0, -6.119594e-08, 0.009042919, -0.50363076, -0.003934622)
@@ -166,7 +173,7 @@ mesh = SubResource("CylinderMesh_j8ivh")
 
 [node name="WheelBL" type="RayCast3D" parent="."]
 process_physics_priority = -1
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.9, 0, -0.9)
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0.9, -0.01948756, -0.9)
 script = ExtResource("3_20k7n")
 spring_strength = 8000.0
 spring_damping = 200.0
@@ -177,7 +184,7 @@ is_motor = true
 grip_curve = SubResource("Curve_7ddre")
 
 [node name="wheel" parent="WheelBL" instance=ExtResource("7_2jort")]
-transform = Transform3D(-2.185569e-08, 0, -0.4999999, 0, 0.4999999, 0, 0.4999999, 0, -2.185569e-08, 0, -0.47791636, 0.0036349297)
+transform = Transform3D(-2.185569e-08, 0, -0.4999999, 0, 0.4999999, 0, 0.4999999, 0, -2.185569e-08, 0, -0.6, 0)
 
 [node name="Node3D" parent="WheelBL" instance=ExtResource("4_20k7n")]
 transform = Transform3D(-4.8082526e-08, 0, 1.4, 0, 1.1, 0, -1.1, 0, -6.119594e-08, 0.009042919, -0.50363076, -0.003934622)

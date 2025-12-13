@@ -1,32 +1,58 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2suk4ky5e7mq"]
+[gd_scene load_steps=8 format=3 uid="uid://c2suk4ky5e7mq"]
 
 [ext_resource type="Script" uid="uid://12km7t0aowhn" path="res://scripts/alien_info_lava.gd" id="1_cfp81"]
 [ext_resource type="Material" uid="uid://d34bvh21te5ou" path="res://assets/alienskin.tres" id="2_ryd2a"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_decaq"]
-radius = 2.0
+radius = 4.2131124
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_h100l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8rjw"]
 albedo_color = Color(0.86304724, 0.44660252, 0.4209031, 1)
 
+[sub_resource type="SphereMesh" id="SphereMesh_cfp81"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cfp81"]
+albedo_color = Color(0.54901963, 0, 1, 1)
+
 [node name="Alien_Info_Lava" type="Area3D"]
 script = ExtResource("1_cfp81")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.99556494, 0)
 shape = SubResource("SphereShape3D_decaq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99556494, 0)
 material_override = ExtResource("2_ryd2a")
 mesh = SubResource("CapsuleMesh_h100l")
 surface_material_override/0 = SubResource("StandardMaterial3D_u8rjw")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.995565, 0)
 pixel_size = 0.01
 billboard = 2
 text = "Careful, Buddy. 
 The lava ahead is extremely hot. 
 Your systems won't survive a dip."
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.13249841, 1.4101323, 0.3867116)
+mesh = SubResource("SphereMesh_cfp81")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D2"]
+transform = Transform3D(0.16666666, 0, 0, 0, 0.16666666, 0, 0, 0, 0.16666666, 0, 0, 0.42952478)
+material_override = SubResource("StandardMaterial3D_cfp81")
+mesh = SubResource("SphereMesh_cfp81")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.19302762, 1.4101323, 0.35631156)
+mesh = SubResource("SphereMesh_cfp81")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="MeshInstance3D3"]
+transform = Transform3D(0.16666666, 0, 0, 0, 0.16666666, 0, 0, 0, 0.16666666, 0.11794454, 0, 0.42952478)
+material_override = SubResource("StandardMaterial3D_cfp81")
+mesh = SubResource("SphereMesh_cfp81")
+skeleton = NodePath("../..")

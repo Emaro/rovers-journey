@@ -27,7 +27,7 @@ stencil_color = Color(0, 0.36862746, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_82i38"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i8q7m"]
-size = Vector3(1.0551758, 1, 1)
+size = Vector3(1.0551758, 1.9550781, 1)
 
 [node name="MetalScrapResource" type="Area3D"]
 script = ExtResource("1_i8q7m")
@@ -48,7 +48,7 @@ material_override = SubResource("StandardMaterial3D_8sqrg")
 mesh = SubResource("BoxMesh_82i38")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02758789, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02758789, 0.47753906, 0)
 shape = SubResource("BoxShape3D_i8q7m")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]

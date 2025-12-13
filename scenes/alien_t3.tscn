@@ -1,23 +1,118 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpirfnsewblna"]
+[gd_scene load_steps=9 format=3 uid="uid://cpirfnsewblna"]
 
 [ext_resource type="Script" uid="uid://dpnmjet8v74wc" path="res://scripts/alien_t3.gd" id="1_wllhr"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_decaq"]
-radius = 2.0
+[sub_resource type="SphereShape3D" id="SphereShape3D_wllhr"]
+radius = 4.23167
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_h100l"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4qc2c"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8rjw"]
-albedo_color = Color(0.86304724, 0.44660252, 0.4209031, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wllhr"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.14117648, 1, 0, 1)
+grow = true
+grow_amount = 0.01
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ah6wd"]
+next_pass = SubResource("StandardMaterial3D_wllhr")
+albedo_color = Color(0.7647059, 0.6666667, 0.40392157, 1)
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0.14117648, 1, 0, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_wkpbj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_57tpb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_p20hh"]
 
 [node name="Alien_T3" type="Area3D"]
-visible = false
 monitoring = false
 script = ExtResource("1_wllhr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_decaq")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_wllhr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_h100l")
-surface_material_override/0 = SubResource("StandardMaterial3D_u8rjw")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1394448, 0)
+mesh = SubResource("CapsuleMesh_4qc2c")
+surface_material_override/0 = SubResource("StandardMaterial3D_ah6wd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.28403082, 0, 0, 0, 0.020629907, -0.16614145, 0, 0.15401934, 0.02225359, 0, 1.6776363, 0.46157557)
+mesh = SubResource("TorusMesh_wkpbj")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.002535969, 0.0073816674, 0.12019749, 0.034515843, -0.15100023, 0.002454681, 0.062577225, 0.082988344, -0.0062249815, 0.014252752, 1.950425, 0.33528578)
+mesh = SubResource("CapsuleMesh_57tpb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.01700495, -0.057679497, 0.109780006, 0.030143095, -0.1397449, -0.04900828, 0.062577225, 0.08298834, -0.0062249815, 0.19251546, 1.9881343, 0.31814492)
+mesh = SubResource("CapsuleMesh_57tpb")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.012044367, 0.0694952, 0.10829523, 0.032445457, -0.13426086, 0.05220731, 0.062577225, 0.08298834, -0.006224981, -0.15029708, 2.0052752, 0.32157338)
+mesh = SubResource("CapsuleMesh_57tpb")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97115123, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.19999997, 0, 0, 0, 0.19596559, 0.16571179, 0, -0.28999567, 0.11198035, 0, -0.7959263, 0.58138275)
+mesh = SubResource("CapsuleMesh_p20hh")
+skeleton = NodePath("../..")
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(0.7079702, 0, 0.70624244, 0, 1, 0, -0.70624244, 0, 0.7079702, 0, 0.97115123, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(0.19999999, 0, 0, 0, 0.17289558, 0.17389381, 0, -0.30431417, 0.0987975, 0, -0.7959263, 0.58138275)
+mesh = SubResource("CapsuleMesh_p20hh")
+skeleton = NodePath("../..")
+
+[node name="Node3D3" type="Node3D" parent="."]
+transform = Transform3D(-0.0795552, 0, 0.99683046, 0, 1, 0, -0.99683046, 0, -0.0795552, 0, 0.97115123, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D3"]
+transform = Transform3D(0.19999999, 0, 0, 0, 0.17289558, 0.17389381, 0, -0.30431417, 0.0987975, 0, -0.7959263, 0.58138275)
+mesh = SubResource("CapsuleMesh_p20hh")
+skeleton = NodePath("../..")
+
+[node name="Node3D4" type="Node3D" parent="."]
+transform = Transform3D(-0.72861016, 0, 0.68492866, 0, 1, 0, -0.68492866, 0, -0.72861016, 0, 0.97115123, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D4"]
+transform = Transform3D(0.19999999, 0, 0, 0, 0.17289558, 0.17389381, 0, -0.30431417, 0.0987975, 0, -0.7959263, 0.58138275)
+mesh = SubResource("CapsuleMesh_p20hh")
+skeleton = NodePath("../..")
+
+[node name="Node3D5" type="Node3D" parent="."]
+transform = Transform3D(0.6484256, 0, -0.7612781, 0, 1, 0, 0.7612781, 0, 0.6484256, 0, 0.97115123, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D5"]
+transform = Transform3D(0.19999999, 0, 0, 0, 0.17289558, 0.17389381, 0, -0.30431417, 0.0987975, 0, -0.7959263, 0.58138275)
+mesh = SubResource("CapsuleMesh_p20hh")
+skeleton = NodePath("../..")
+
+[node name="Node3D6" type="Node3D" parent="."]
+transform = Transform3D(0.08028591, 0, -0.9967719, 0, 1, 0, 0.9967719, 0, 0.08028591, 0, 0.97115123, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D6"]
+transform = Transform3D(0.19999999, 0, 0, 0, 0.17289558, 0.17389381, 0, -0.30431417, 0.0987975, 0, -0.7959263, 0.58138275)
+mesh = SubResource("CapsuleMesh_p20hh")
+skeleton = NodePath("../..")
+
+[node name="Node3D7" type="Node3D" parent="."]
+transform = Transform3D(-0.89010936, 0, -0.45574695, 0, 1, 0, 0.45574695, 0, -0.89010936, 0, 0.97115123, 0)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D7"]
+transform = Transform3D(0.19999999, 0, 0, 0, 0.17289558, 0.17389381, 0, -0.30431417, 0.0987975, 0, -0.7959263, 0.58138275)
+mesh = SubResource("CapsuleMesh_p20hh")
+skeleton = NodePath("../..")
