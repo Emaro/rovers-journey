@@ -346,6 +346,7 @@ next_alien = NodePath("../Alien_T3")
 
 [node name="Alien_T3" parent="Alien_T" node_paths=PackedStringArray("tower_part") instance=ExtResource("13_a8y0u")]
 transform = Transform3D(0.8638531, 0, -0.5037438, 0, 1, 0, 0.5037438, 0, 0.8638531, -99.88291, 9.208906, 167.36185)
+visible = false
 tower_part = NodePath("../../Tower_Parts/TowerPart_3")
 
 [node name="Node3D" type="Node3D" parent="Alien_T"]
@@ -374,12 +375,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9506035, 2.1088266, -85.89
 
 [node name="TowerPart_1" parent="Tower_Parts" instance=ExtResource("10_choun")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.52657986, 0)
+visible = false
 
 [node name="TowerPart_2" parent="Tower_Parts" instance=ExtResource("12_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.910199, 0)
+visible = false
 
 [node name="TowerPart_3" parent="Tower_Parts" instance=ExtResource("14_jkv2x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.781747, 0)
+visible = false
 script = ExtResource("16_2f3dj")
 
 [node name="EndTrigger" type="Area3D" parent="Tower_Parts"]
