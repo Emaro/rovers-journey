@@ -35,7 +35,7 @@ var current_alien: Node = null
 var current_cost: int = 0
 var current_has_enough: bool = false
 var current_mode: String = "upgrade"
-var tower_completed: bool = true
+var tower_completed: bool = false
 
 var story_lines_intro := [
 	"Mission Log 042: Emergency landing complete.",

@@ -43,7 +43,9 @@ mesh = SubResource("BoxMesh_6gbet")
 surface_material_override/0 = SubResource("StandardMaterial3D_pcm6x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
 shape = SubResource("BoxShape3D_6gbet")
+disabled = true
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1.491952, -1.3319457, 0, 1.3319457, 1.491952, 0, 0, 0, 2, -0.29307747, 2.6454453, 0)
