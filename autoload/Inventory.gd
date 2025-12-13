@@ -1,6 +1,6 @@
 extends Node
 
-var items := {}  # e.g. {"mineral": 3}
+var items := {}
 signal changed
 
 func add_item(id: String, count: int = 1) -> void:
@@ -9,3 +9,7 @@ func add_item(id: String, count: int = 1) -> void:
 
 func get_count(id: String) -> int:
 	return items.get(id, 0)
+
+func reset() -> void:
+	items.clear()
+	emit_signal("changed")

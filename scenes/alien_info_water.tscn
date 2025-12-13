@@ -25,7 +25,7 @@ transform = Transform3D(-0.03705455, -0.14252494, -0.044654533, 0.08819726, -0.0
 mesh = SubResource("CapsuleMesh_8dsr1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.9978218, 0)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0.9978218, 0)
 shape = SubResource("SphereShape3D_decaq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

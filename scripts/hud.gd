@@ -40,7 +40,7 @@ var tower_completed: bool = false
 var story_lines_intro := [
 	"Mission Log 042: Emergency landing complete.",
 	"I have crash-landed on an unknown planet.",
-	"Most of my systems are damaged. I must gather resources to begin repairs.",
+	"My drivetrain seems damaged. I must gather resources to begin repairs.",
 	"I should explore this place and build a communication tower to signal home."
 ]
 
@@ -141,7 +141,7 @@ func _refresh() -> void:
 
 	rocks_label.text = "Rocks: %d" % rocks
 	sandstone_label.text = "Sandstones: %d" % sandstone
-	metalscrap_label.text = "Metalscraps: %d" % metalscrap
+	metalscrap_label.text = "Metal scraps: %d" % metalscrap
 	wood_label.text = "Wood: %d" % wood
 	crystal_label.text = "Crystal: %d" % crystal
 
@@ -186,7 +186,7 @@ func show_alien1_dialog(
 	if drivetrain_upgraded:
 		msg_label.text = "Your drivetrain is fixed now.\n" \
 			+ "You should be able to drive as fast as before your crash!\n" \
-			+ "If you follow the path up into the mountains, you might " \
+			+ "If you follow the path up into the rocky mountains, you might " \
 			+ "find someone who knows how to build a communication tower.\n"
 		upgrade_btn.visible = false
 		upgrade_btn.disabled = true
@@ -292,7 +292,7 @@ func show_alien_t2_dialog(
 		msg_label.text = (
 			"The tower frame is in place now.\n"
 			+ "Once you add the transmitter, your signal will finally reach out.\n"
-			+ "Deep in the crystal fields, someone can help you build that part.\n"
+			+ "Up in the crystal high plains, someone can help you build that part.\n"
 		)
 		upgrade_btn.visible = false
 		upgrade_btn.disabled = true
@@ -598,7 +598,7 @@ func _on_rover_health_changed(old_health: Variant, new_health: Variant) -> void:
 	if new_health <= 1:
 		$Health/RespawnButton.text = "Give up (-❤️)"
 	if new_health <= 0:
-		_show_thank_you(true)
+		_show_game_over()
 
 
 func _on_button_pressed() -> void:
@@ -626,7 +626,8 @@ func show_start_hint_popup() -> void:
 		+ "  W / ↑  – Move forward\n"
 		+ "  S / ↓  – Move back\n"
 		+ "  A / ←  – Turn left\n"
-		+ "  D / →  – Turn right\n\n"
+		+ "  D / →  – Turn right\n"
+		+ "  Mouse – Look around\n\n"
 		+ "Interaction:\n"
 		+ "  E – Talk to aliens\n\n"
 		+ "Driving:\n"
@@ -637,7 +638,17 @@ func show_start_hint_popup() -> void:
 
 
 func _on_play_again_button_pressed() -> void:
+	Inventory.reset()
 	get_tree().reload_current_scene()
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+	
+func _show_game_over() -> void:
+	story_panel.visible = false
+	end_screen.visible = true
+	end_label.text = (
+	"GAME OVER\n"
+	+ "Thank you for playing our game!\n"
+	)
+	$EndScreen/Content/Buttons.visible = true
