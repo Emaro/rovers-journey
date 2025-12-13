@@ -20,6 +20,7 @@ extends Control
 @onready var story_label: Label = $StoryPanel/VBoxContainer/MarginContainer/StoryLabel
 @onready var story_next_button: Button = $StoryPanel/VBoxContainer/StoryNextButton
 @onready var start_mission_button: Button = $StoryPanel/VBoxContainer/StartMissionButton
+@onready var story_decide_button: Button = $StoryPanel/VBoxContainer/StoryDecideButton
 @onready var choice_buttons: HBoxContainer = $StoryPanel/VBoxContainer/ChoiceButtons
 @onready var call_home_button: Button = $StoryPanel/VBoxContainer/ChoiceButtons/CallHomeButton
 @onready var stay_here_button: Button = $StoryPanel/VBoxContainer/ChoiceButtons/StayHereButton
@@ -75,6 +76,7 @@ func _ready() -> void:
 
 	story_next_button.pressed.connect(_on_story_next_pressed)
 	start_mission_button.pressed.connect(_on_story_next_pressed)
+	story_decide_button.pressed.connect(_on_story_next_pressed)
 	call_home_button.pressed.connect(_on_call_home_pressed)
 	stay_here_button.pressed.connect(_on_stay_here_pressed)
 
@@ -499,7 +501,9 @@ func _show_current_outro_line() -> void:
 	_start_typewriter(story_lines_outro[story_index])
 
 	if story_index == story_lines_outro.size() - 1:
-		story_next_button.text = "Decide"
+		story_next_button.visible = false
+		story_decide_button.visible = true
+		
 	else:
 		story_next_button.text = "Next"
 
@@ -519,6 +523,7 @@ func _intro_next_step() -> void:
 	story_index += 1
 
 	if story_index >= story_lines_intro.size():
+		start_mission_button.visible = false
 		story_panel.visible = false
 		_set_rover_navigation_enabled(true)
 		show_start_hint_popup()

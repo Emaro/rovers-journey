@@ -145,7 +145,6 @@ size_flags_horizontal = 4
 text = "Start Game"
 
 [node name="StoryPanel" type="PanelContainer" parent="."]
-visible = false
 z_index = 101
 layout_mode = 1
 anchors_preset = 15
@@ -170,7 +169,16 @@ size_flags_horizontal = 4
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Start Mission"
+text = "Next
+"
+
+[node name="StoryDecideButton" type="Button" parent="StoryPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Decide
+"
 
 [node name="StartMissionButton" type="Button" parent="StoryPanel/VBoxContainer"]
 visible = false
@@ -256,7 +264,7 @@ grow_horizontal = 0
 
 [node name="HealthLabel" type="Label" parent="Health"]
 layout_mode = 2
-text = "<3 <3 <3"
+text = "<3 <3 <3 "
 horizontal_alignment = 2
 
 [node name="RespawnButton" type="Button" parent="Health"]
