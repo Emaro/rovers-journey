@@ -126,7 +126,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ld40"]
-size = Vector3(3.0303955, 1.8709717, 2.426529)
+size = Vector3(26.267448, 8.315277, 22.119884)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jbj1t"]
 panorama = ExtResource("15_muem4")
@@ -165,8 +165,11 @@ shadow_opacity = 0.85
 transform = Transform3D(0.007906224, 0, -0.9999687, 0, 1, 0, 0.9999687, 0, 0.007906224, 80.84338, 0.12994003, -66.34306)
 linear_damp_mode = 1
 spawn = NodePath("../Spawn")
-max_speed = 20.0
+acceleration = 250.0
+max_speed = 18.0
 lower_center_of_mass = 0.2
+tire_turn_speed = 2.0
+tire_max_turn_degrees = 45
 show_debug = false
 
 [node name="CameraPivot" type="Node3D" parent="Rover"]
@@ -387,12 +390,13 @@ visible = false
 script = ExtResource("16_2f3dj")
 
 [node name="EndTrigger" type="Area3D" parent="Tower_Parts"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.7596979, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7596979, 0)
 script = ExtResource("15_0ld40")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tower_Parts/EndTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14300525, 0.4354859, -0.03568268)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22068405, 3.6576385, 0.15719604)
 shape = SubResource("BoxShape3D_0ld40")
+metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dp3eg")

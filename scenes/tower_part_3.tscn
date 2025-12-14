@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqnhyt7o6klmf"]
+[gd_scene load_steps=10 format=3 uid="uid://cqnhyt7o6klmf"]
 
 [ext_resource type="PackedScene" uid="uid://cfo0a4hpm36fy" path="res://assets/antenna_part.tscn" id="1_jutkn"]
 [ext_resource type="Texture2D" uid="uid://bmvff670t6sye" path="res://assets/textures/metal_01_2k/metal_01_color_2k.png" id="2_0ucsh"]
@@ -10,8 +10,6 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcm6x"]
 albedo_color = Color(0.2520276, 0.25202766, 0.25202763, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6gbet"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ompuh"]
 albedo_color = Color(1, 1, 0.56078434, 1)
@@ -30,7 +28,7 @@ outer_radius = 1.05
 rings = 8
 ring_segments = 12
 
-[node name="TowerPart_3" type="StaticBody3D"]
+[node name="TowerPart_3" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.90245694, 0, 0, 0, 20.621891, 0, 0, 0, 0.4497949, 0, -9.690715, 0)
@@ -41,11 +39,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pcm6x")
 transform = Transform3D(0.35850447, 0, 0.3241111, 0, 7.075932, 0, -0.37256733, 0, 0.31187728, -0.18348622, -1.2965872, 0)
 mesh = SubResource("BoxMesh_6gbet")
 surface_material_override/0 = SubResource("StandardMaterial3D_pcm6x")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-visible = false
-shape = SubResource("BoxShape3D_6gbet")
-disabled = true
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1.491952, -1.3319457, 0, 1.3319457, 1.491952, 0, 0, 0, 2, -0.29307747, 2.6454453, 0)

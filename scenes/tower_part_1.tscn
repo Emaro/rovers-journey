@@ -25,7 +25,9 @@ mesh = SubResource("BoxMesh_garii")
 surface_material_override/0 = SubResource("StandardMaterial3D_awisn")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+visible = false
 shape = SubResource("BoxShape3D_nia26")
+disabled = true
 
 [node name="Rock_Medium_3" parent="." instance=ExtResource("1_pxig6")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.015016794, -0.3581298, -0.9378233)
@@ -41,8 +43,12 @@ transform = Transform3D(-1.2986817, 0, 0.05851893, 0, 2.3216324, 0, -0.05851893,
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09814336, 0.060420588, -0.16591696)
+visible = false
 shape = SubResource("SphereShape3D_pxig6")
+disabled = true
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20898439, 3.2785618, 0.06591797)
+visible = false
 shape = SubResource("BoxShape3D_pxig6")
+disabled = true

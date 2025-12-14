@@ -108,7 +108,7 @@ func perform_upgrade() -> void:
 	if rover_body and rover_body is RaycastCar:
 		var car := rover_body as RaycastCar
 		car.max_speed *= 2.0
-		car.acceleration *= 2.0
+		car.acceleration *= 1.4
 		print("Alien_1: Upgraded rover drivetrain.")
 	else:
 		print("Alien_1: Rover body missing or incompatible.")

@@ -83,6 +83,10 @@ func perform_build() -> void:
 
 	if tower_part:
 		tower_part.visible = true
+		for c in tower_part.get_children():
+			if c is CollisionShape3D:
+				c.visible = true
+				c.disabled = false
 
 	if next_alien:
 		next_alien.visible = true
