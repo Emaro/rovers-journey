@@ -126,7 +126,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ld40"]
-size = Vector3(26.267448, 8.315277, 22.119884)
+size = Vector3(32.35843, 11.952072, 27.91608)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jbj1t"]
 panorama = ExtResource("15_muem4")
@@ -394,7 +394,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7596979, 0)
 script = ExtResource("15_0ld40")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tower_Parts/EndTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22068405, 3.6576385, 0.15719604)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0159874, 5.476036, 1.0522461)
 shape = SubResource("BoxShape3D_0ld40")
 metadata/_edit_lock_ = true
 
