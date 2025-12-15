@@ -44,7 +44,9 @@ func _process(_delta: float) -> void:
 	if rover_near and Input.is_action_just_pressed("interact"):
 		_talk()
 	if rover_body:
-		look_at(rover_body.global_position, Vector3.UP, true)
+		var p = rover_body.global_position
+		p.y = global_position.y
+		look_at(p, Vector3.UP, true)
 
 func _talk() -> void:
 	var hud = get_tree().get_first_node_in_group("hud")
