@@ -160,6 +160,7 @@ shadow_normal_bias = 0.0
 shadow_opacity = 0.85
 
 [node name="HUD" parent="." instance=ExtResource("3_sugp2")]
+visible = false
 
 [node name="Rover" parent="." node_paths=PackedStringArray("spawn") instance=ExtResource("5_tbgi4")]
 transform = Transform3D(0.007906224, 0, -0.9999687, 0, 1, 0, 0.9999687, 0, 0.007906224, 80.84338, 0.12994003, -66.34306)
@@ -378,15 +379,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9506035, 2.1088266, -85.89
 
 [node name="TowerPart_1" parent="Tower_Parts" instance=ExtResource("10_choun")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.52657986, 0)
-visible = false
 
 [node name="TowerPart_2" parent="Tower_Parts" instance=ExtResource("12_trceg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.910199, 0)
-visible = false
 
 [node name="TowerPart_3" parent="Tower_Parts" instance=ExtResource("14_jkv2x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.781747, 0)
-visible = false
 script = ExtResource("16_2f3dj")
 
 [node name="EndTrigger" type="Area3D" parent="Tower_Parts"]
