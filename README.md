@@ -11,9 +11,11 @@ SDENT game prototype 2025 by Dobi & Miro.
 Requirements: `git`
 
 - Install [Godot 4.5 .NET](https://godotengine.org/download/)
-- Clone this repository: `git clone git@github.com:Emaro/rovers-journey.git`
+- Clone this repository (or unpack this very source code): `git clone git@github.com:Emaro/rovers-journey.git`
 - Open the project in Godot
 - Run
+
+Note: maybe you also need Blender to load the game.
 
 ## How to play
 
