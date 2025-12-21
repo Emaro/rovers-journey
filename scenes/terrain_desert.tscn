@@ -234,15 +234,12 @@ uv1_world_triplanar = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_jdo05"]
 size = Vector3(35, 1, 10)
 
-[node name="TerrainDesert" type="Node3D"]
+[node name="Map" type="Node3D"]
+
+[node name="Terrain" parent="." instance=ExtResource("140_3lhbf")]
 
 [node name="Rock Type1 05" parent="." instance=ExtResource("8_up6qc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0358696, 0.012912273, 5.208581)
-
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="CactusFlowers_2" parent="Node3D" instance=ExtResource("26_b3s3f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.610397, 1.9942188, -81.1178)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.485693, 0.034697533, 44.210995)
 
 [node name="Node3D2" type="Node3D" parent="."]
 
@@ -331,8 +328,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.63658, 0, 126.00145)
 [node name="Rock_Moss_7" parent="Node3D2" instance=ExtResource("100_e1alf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.119423, 0, 96.561775)
 
-[node name="StartingArea" parent="." instance=ExtResource("140_3lhbf")]
-
 [node name="LavaLakes" type="Node3D" parent="."]
 
 [node name="Lava" parent="LavaLakes" instance=ExtResource("140_c16b8")]
@@ -404,6 +399,12 @@ light_energy = 15.0
 light_volumetric_fog_energy = 3.0
 omni_range = 22.087511
 
+[node name="CrystalLight2" parent="LavaLakes" instance=ExtResource("39_u2wqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.13236, 8.632917, 185.13095)
+light_color = Color(0.8022955, 0.43777448, 0.8432384, 1)
+shadow_enabled = true
+omni_range = 16.307486
+
 [node name="OmniLight3D2" type="OmniLight3D" parent="LavaLakes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.26904, 1.0804043, 167.22285)
 light_color = Color(1, 0.5411765, 0.28235295, 1)
@@ -424,6 +425,13 @@ light_color = Color(1, 0.5411765, 0.28235295, 1)
 light_energy = 15.0
 light_volumetric_fog_energy = 3.0
 omni_range = 22.288382
+
+[node name="CrystalLight" parent="LavaLakes" instance=ExtResource("39_u2wqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.143234, 6.232647, 200.50607)
+light_energy = 20.0
+light_volumetric_fog_energy = 0.5
+shadow_enabled = true
+omni_range = 20.306171
 
 [node name="Bridge" type="StaticBody3D" parent="."]
 transform = Transform3D(0.97335523, 0, -0.22930233, 0, 1, 0, 0.22930233, 0, 0.97335523, -81.79663, 18.678131, 139.73492)
@@ -525,6 +533,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.90312, 0, -183.40526)
 
 [node name="CactusFlowers_4" parent="Desert" instance=ExtResource("26_b3s3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.79753, 0, -212.13828)
+
+[node name="CactusFlowers_2" parent="Desert" instance=ExtResource("26_b3s3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.13739, 1.9073486e-06, -136.50037)
+
+[node name="Cactus_7" parent="Desert" instance=ExtResource("101_v8pyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.91458, 0, -134.09421)
+
+[node name="CactusFlowers_5" parent="Desert" instance=ExtResource("26_b3s3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.610397, 1.9942188, -81.1178)
 
 [node name="Forest" type="Node3D" parent="."]
 
@@ -678,6 +695,12 @@ transform = Transform3D(4.359962, 0, -2.4475973, 0, 5, 0, 2.4475973, 0, 4.359962
 [node name="Grass_24" parent="Forest" instance=ExtResource("107_wpj7b")]
 transform = Transform3D(5.659729, 0, 2.5577266, 0, 7.478132, 0, -3.0743895, 0, 4.7085896, 326.90994, -0.7777691, 131.88081)
 
+[node name="WoodLog2" parent="Forest" instance=ExtResource("104_jdo05")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 176.18445, -0.12314844, 359.5898)
+
+[node name="Tree Type6 10" parent="Forest" instance=ExtResource("63_miux7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.73431, 0, 360.53125)
+
 [node name="Mountains" type="Node3D" parent="."]
 
 [node name="Rock Type1 01" parent="Mountains" instance=ExtResource("8_up6qc")]
@@ -689,30 +712,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.13947, 0, -189.16428)
 [node name="Rock Type1 03" parent="Mountains" instance=ExtResource("8_up6qc")]
 transform = Transform3D(-0.7317633, 0, 0.5884062, 0, 1.7498437, 0, -0.59642893, 0, -0.72192013, -44.177246, -2.3841858e-07, -191.09615)
 
-[node name="Tree Type0 02" parent="." instance=ExtResource("107_v8pyf")]
+[node name="Tree Type0 02" parent="Mountains" instance=ExtResource("107_v8pyf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.16318, 1.0632992, -287.9765)
-
-[node name="WoodLog" parent="." instance=ExtResource("104_jdo05")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 176.18445, -0.12314844, 359.5898)
-
-[node name="Tree Type6 03" parent="." instance=ExtResource("63_miux7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.73431, 0, 360.53125)
-
-[node name="Cactus_3" parent="." instance=ExtResource("101_v8pyf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.91458, 0, -134.09421)
-
-[node name="CactusFlowers_2" parent="." instance=ExtResource("26_b3s3f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.13739, 1.9073486e-06, -136.50037)
-
-[node name="CrystalLight" parent="." instance=ExtResource("39_u2wqf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.143234, 6.232647, 200.50607)
-light_energy = 20.0
-light_volumetric_fog_energy = 0.5
-shadow_enabled = true
-omni_range = 20.306171
-
-[node name="CrystalLight2" parent="." instance=ExtResource("39_u2wqf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.13236, 8.632917, 185.13095)
-light_color = Color(0.8022955, 0.43777448, 0.8432384, 1)
-shadow_enabled = true
-omni_range = 16.307486

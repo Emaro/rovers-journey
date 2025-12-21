@@ -422,7 +422,7 @@ metadata/_edit_lock_ = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dp3eg")
 
-[node name="TerrainDesert" parent="." instance=ExtResource("16_jbj1t")]
+[node name="Map" parent="." instance=ExtResource("16_jbj1t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0029296875, -0.01159668, 0.9862366)
 
 [node name="DarkArea" type="Area3D" parent="."]
