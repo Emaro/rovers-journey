@@ -15,3 +15,12 @@ Requirements: `git`
 - Open the project in Godot
 - Run
 
+## How to play
+
+- **Goal:** Build all three stages of the communication tower to restore contact with your home planet.
+- **Upgrades:** Talk to aliens and bring them the required resources. They will perform the upgrade (repair drivetrain, build tower stage) for you.
+- **Drive around** with `W`, `A`, `S`, `D` or the arrow keys.
+- **Drift** by pressing `Space`.
+- **Full brake** with `X`.
+- **Water** and **lava** damage the rover and cost you a life.
+- You can also **respawn** using the button in the top right, in case you're stuck or flipped (also costs you a life).
