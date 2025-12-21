@@ -50,10 +50,8 @@ func _talk() -> void:
 	var hud = get_tree().get_first_node_in_group("hud")
 	if hud == null or not hud.has_method("show_alien_t2_dialog"):
 		return
-
 	var available_wood := Inventory.get_count("wood")
 	var has_enough := available_wood >= required_wood
-
 	hud.show_alien_t2_dialog(
 		self,
 		has_enough,
@@ -65,19 +63,14 @@ func _talk() -> void:
 func perform_build() -> void:
 	if Inventory.get_count("wood") < required_wood:
 		return
-
 	Inventory.add_item("wood", -required_wood)
-
 	var hud = get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("update_resource_labels"):
 		hud.update_resource_labels()
-
 	if tower_part:
 		tower_part.visible = true
-
 	if next_alien:
 		next_alien.visible = true
 		if next_alien is Area3D:
 			next_alien.monitoring = true
-
 	part_built = true

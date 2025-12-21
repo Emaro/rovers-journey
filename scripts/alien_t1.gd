@@ -51,14 +51,12 @@ func _talk() -> void:
 	var hud = get_tree().get_first_node_in_group("hud")
 	if hud == null or not hud.has_method("show_alien_t1_dialog"):
 		return
-
 	var available_rocks := Inventory.get_count("rock")
 	var available_sandstone := Inventory.get_count("sandstone")
 	var has_enough := (
 		available_rocks >= required_rocks
 		and available_sandstone >= required_sandstone
 	)
-
 	hud.show_alien_t1_dialog(
 		self,
 		has_enough,
@@ -73,24 +71,19 @@ func perform_build() -> void:
 	if Inventory.get_count("rock") < required_rocks \
 		or Inventory.get_count("sandstone") < required_sandstone:
 		return
-
 	Inventory.add_item("rock", -required_rocks)
 	Inventory.add_item("sandstone", -required_sandstone)
-
 	var hud = get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("update_resource_labels"):
 		hud.update_resource_labels()
-
 	if tower_part:
 		tower_part.visible = true
 		for c in tower_part.get_children():
 			if c is CollisionShape3D:
 				c.visible = true
 				c.disabled = false
-
 	if next_alien:
 		next_alien.visible = true
 		if next_alien is Area3D:
 			next_alien.monitoring = true
-
 	part_built = true

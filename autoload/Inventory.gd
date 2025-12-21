@@ -1,6 +1,7 @@
 extends Node
 
 var items := {}
+
 signal changed
 
 func add_item(id: String, count: int = 1) -> void:

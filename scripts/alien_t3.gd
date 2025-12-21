@@ -51,17 +51,14 @@ func _talk() -> void:
 	var hud = get_tree().get_first_node_in_group("hud")
 	if hud == null or not hud.has_method("show_alien_t3_dialog"):
 		return
-
 	var available_crystal := Inventory.get_count("crystal")
 	var available_metalscrap := Inventory.get_count("metalscrap")
 	var available_rocks := Inventory.get_count("rock")
-
 	var has_enough := (
 		available_crystal >= required_crystal
 		and available_metalscrap >= required_metalscrap
 		and available_rocks >= required_rocks
 	)
-
 	hud.show_alien_t3_dialog(
 		self,
 		has_enough,
@@ -79,19 +76,14 @@ func perform_build() -> void:
 		or Inventory.get_count("metalscrap") < required_metalscrap \
 		or Inventory.get_count("rock") < required_rocks:
 		return
-
 	Inventory.add_item("crystal", -required_crystal)
 	Inventory.add_item("metalscrap", -required_metalscrap)
 	Inventory.add_item("rock", -required_rocks)
-
 	var hud = get_tree().get_first_node_in_group("hud")
 	if hud and hud.has_method("update_resource_labels"):
 		hud.update_resource_labels()
-
 	if tower_part:
 		tower_part.visible = true
-
 	if hud and hud.has_method("on_tower_completed"):
 		hud.on_tower_completed()
-
 	part_built = true

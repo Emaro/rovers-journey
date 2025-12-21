@@ -2,6 +2,7 @@ extends Area3D
 
 @export var item_id := "rock"
 @export var amount := 1
+
 var picked := false
 
 func _ready() -> void:
