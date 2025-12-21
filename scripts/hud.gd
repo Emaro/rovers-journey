@@ -201,7 +201,7 @@ func show_alien1_dialog(
 				+ "I can fix it for you.\n" \
 				+ "Bring me 5 metal scraps and 2 rocks.\n"
 			upgrade_btn.disabled = false
-			upgrade_btn.text = "Upgrade"
+			upgrade_btn.text = "Repair"
 			cancel_btn.text = "Cancel"
 		else:
 			msg_label.text = "Whoa, I saw you crash-land!\n" \
@@ -210,7 +210,7 @@ func show_alien1_dialog(
 				+ "Bring me 5 metal scraps and 2 rocks.\n" \
 				+ "Come back when you've gathered enough.\n"
 			upgrade_btn.disabled = true
-			upgrade_btn.text = "Upgrade"
+			upgrade_btn.text = "Repair"
 			cancel_btn.text = "Close"
 
 
