@@ -41,7 +41,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		is_slipping = true
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if disable_nav:
 		# ------------------------------------------
 		# ➤ CHANGED: NO handbrake during dialogs!

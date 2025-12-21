@@ -168,10 +168,6 @@ func hide_interact_prompt() -> void:
 func show_alien1_dialog(
 	alien: Node,
 	has_enough: bool,
-	required_metalscrap: int,
-	required_rocks: int,
-	available_metalscrap: int,
-	available_rocks: int,
 	drivetrain_upgraded: bool
 ) -> void:
 	current_mode = "upgrade"
@@ -397,10 +393,6 @@ func _on_upgrade_pressed() -> void:
 				show_alien1_dialog(
 					current_alien,
 					true,
-					0,
-					0,
-					0,
-					0,
 					true
 				)
 				return
@@ -591,11 +583,7 @@ func on_tower_completed() -> void:
 	tower_completed = true
 
 
-func _on_dark_area_body_entered(body: Node3D) -> void:
-	pass
-
-
-func _on_rover_health_changed(old_health: Variant, new_health: Variant) -> void:
+func _on_rover_health_changed(_old_health: Variant, new_health: Variant) -> void:
 	health_label.text = "❤️ ".repeat(new_health).trim_suffix(" ")
 	
 	if new_health <= 1:

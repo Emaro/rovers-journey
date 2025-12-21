@@ -14,7 +14,7 @@ func _input(event: InputEvent) -> void:
 		get_parent().rotate_y(-event.relative.x * camera_sensibility)
 		top_level = true
 		
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var from_target := global_position - target.global_position
 	
 	if from_target.length() < min_dist:
