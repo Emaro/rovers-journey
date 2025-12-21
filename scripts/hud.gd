@@ -152,7 +152,7 @@ func show_alien1_dialog(
 	if drivetrain_upgraded:
 		msg_label.text = "Your drivetrain is fixed now.\n" \
 			+ "You should be able to drive as fast as before your crash!\n" \
-			+ "If you follow the path up into the rocky mountains, you might " \
+			+ "If you follow the path into the rocky mountains, you might " \
 			+ "find someone who knows how to build a communication tower.\n"
 		upgrade_btn.visible = false
 		upgrade_btn.disabled = true
