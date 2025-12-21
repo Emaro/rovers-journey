@@ -82,10 +82,6 @@ func _talk() -> void:
 	hud.show_alien1_dialog(
 		self,
 		has_enough,
-		required_metalscrap,
-		required_rocks,
-		available_metalscrap,
-		available_rocks,
 		drivetrain_upgraded
 	)
 
@@ -127,9 +123,5 @@ func perform_upgrade() -> void:
 		hud.show_alien1_dialog(
 			self,
 			true,
-			required_metalscrap,
-			required_rocks,
-			new_metals,
-			new_rocks,
 			true
 		)
