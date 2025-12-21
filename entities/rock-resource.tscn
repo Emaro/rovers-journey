@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://66pni2vgvdo1"]
 
 [ext_resource type="PackedScene" uid="uid://b0mxwt032af3c" path="res://assets/models/Low poly rocks/Models/Rock Type3 04.dae" id="1_58ap4"]
-[ext_resource type="Material" uid="uid://c3ybrfv4dtlfc" path="res://entities/crystal_material.tres" id="2_aeg2r"]
+[ext_resource type="Material" uid="uid://c3ybrfv4dtlfc" path="res://assets/crystal_material.tres" id="2_aeg2r"]
 
 [node name="Rock Type3 04" instance=ExtResource("1_58ap4")]
 

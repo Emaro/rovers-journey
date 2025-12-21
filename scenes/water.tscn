@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8m708uldsn0b"]
 
-[ext_resource type="Script" uid="uid://bf0wiqlw6a6yj" path="res://scenes/lava.gd" id="1_s3811"]
+[ext_resource type="Script" uid="uid://bf0wiqlw6a6yj" path="res://scripts/lava.gd" id="1_s3811"]
 [ext_resource type="Material" uid="uid://b36k4ru0b7mca" path="res://assets/water.tres" id="2_p1n2c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dw3wf"]

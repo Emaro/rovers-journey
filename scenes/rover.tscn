@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cc8fkkc60m7nf" path="res://scripts/raycast_car.gd" id="1_fubay"]
 [ext_resource type="Material" uid="uid://breym7k6v2vb4" path="res://assets/rover_material.tres" id="2_avdik"]
-[ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://images.png" id="2_k7dli"]
+[ext_resource type="Texture2D" uid="uid://cxo0oj24tb1r5" path="res://assets/images.png" id="2_k7dli"]
 [ext_resource type="Script" uid="uid://lyvrj6sgrp8f" path="res://scripts/raycast_wheel.gd" id="3_20k7n"]
 [ext_resource type="PackedScene" uid="uid://cgur1iu5kosfe" path="res://entities/tire2.tscn" id="4_20k7n"]
 [ext_resource type="PackedScene" uid="uid://bt2jbawht547w" path="res://entities/wheel.tscn" id="4_k7dli"]
