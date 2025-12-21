@@ -9,15 +9,14 @@
 script = ExtResource("1_gj6t0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36743546, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.36743546, 0)
 shape = SubResource("SphereShape3D_08epp")
 
 [node name="Rock Type6 04" parent="." instance=ExtResource("2_wgcwf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056663513, 0, -0.03852254)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.056663513, 0, -0.03852254)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11563873, 0)
 light_color = Color(1, 1, 0, 1)
+light_volumetric_fog_energy = 2.0
 omni_range = 1.6912388
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]

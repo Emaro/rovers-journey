@@ -11,4 +11,5 @@ material_override = ExtResource("2_aeg2r")
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22977233, 0)
 light_color = Color(0.827451, 0.16470589, 1, 1)
-omni_range = 1.8150213
+light_volumetric_fog_energy = 2.0
+omni_range = 1.3109818

@@ -6,9 +6,9 @@
 render_priority = 1
 transparency = 1
 shading_mode = 0
-albedo_color = Color(0, 0.36862746, 1, 1)
+albedo_color = Color(0, 0.62352943, 1, 1)
 grow = true
-grow_amount = 0.01
+grow_amount = 0.02
 stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 5
@@ -16,42 +16,44 @@ metadata/_stencil_owned = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sqrg"]
 next_pass = SubResource("StandardMaterial3D_i8q7m")
-albedo_color = Color(0, 0.13337034, 0.3113423, 1)
+albedo_color = Color(8.1822276e-07, 0.24233061, 0.52093285, 1)
 metallic = 1.0
 metallic_specular = 1.0
 roughness = 0.15
 stencil_mode = 1
 stencil_flags = 2
-stencil_color = Color(0, 0.36862746, 1, 1)
+stencil_color = Color(0, 0.62352943, 1, 1)
+stencil_outline_thickness = 0.02
 
 [sub_resource type="BoxMesh" id="BoxMesh_82i38"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i8q7m"]
-size = Vector3(1.0551758, 1.9550781, 1)
+size = Vector3(1.7796631, 1.9550781, 1.439209)
 
 [node name="MetalScrapResource" type="Area3D"]
 script = ExtResource("1_i8q7m")
 
 [node name="MetalScrapMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.7944383, 0, 0, 0, 0.21468897, 0, 0, 0, 0.9, 0, 0, 0)
+transform = Transform3D(1.3, 0, 0, 0, 0.352, 0, 0, 0, 1.474, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_8sqrg")
 mesh = SubResource("BoxMesh_82i38")
 
 [node name="MetalScrapMesh2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.8960954, -0.014257776, -0.25675356, 0.10328558, 0.12369908, -0.029593887, 0.38694534, 0, 0.60249424, -0.23261909, 0.1517348, 0.11336821)
+transform = Transform3D(1.1868571, -0.0403053, -0.577274, 0.13679928, 0.34968483, -0.06653763, 0.5124998, -2.6226044e-09, 1.354623, -0.23261909, 0.1517348, 0.11336821)
 material_override = SubResource("StandardMaterial3D_8sqrg")
 mesh = SubResource("BoxMesh_82i38")
 
 [node name="MetalScrapMesh3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.43951178, 0.01136742, 0.19383094, -0.14721417, 0.073874354, 0.043964386, -0.29137608, -0.020177502, 0.27016217, 0.12874086, 0.23534349, -0.12613091)
+transform = Transform3D(1.0436132, 0.05168378, 0.8518475, -0.34955755, 0.33588168, 0.19321454, -0.69186753, -0.09174025, 1.1873078, 0.12874086, 0.23534349, -0.12613091)
 material_override = SubResource("StandardMaterial3D_8sqrg")
 mesh = SubResource("BoxMesh_82i38")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02758789, 0.47753906, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12164307, 0.47753906, -0.026977539)
 shape = SubResource("BoxShape3D_i8q7m")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10029167, 0)
-light_color = Color(0, 1, 1, 1)
-omni_range = 1.7490994
+light_color = Color(2.2140146e-06, 0.47383165, 0.6840179, 1)
+light_volumetric_fog_energy = 2.0
+omni_range = 1.437681

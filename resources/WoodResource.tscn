@@ -7,9 +7,9 @@
 render_priority = 1
 transparency = 1
 shading_mode = 0
-albedo_color = Color(5.510971e-06, 0.6315113, 3.85046e-07, 1)
+albedo_color = Color(0.9734891, 0.3387302, 0.1824283, 1)
 grow = true
-grow_amount = 0.01
+grow_amount = 0.02
 stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 5
@@ -24,7 +24,8 @@ metallic_specular = 0.0
 roughness = 0.46
 stencil_mode = 1
 stencil_flags = 2
-stencil_color = Color(5.510971e-06, 0.6315113, 3.85046e-07, 1)
+stencil_color = Color(0.9734891, 0.3387302, 0.1824283, 1)
+stencil_outline_thickness = 0.02
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_sntmt"]
 
@@ -36,12 +37,12 @@ radius = 0.6689453
 script = ExtResource("1_t16f7")
 
 [node name="WoodMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.1954336, -1.3382553e-08, 0.078440145, 0.10458678, -1.3382548e-08, -0.8965751, 1.7193965e-08, 0.43297148, -4.583433e-08, 0, 0.34819442, 0)
+transform = Transform3D(1.9923894, 7.7511986e-10, 0.13073316, 0.1743109, -1.7753377e-08, -1.494292, 2.1471465e-09, 0.722, -3.6883748e-08, 0, 0.34819442, 0)
 material_override = SubResource("StandardMaterial3D_uh0ds")
 mesh = SubResource("CylinderMesh_sntmt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.033643615, -0.9994339, 0, 0.9994339, -0.033643615, 0, 0.5921332, 0.015555158)
+transform = Transform3D(2, 0, 0, 0, -0.06728723, -1.9988678, 0, 1.9988678, -0.06728723, 0, 0.5921332, 0.015555158)
 shape = SubResource("CylinderShape3D_h8t7d")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
