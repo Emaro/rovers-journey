@@ -528,6 +528,7 @@ func _intro_next_step() -> void:
 	if story_index >= story_lines_intro.size():
 		start_mission_button.visible = false
 		story_panel.visible = false
+		$Health/RespawnButton.visible = true
 		_set_rover_navigation_enabled(true)
 		show_start_hint_popup()
 	else:
@@ -607,9 +608,9 @@ func _on_button_pressed() -> void:
 		rover.kill()
 		
 func show_start_hint_popup() -> void:
-	await get_tree().create_timer(5.0, true, false, true).timeout
+	await get_tree().create_timer(3.0, true, false, true).timeout
 
-	if alien_dialog.visible:
+	if alien_dialog.visible or end_screen.visible:
 		return
 
 	current_mode = "hint"
