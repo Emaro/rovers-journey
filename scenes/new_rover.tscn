@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c1yrv7iljhb0h"]
+[gd_scene load_steps=35 format=3 uid="uid://c1yrv7iljhb0h"]
 
 [ext_resource type="Script" uid="uid://cc8fkkc60m7nf" path="res://scripts/raycast_car.gd" id="1_fubay"]
 [ext_resource type="Material" uid="uid://breym7k6v2vb4" path="res://assets/rover_material.tres" id="2_avdik"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cgur1iu5kosfe" path="res://entities/tire2.tscn" id="4_20k7n"]
 [ext_resource type="PackedScene" uid="uid://bt2jbawht547w" path="res://entities/wheel.tscn" id="4_k7dli"]
 [ext_resource type="PackedScene" uid="uid://dgc1gegx2kr0m" path="res://entities/scifi_wheel.tscn" id="7_2jort"]
+[ext_resource type="Texture2D" uid="uid://cagpx4i1bk1r5" path="res://assets/textures/Metal Plates/6/6_diffuseOriginal.bmp" id="8_wtqbn"]
+[ext_resource type="Texture2D" uid="uid://c88grjhdiog1e" path="res://assets/textures/Metal Plates/5/5_diffuseOriginal.bmp" id="9_7xee7"]
 
 [sub_resource type="Curve" id="Curve_nd71p"]
 _data = [Vector2(0.020504732, 0.3150205), 0.0, 0.0, 0, 0, Vector2(0.31034482, 0.62178624), -0.8235736, -0.8235736, 0, 0, Vector2(0.4403183, 0.61885434), 0.0, 0.0, 0, 0, Vector2(0.51724136, 0.6335138), 0.0, 0.0, 0, 0, Vector2(0.6180371, 0.75078934), 0.0, 0.0, 0, 0, Vector2(0.74535805, 0.9091114), -0.851827, -0.851827, 0, 0, Vector2(1, 0.28426093), 0.0, 0.0, 0, 0]
@@ -59,6 +61,72 @@ material = SubResource("StandardMaterial3D_7ddre")
 size = Vector2(0.4, 0.3)
 orientation = 1
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0xo8"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.16862746, 0, 1)
+grow = true
+grow_amount = 0.043
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vi5p"]
+next_pass = SubResource("StandardMaterial3D_a0xo8")
+albedo_color = Color(0.5666802, 0.5666802, 0.56668013, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(1, 0.16862746, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7xee7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u45r2"]
+next_pass = SubResource("StandardMaterial3D_a0xo8")
+albedo_color = Color(0.2900912, 0.29009122, 0.29009116, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(1, 0.16862746, 0, 1)
+stencil_outline_thickness = 0.043
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3vi5p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qk2ke"]
+albedo_texture = ExtResource("8_wtqbn")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_rr7mb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rr7mb"]
+albedo_texture = ExtResource("9_7xee7")
+uv1_scale = Vector3(0.4, 1.2, 0.41)
+uv1_triplanar = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_wtqbn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jort"]
+albedo_color = Color(0.22155887, 0.22155887, 0.22155887, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wtqbn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xee7"]
+diffuse_mode = 3
+albedo_color = Color(0.972549, 1, 0.5686275, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+
 [node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("wheels", "skid_marks")]
 mass = 100.0
 script = ExtResource("1_fubay")
@@ -71,10 +139,10 @@ tire_max_turn_degrees = 50
 skid_marks = [NodePath("Marks/GPUParticles3D"), NodePath("Marks/GPUParticles3D2"), NodePath("Marks/GPUParticles3D3"), NodePath("Marks/GPUParticles3D4")]
 show_debug = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="BodyShape" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_j8ivh")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="BodyShape"]
 transform = Transform3D(1, 0, 0, 0, 0.52978694, 0, 0, 0, 1, 0, 0.18, -0.3)
 material_override = ExtResource("2_avdik")
 mesh = SubResource("BoxMesh_g7g4h")
@@ -235,3 +303,97 @@ lifetime = 2.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_nd71p")
 draw_pass_1 = SubResource("QuadMesh_qjeyg")
+
+[node name="Decoration" type="Node3D" parent="."]
+
+[node name="Back stripe" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(-3.2632206e-09, 0.5340165, 0, -0.074653774, -2.3342604e-08, 0, 0, 0, 0.017993946, 0, -0.1106794, -1.0010121)
+material_override = SubResource("StandardMaterial3D_3vi5p")
+mesh = SubResource("CylinderMesh_7xee7")
+skeleton = NodePath("../..")
+
+[node name="FakeCamera" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(-9.368117e-09, 0.22891243, 0, -0.21431753, -1.000608e-08, 0, 0, 0, 0.1833016, 0, 0.39008343, 0.45892906)
+material_override = SubResource("StandardMaterial3D_u45r2")
+mesh = SubResource("CapsuleMesh_3vi5p")
+skeleton = NodePath("../..")
+
+[node name="Metal stripes" type="Node3D" parent="Decoration"]
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Decoration/Metal stripes"]
+transform = Transform3D(0.04091853, 0, 0, 0, -0.044603653, -8.998323e-08, 0, 3.8993755e-09, -1.0292883, -0.90269434, -0.079194084, 0.318099)
+material_override = SubResource("StandardMaterial3D_qk2ke")
+mesh = SubResource("BoxMesh_rr7mb")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Decoration/Metal stripes"]
+transform = Transform3D(0.04091853, 0, 0, 0, 0.044603657, 0, 0, 0, 1.0524232, -0.5109967, 0.26632667, -0.29863605)
+material_override = SubResource("StandardMaterial3D_qk2ke")
+mesh = SubResource("BoxMesh_rr7mb")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Decoration/Metal stripes"]
+transform = Transform3D(0.04091853, 0, 0, 0, 0.044603657, 0, 0, 0, 1.0524232, 0.511, 0.266, -0.299)
+material_override = SubResource("StandardMaterial3D_qk2ke")
+mesh = SubResource("BoxMesh_rr7mb")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Decoration/Metal stripes"]
+transform = Transform3D(-1.7886057e-09, 0, 1.052571, 0, 0.044603653, 0, -0.04091853, 0, -4.600934e-08, 0, 0.266, -0.805)
+material_override = SubResource("StandardMaterial3D_qk2ke")
+mesh = SubResource("BoxMesh_rr7mb")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Decoration/Metal stripes"]
+transform = Transform3D(-1.7886057e-09, 0, 1.052571, 0, 0.044603653, 0, -0.04091853, 0, -4.600934e-08, 0, 0.266, 0.2047419)
+material_override = SubResource("StandardMaterial3D_qk2ke")
+mesh = SubResource("BoxMesh_rr7mb")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Decoration/Metal stripes"]
+transform = Transform3D(0.040918525, 0, 0, 0, -0.05850571, -8.998323e-08, 0, 5.1147317e-09, -1.0292882, -0.90269434, -0.16408254, 0.042938143)
+material_override = SubResource("StandardMaterial3D_qk2ke")
+mesh = SubResource("BoxMesh_rr7mb")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Decoration/Metal stripes"]
+transform = Transform3D(0.04091853, 0, 0, 0, -0.044603653, -8.998323e-08, 0, 3.8993755e-09, -1.0292883, 0.903, -0.079194084, 0.318099)
+material_override = SubResource("StandardMaterial3D_qk2ke")
+mesh = SubResource("BoxMesh_rr7mb")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Decoration/Metal stripes"]
+transform = Transform3D(0.040918525, 0, 0, 0, -0.05850571, -8.998323e-08, 0, 5.1147317e-09, -1.0292882, 0.903, -0.16408254, 0.042938143)
+material_override = SubResource("StandardMaterial3D_qk2ke")
+mesh = SubResource("BoxMesh_rr7mb")
+skeleton = NodePath("../../..")
+
+[node name="TopDecoration" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(0.5965528, 0, 0, 0, -0.07389969, 0.39890623, 0, -0.9972657, -0.029559862, 0, 0.29639256, 0)
+material_override = SubResource("StandardMaterial3D_rr7mb")
+mesh = SubResource("PrismMesh_wtqbn")
+skeleton = NodePath("../..")
+
+[node name="LightR" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(0.3, 0, 0, 0, -3.934025e-09, -0.3, 0, 0.09, -1.3113417e-08, -0.6669824, 0, 0.9323031)
+material_override = SubResource("StandardMaterial3D_2jort")
+mesh = SubResource("CylinderMesh_wtqbn")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Decoration/LightR"]
+transform = Transform3D(0.8, 0, 0, 0, 0.99999994, 7.1054274e-15, 0, 1.7763568e-15, 0.8, 0, 0.085214615, -1.1174563e-09)
+material_override = SubResource("StandardMaterial3D_7xee7")
+mesh = SubResource("CylinderMesh_wtqbn")
+skeleton = NodePath("../../..")
+
+[node name="LightL" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(0.3, 0, 0, 0, -3.934025e-09, -0.3, 0, 0.09, -1.3113417e-08, 0.667, 0, 0.9322754)
+material_override = SubResource("StandardMaterial3D_2jort")
+mesh = SubResource("CylinderMesh_wtqbn")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Decoration/LightL"]
+transform = Transform3D(0.8, 0, 0, 0, 0.99999994, 7.1054274e-15, 0, 1.7763568e-15, 0.8, 0, 0.085214615, -1.1174563e-09)
+material_override = SubResource("StandardMaterial3D_7xee7")
+mesh = SubResource("CylinderMesh_wtqbn")
+skeleton = NodePath("../../..")
