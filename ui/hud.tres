@@ -29,6 +29,7 @@ default_font = ExtResource("1_ls0po")
 default_font_size = 30
 Button/constants/h_separation = 40
 Button/constants/outline_size = 10
+Button/styles/disabled = SubResource("StyleBoxFlat_ls0po")
 Button/styles/normal = SubResource("StyleBoxFlat_ls0po")
 HBoxContainer/constants/separation = 8
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_meaxu")

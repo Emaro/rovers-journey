@@ -95,6 +95,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_update_typewriter(delta)
 
+	$Health/RespawnButton.disabled = alien_dialog.visible
+	
 	if alien_dialog.visible:
 		return
 
