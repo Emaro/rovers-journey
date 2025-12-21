@@ -241,91 +241,91 @@ size = Vector3(35, 1, 10)
 [node name="Rock Type1 05" parent="." instance=ExtResource("8_up6qc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.485693, 0.034697533, 44.210995)
 
-[node name="Node3D2" type="Node3D" parent="."]
+[node name="RandomAssets" type="Node3D" parent="."]
 
-[node name="Tree Type2 06" parent="Node3D2" instance=ExtResource("41_bck7e")]
+[node name="Tree Type2 06" parent="RandomAssets" instance=ExtResource("41_bck7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.83647, 19.805893, 145.0484)
 
-[node name="Tree Type2 08" parent="Node3D2" instance=ExtResource("41_bck7e")]
+[node name="Tree Type2 08" parent="RandomAssets" instance=ExtResource("41_bck7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.103455, 19.805893, 142.26923)
 
-[node name="Tree Type2 09" parent="Node3D2" instance=ExtResource("41_bck7e")]
+[node name="Tree Type2 09" parent="RandomAssets" instance=ExtResource("41_bck7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.36592, 6.659193, 156.61784)
 
-[node name="Tree Type2 07" parent="Node3D2" instance=ExtResource("41_bck7e")]
+[node name="Tree Type2 07" parent="RandomAssets" instance=ExtResource("41_bck7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.566183, 19.177319, 142.62225)
 
-[node name="BeachPropStarfish2" type="MeshInstance3D" parent="Node3D2"]
+[node name="BeachPropStarfish2" type="MeshInstance3D" parent="RandomAssets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 78)
 mesh = SubResource("ArrayMesh_452ka")
 skeleton = NodePath("../..")
 
-[node name="BeachPropStarfish1" type="MeshInstance3D" parent="Node3D2"]
+[node name="BeachPropStarfish1" type="MeshInstance3D" parent="RandomAssets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.716, 0, 78)
 mesh = SubResource("ArrayMesh_xbkw0")
 skeleton = NodePath("../..")
 
-[node name="SharedPropBoulder5" type="MeshInstance3D" parent="Node3D2"]
+[node name="SharedPropBoulder5" type="MeshInstance3D" parent="RandomAssets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.67715, 1.0042229, 78.52372)
 mesh = SubResource("ArrayMesh_18yd3")
 skeleton = NodePath("../..")
 
-[node name="SharedPropBoulder1" type="MeshInstance3D" parent="Node3D2"]
+[node name="SharedPropBoulder1" type="MeshInstance3D" parent="RandomAssets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.572, 0, 78.752)
 mesh = SubResource("ArrayMesh_aohxl")
 skeleton = NodePath("../..")
 
-[node name="Mountain3" type="MeshInstance3D" parent="Node3D2"]
+[node name="Mountain3" type="MeshInstance3D" parent="RandomAssets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.865314, 0.03342724, 79.20416)
 mesh = SubResource("ArrayMesh_wsl0k")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D2/Mountain3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RandomAssets/Mountain3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D2/Mountain3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RandomAssets/Mountain3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047454834, 3.0622559, -0.15246582)
 shape = SubResource("BoxShape3D_rhrei")
 
-[node name="BirchTree_4" parent="Node3D2" instance=ExtResource("69_c5wes")]
+[node name="BirchTree_4" parent="RandomAssets" instance=ExtResource("69_c5wes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.467606, 0, 66.26671)
 
-[node name="BirchTree_Autumn_2" parent="Node3D2" instance=ExtResource("70_wpj7b")]
+[node name="BirchTree_Autumn_2" parent="RandomAssets" instance=ExtResource("70_wpj7b")]
 transform = Transform3D(0.99997437, 0, -0.007155789, 0, 1, 0, 0.007155789, 0, 0.99997437, -29.577562, 0, 68.52589)
 
-[node name="BirchTree_Dead_1" parent="Node3D2" instance=ExtResource("71_a2wdf")]
+[node name="BirchTree_Dead_1" parent="RandomAssets" instance=ExtResource("71_a2wdf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.914581, 0, 75.87188)
 
-[node name="BirchTree_Dead_5" parent="Node3D2" instance=ExtResource("72_uu2h0")]
+[node name="BirchTree_Dead_5" parent="RandomAssets" instance=ExtResource("72_uu2h0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.402176, 9.536743e-07, 73.81849)
 
-[node name="BirchTree_Dead_Snow_2" parent="Node3D2" instance=ExtResource("73_6ulsg")]
+[node name="BirchTree_Dead_Snow_2" parent="RandomAssets" instance=ExtResource("73_6ulsg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.264499, -9.536743e-07, 72.812)
 
-[node name="BirchTree_Dead_Snow_4" parent="Node3D2" instance=ExtResource("74_exe5i")]
+[node name="BirchTree_Dead_Snow_4" parent="RandomAssets" instance=ExtResource("74_exe5i")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -22.32865, 0, 73.03012)
 
-[node name="BushBerries_1" parent="Node3D2" instance=ExtResource("76_epd3v")]
+[node name="BushBerries_1" parent="RandomAssets" instance=ExtResource("76_epd3v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.79787, 0, 75.00107)
 
-[node name="Bush_1" parent="Node3D2" instance=ExtResource("77_uw8m6")]
+[node name="Bush_1" parent="RandomAssets" instance=ExtResource("77_uw8m6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.267963, 0, 71.072296)
 
-[node name="CommonTree_1" parent="Node3D2" instance=ExtResource("82_ykbg5")]
+[node name="CommonTree_1" parent="RandomAssets" instance=ExtResource("82_ykbg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.892823, 0, 67.5453)
 
-[node name="Flowers" parent="Node3D2" instance=ExtResource("85_uy0cq")]
+[node name="Flowers" parent="RandomAssets" instance=ExtResource("85_uy0cq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.412518, 0, 70.34662)
 
-[node name="Grass" parent="Node3D2" instance=ExtResource("86_eekg2")]
+[node name="Grass" parent="RandomAssets" instance=ExtResource("86_eekg2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.355103, 0, 78.73604)
 
-[node name="Grass_2" parent="Node3D2" instance=ExtResource("87_qjxgo")]
+[node name="Grass_2" parent="RandomAssets" instance=ExtResource("87_qjxgo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.282715, 0, 80.29118)
 
-[node name="Lilypad" parent="Node3D2" instance=ExtResource("88_6jia4")]
+[node name="Lilypad" parent="RandomAssets" instance=ExtResource("88_6jia4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.63658, 0, 126.00145)
 
-[node name="Rock_Moss_7" parent="Node3D2" instance=ExtResource("100_e1alf")]
+[node name="Rock_Moss_7" parent="RandomAssets" instance=ExtResource("100_e1alf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.119423, 0, 96.561775)
 
 [node name="LavaLakes" type="Node3D" parent="."]
