@@ -4,7 +4,7 @@ SDENT game prototype 2025 by Dobi & Miro.
 
 **Rover's Journey** is a cozy video game about a rover that crashed on an unknown planet. Explore the new world, get to know it's habitants and find a way to reach back home.
 
-![Screenshot Rover's Journey Menu](./docs/screenshot%20desert.png)
+![Screenshot Rover's Journey](./screenshot.png)
 
 ## Setup
 
