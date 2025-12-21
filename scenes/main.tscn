@@ -434,7 +434,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.126053, -4.5, -4.4555054)
 shape = SubResource("BoxShape3D_jscy8")
 
 [node name="Spawn" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.82175, 3.4182386, -66.15085)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 81.78645, 1.0388072, -66.15085)
 
 [connection signal="health_changed" from="Rover" to="HUD" method="_on_rover_health_changed"]
 [connection signal="animation_finished" from="Alien_T/Node3D/Alien_1/AnimationPlayer" to="Alien_T/Node3D/Alien_1" method="_on_animation_player_animation_finished"]

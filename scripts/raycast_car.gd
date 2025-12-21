@@ -132,6 +132,8 @@ func _physics_process(delta: float) -> void:
 		reset_position = false
 		global_position = spawn.global_position
 		rotation = spawn.rotation
+		linear_velocity = Vector3.ZERO
+		angular_velocity = Vector3.ZERO
 		return
 		
 	var id := 0
