@@ -1,8 +1,9 @@
-[gd_scene load_steps=58 format=4 uid="uid://bhlus1o4fqfxd"]
+[gd_scene load_steps=59 format=4 uid="uid://bhlus1o4fqfxd"]
 
 [ext_resource type="PackedScene" uid="uid://bu7iua6j64p0x" path="res://entities/rock_type_1_01.tscn" id="8_up6qc"]
 [ext_resource type="PackedScene" uid="uid://b44ybtmsvguta" path="res://scenes/cactus_flowers_2.tscn" id="26_b3s3f"]
 [ext_resource type="PackedScene" uid="uid://weoyf5gy6wfw" path="res://entities/tree01.tscn" id="28_tkj4y"]
+[ext_resource type="PackedScene" uid="uid://e4tbo2c0vtg1" path="res://assets/crystal_light.tscn" id="39_u2wqf"]
 [ext_resource type="PackedScene" uid="uid://dvhfm1hjrdc5h" path="res://assets/models/Low poly trees/Models/Tree Type2 02.dae" id="41_bck7e"]
 [ext_resource type="PackedScene" uid="uid://cim33c3t5qcns" path="res://entities/tree_2.tscn" id="63_miux7"]
 [ext_resource type="PackedScene" uid="uid://dn7d0w7ixnld3" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/BirchTree_4.fbx" id="69_c5wes"]
@@ -687,3 +688,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.13947, 0, -189.16428)
 
 [node name="Rock Type1 03" parent="Mountains" instance=ExtResource("8_up6qc")]
 transform = Transform3D(-0.7317633, 0, 0.5884062, 0, 1.7498437, 0, -0.59642893, 0, -0.72192013, -44.177246, -2.3841858e-07, -191.09615)
+
+[node name="Tree Type0 02" parent="." instance=ExtResource("107_v8pyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.16318, 1.0632992, -287.9765)
+
+[node name="WoodLog" parent="." instance=ExtResource("104_jdo05")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 176.18445, -0.12314844, 359.5898)
+
+[node name="Tree Type6 03" parent="." instance=ExtResource("63_miux7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.73431, 0, 360.53125)
+
+[node name="Cactus_3" parent="." instance=ExtResource("101_v8pyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.91458, 0, -134.09421)
+
+[node name="CactusFlowers_2" parent="." instance=ExtResource("26_b3s3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.13739, 1.9073486e-06, -136.50037)
+
+[node name="CrystalLight" parent="." instance=ExtResource("39_u2wqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.143234, 6.232647, 200.50607)
+light_energy = 20.0
+light_volumetric_fog_energy = 0.5
+shadow_enabled = true
+omni_range = 20.306171
+
+[node name="CrystalLight2" parent="." instance=ExtResource("39_u2wqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.13236, 8.632917, 185.13095)
+light_color = Color(0.8022955, 0.43777448, 0.8432384, 1)
+shadow_enabled = true
+omni_range = 16.307486

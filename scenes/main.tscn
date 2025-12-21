@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b8h0h8nkkq1yv"]
+[gd_scene load_steps=31 format=3 uid="uid://b8h0h8nkkq1yv"]
 
 [ext_resource type="PackedScene" uid="uid://b1cq10wl1t6rd" path="res://ui/hud.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b38w75aqlbwan" path="res://scenes/alien_1.tscn" id="4_jyhfs"]
@@ -22,12 +22,6 @@
 [ext_resource type="Script" uid="uid://brahuilm236c7" path="res://scripts/dark_area.gd" id="18_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://c2suk4ky5e7mq" path="res://scenes/alien_info_lava.tscn" id="20_yc10j"]
 [ext_resource type="PackedScene" uid="uid://cv22yn5ht4yp4" path="res://scenes/alien_info_water.tscn" id="21_jscy8"]
-[ext_resource type="PackedScene" uid="uid://e4tbo2c0vtg1" path="res://assets/crystal_light.tscn" id="22_jscy8"]
-[ext_resource type="PackedScene" uid="uid://r57qh2lyujvu" path="res://scenes/dead_tree.tscn" id="23_og1vs"]
-[ext_resource type="PackedScene" uid="uid://b5rmhhrk4hup2" path="res://assets/models/Ultimate Nature Pack by Quaternius/FBX/WoodLog.fbx" id="24_2wyq8"]
-[ext_resource type="PackedScene" uid="uid://cim33c3t5qcns" path="res://entities/tree_2.tscn" id="25_vxglm"]
-[ext_resource type="PackedScene" uid="uid://dvfn51u0mwgey" path="res://scenes/cactus.tscn" id="26_vxglm"]
-[ext_resource type="PackedScene" uid="uid://b44ybtmsvguta" path="res://scenes/cactus_flowers_2.tscn" id="27_2f3dj"]
 
 [sub_resource type="Animation" id="Animation_o6xl0"]
 length = 0.001
@@ -152,7 +146,7 @@ size = Vector3(161, 35, 149)
 
 [node name="Main" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.7419642, -0.47407246, 0.47407246, 0, 0.7071068, 0.7071068, -0.6704396, 0.52464783, -0.52464783, 0, 7.7081947, 0)
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
@@ -185,153 +179,180 @@ hud = NodePath("../../../HUD")
 
 [node name="Resources" type="Node3D" parent="."]
 
-[node name="MetalScrapResource" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.984554, 0.2366786, -17.81985)
+[node name="Rocks" type="Node3D" parent="Resources"]
 
-[node name="RockResource" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 0, -1)
 
-[node name="SandstoneResource" parent="Resources" instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.358932, 3.6893015, -2)
+[node name="RockResource16" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(0.9098237, 0.4082723, 0.07439442, -0.41499496, 0.89508516, 0.16310032, 0, -0.17926584, 0.98380065, -281.90085, 4.4163322, -28.498524)
 
-[node name="WoodResource" parent="Resources" instance=ExtResource("8_0ld40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.498474, 0.24278688, 50.83783)
-
-[node name="MetalScrapResource2" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.77475, 0.32235265, -80.105576)
-
-[node name="MetalScrapResource3" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.011284, 1.3108914, -76.646484)
-
-[node name="MetalScrapResource4" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.78158, 0.6100712, -72.11824)
-
-[node name="RockResource2" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource2" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.91346, 2.4443502, -61.331963)
 
-[node name="RockResource10" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource10" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(0.98495287, 0.17282309, 0, -0.17282309, 0.98495287, 0, 0, 0, 1, 60.826878, 2.4443502, -79.16994)
 
-[node name="SandstoneResource2" parent="Resources" instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420.2362, 0, -127.25215)
-
-[node name="SandstoneResource3" parent="Resources" instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 422.7776, 0, -153.30591)
-
-[node name="SandstoneResource4" parent="Resources" instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.101696, 2.1952934, -286.81946)
-
-[node name="SandstoneResource5" parent="Resources" instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.34784, 1.0343757, -201.55423)
-
-[node name="SandstoneResource6" parent="Resources" instance=ExtResource("7_85g3d")]
-transform = Transform3D(1, 0, 0, 0, 0.98324215, 0.18230417, 0, -0.18230417, 0.98324215, -296.84775, 4.3739057, -81.15596)
-
-[node name="RockResource3" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource3" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192.61893, 0.5914364, -137.42307)
 
-[node name="RockResource4" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource4" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237.85751, 4.3969536, -151.4406)
 
-[node name="RockResource11" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource11" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(-0.10162925, 0, -0.9948223, 0, 1, 0, 0.9948223, 0, -0.10162925, -223.55019, 10.697779, -271.2736)
 
-[node name="RockResource12" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource12" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(-0.10162925, 0, -0.9948223, 0, 1, 0, 0.9948223, 0, -0.10162925, -136.52887, 5.10266, -266.78534)
 
-[node name="RockResource5" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource5" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -360.9675, 5.752596, -125.386086)
 
-[node name="RockResource6" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource6" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -293.82147, 1.3337841, -276.8603)
 
-[node name="RockResource7" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource7" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -395.01184, 1.7841778, -271.8775)
 
-[node name="RockResource8" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource8" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345.64935, 12.40321, -212.51271)
 
-[node name="RockResource9" parent="Resources" instance=ExtResource("6_tipki")]
+[node name="RockResource9" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.389435, 0.26453495, -33.073437)
 
-[node name="RockResource13" parent="Resources" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.389435, 0.26453495, 264.7458)
+[node name="RockResource13" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.389435, 0.09763718, 264.7458)
 
-[node name="RockResource14" parent="Resources" instance=ExtResource("6_tipki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240.0137, 0.26453495, -320.42902)
+[node name="RockResource17" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.9766, 0.09763718, 217.99878)
 
-[node name="RockResource15" parent="Resources" instance=ExtResource("6_tipki")]
-transform = Transform3D(-0.22709326, 0, 0.973873, 0, 1, 0, -0.973873, 0, -0.22709326, 242.5105, 0.26453495, -320.42902)
+[node name="RockResource14" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240.0137, 0.042621136, -320.42902)
 
-[node name="MetalScrapResource5" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(0.962871, -0.2699619, 0, 0.2699619, 0.962871, 0, 0, 0, 1, 83.31921, 1.8690372, -54.07869)
-
-[node name="MetalScrapResource8" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(0.962871, -0.2699619, 0, 0.26504052, 0.945318, -0.19007224, 0.05131226, 0.18301505, 0.9817701, 83.31921, -0.5892093, -71.06563)
-
-[node name="WoodResource2" parent="Resources" instance=ExtResource("8_0ld40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.16201, 0.13969946, 126.19764)
-
-[node name="WoodResource3" parent="Resources" instance=ExtResource("8_0ld40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.14938, 0.8102708, 132.9497)
-
-[node name="WoodResource4" parent="Resources" instance=ExtResource("8_0ld40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 326.2534, 1.1970272, 328.17218)
-
-[node name="WoodResource5" parent="Resources" instance=ExtResource("8_0ld40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.51903, 0, 350.75452)
-
-[node name="WoodResource6" parent="Resources" instance=ExtResource("8_0ld40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.59123, 0, 352.7962)
-
-[node name="WoodResource7" parent="Resources" instance=ExtResource("8_0ld40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.59123, 0, 348.647)
-
-[node name="WoodResource8" parent="Resources" instance=ExtResource("8_0ld40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.95526, 1.0286622, 162.77078)
-
-[node name="WoodResource9" parent="Resources" instance=ExtResource("8_0ld40")]
-transform = Transform3D(0.123843975, 0, -0.9923017, 0, 1, 0, 0.9923017, 0, 0.123843975, 313.10654, 1.2664957, 162.77078)
-
-[node name="CrystalResource" parent="Resources" instance=ExtResource("9_gqmmt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.11253, 0, 202.408)
-
-[node name="CrystalResource2" parent="Resources" instance=ExtResource("9_gqmmt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.65133, 0, 202.46655)
-
-[node name="CrystalResource3" parent="Resources" instance=ExtResource("9_gqmmt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4733067, 20.022573, 164.66832)
-
-[node name="MetalScrapResource6" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.644706, 20.128592, 154.3594)
-
-[node name="CrystalResource4" parent="Resources" instance=ExtResource("9_gqmmt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.61707, 20.007906, 111.545555)
-
-[node name="MetalScrapResource7" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.0501, 20.057108, 81.877754)
-
-[node name="MetalScrapResource9" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.11751, 20.057108, 143.62198)
-
-[node name="MetalScrapResource10" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.36332, 0.18157864, 205.27077)
-
-[node name="MetalScrapResource11" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(0.99938107, 0, -0.035178576, 0, 1, 0, 0.035178576, 0, 0.99938107, 43.819855, 2.2288914, -241.0582)
-
-[node name="MetalScrapResource12" parent="Resources" instance=ExtResource("8_choun")]
-transform = Transform3D(0.99938107, 0, -0.035178576, 0, 1, 0, 0.035178576, 0, 0.99938107, -64.93388, 0.055054665, -260.38574)
-
-[node name="Rocks" type="Node3D" parent="Resources"]
+[node name="RockResource15" parent="Resources/Rocks" instance=ExtResource("6_tipki")]
+transform = Transform3D(-0.22709326, 0, 0.973873, 0.0788829, 0.9967142, 0.018394364, -0.970673, 0.080999166, -0.22634707, 289.69696, -0.000849247, -302.02713)
 
 [node name="Sandstones" type="Node3D" parent="Resources"]
 
+[node name="SandstoneResource" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 0.98244387, -0.18655832, 0, 0.18655832, 0.98244387, -16.501715, 3.9754572, -2)
+
+[node name="SandstoneResource2" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420.2362, 0, -127.25215)
+
+[node name="SandstoneResource3" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 422.7776, 0, -153.30591)
+
+[node name="SandstoneResource4" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.720234, 5.1600256, -280.87076)
+
+[node name="SandstoneResource5" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.34784, 1.0343757, -201.55423)
+
+[node name="SandstoneResource6" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 0.98324215, 0.18230417, 0, -0.18230417, 0.98324215, -296.84775, 4.516932, -81.15596)
+
+[node name="SandstoneResource7" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 0.9998449, 0.017609462, 0, -0.017609462, 0.9998449, -296.84775, 1.6648421, -243.06659)
+
+[node name="SandstoneResource8" parent="Resources/Sandstones" instance=ExtResource("7_85g3d")]
+transform = Transform3D(1, 0, 0, 0, 0.9998449, 0.017609462, 0, -0.017609462, 0.9998449, 303.93015, 0.030683994, -36.929077)
+
 [node name="Metalscraps" type="Node3D" parent="Resources"]
+
+[node name="MetalScrapResource" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.68915, 0.48276782, -70.79434)
+
+[node name="MetalScrapResource2" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.77475, 0.32235265, -80.105576)
+
+[node name="MetalScrapResource3" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.011284, 1.3108914, -76.646484)
+
+[node name="MetalScrapResource4" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.78158, 0.6100712, -72.11824)
+
+[node name="MetalScrapResource5" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(0.962871, -0.2699619, 0, 0.2699619, 0.962871, 0, 0, 0, 1, 83.31921, 1.8690372, -54.07869)
+
+[node name="MetalScrapResource8" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(0.962871, -0.2699619, 0, 0.26504052, 0.945318, -0.19007224, 0.05131226, 0.18301505, 0.9817701, 83.31921, -0.5892093, -71.06563)
+
+[node name="MetalScrapResource6" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.644706, 20.128592, 154.3594)
+
+[node name="MetalScrapResource7" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.0501, 20.057108, 81.877754)
+
+[node name="MetalScrapResource13" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.07972, 2.2327623, 75.416046)
+
+[node name="MetalScrapResource9" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.11751, 20.057108, 143.62198)
+
+[node name="MetalScrapResource10" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.36332, 0.18157864, 205.27077)
+
+[node name="MetalScrapResource11" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(0.99938107, 0, -0.035178576, 0, 1, 0, 0.035178576, 0, 0.99938107, 43.819855, 2.2288914, -241.0582)
+
+[node name="MetalScrapResource12" parent="Resources/Metalscraps" instance=ExtResource("8_choun")]
+transform = Transform3D(0.99938107, 0, -0.035178576, 0, 1, 0, 0.035178576, 0, 0.99938107, -64.93388, 0.055054665, -260.38574)
+
+[node name="Crystal" type="Node3D" parent="Resources"]
+
+[node name="CrystalResource" parent="Resources/Crystal" instance=ExtResource("9_gqmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.11253, 0, 202.408)
+
+[node name="CrystalResource2" parent="Resources/Crystal" instance=ExtResource("9_gqmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.97732, 0, 202.46655)
+
+[node name="CrystalResource3" parent="Resources/Crystal" instance=ExtResource("9_gqmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4733067, 20.022573, 164.66832)
+
+[node name="CrystalResource4" parent="Resources/Crystal" instance=ExtResource("9_gqmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.61707, 20.007906, 111.545555)
+
+[node name="CrystalResource5" parent="Resources/Crystal" instance=ExtResource("9_gqmmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.74628, 9.496868, 149.76419)
 
 [node name="Wood" type="Node3D" parent="Resources"]
 
-[node name="Crystal" type="Node3D" parent="Resources"]
+[node name="WoodResource" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.498474, 0.24278688, 50.83783)
+
+[node name="WoodResource2" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.16201, 0.13969946, 126.19764)
+
+[node name="WoodResource3" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.14938, 0.8102708, 132.9497)
+
+[node name="WoodResource4" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 326.2534, 1.1970272, 328.17218)
+
+[node name="WoodResource10" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 277.17468, 1.1970272, 288.2795)
+
+[node name="WoodResource11" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360.361, 0.31907392, -1.1210709)
+
+[node name="WoodResource5" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.51903, 0, 350.75452)
+
+[node name="WoodResource6" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.59123, 0, 352.7962)
+
+[node name="WoodResource12" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150.5501, 7.3464346, 222.15118)
+
+[node name="WoodResource7" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.59123, 0, 348.647)
+
+[node name="WoodResource8" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.95526, 1.0286622, 162.77078)
+
+[node name="WoodResource9" parent="Resources/Wood" instance=ExtResource("8_0ld40")]
+transform = Transform3D(0.123843975, 0, -0.9923017, 0, 1, 0, 0.9923017, 0, 0.123843975, 313.10654, 1.2664957, 162.77078)
 
 [node name="Alien_T" type="Node3D" parent="."]
 
@@ -412,36 +433,8 @@ script = ExtResource("18_dp3eg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.126053, -4.5, -4.4555054)
 shape = SubResource("BoxShape3D_jscy8")
 
-[node name="CrystalLight" parent="." instance=ExtResource("22_jscy8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.143234, 6.232647, 200.50607)
-light_energy = 50.0
-light_volumetric_fog_energy = 0.5
-shadow_enabled = true
-omni_range = 20.306171
-
-[node name="CrystalLight2" parent="." instance=ExtResource("22_jscy8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.13236, 8.632917, 185.13095)
-light_color = Color(0.8022955, 0.43777448, 0.8432384, 1)
-shadow_enabled = true
-omni_range = 16.307486
-
 [node name="Spawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.82175, 3.4182386, -66.15085)
-
-[node name="Tree Type0 02" parent="." instance=ExtResource("23_og1vs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.16318, 1.0632992, -287.9765)
-
-[node name="WoodLog" parent="." instance=ExtResource("24_2wyq8")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 176.18445, -0.12314844, 359.5898)
-
-[node name="Tree Type6 03" parent="." instance=ExtResource("25_vxglm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.73431, 0, 360.53125)
-
-[node name="Cactus_3" parent="." instance=ExtResource("26_vxglm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.91458, 0, -134.09421)
-
-[node name="CactusFlowers_2" parent="." instance=ExtResource("27_2f3dj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.13739, 1.9073486e-06, -136.50037)
 
 [connection signal="health_changed" from="Rover" to="HUD" method="_on_rover_health_changed"]
 [connection signal="animation_finished" from="Alien_T/Node3D/Alien_1/AnimationPlayer" to="Alien_T/Node3D/Alien_1" method="_on_animation_player_animation_finished"]
